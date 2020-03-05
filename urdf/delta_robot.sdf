@@ -1,0 +1,1043 @@
+<?xml version="1.0" ?>
+<sdf version='1.6'>
+  <model name='delta_robot'>
+    <link name='link_0'>
+      <pose frame=''>0 0 1.359 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0 -0 -0 0 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='link_0_collision'>
+        <pose frame=''>-0.147 -0.085 -0.01 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/fixed_base2.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='link_0_visual'>
+        <pose frame=''>-0.147 -0.085 -0.01 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/fixed_base2.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <visual name='link_0_visual_1'>
+        <pose frame=''>-0 0 0.06 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.12</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='base' type='fixed'>
+      <child>link_0</child>
+      <parent>world</parent>
+    </joint>
+    <link name='uleg_1'>
+      <pose frame=''>0 -0.08585 1.359 0 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 -0.071 0 1.5708 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='uleg_1_collision'>
+        <pose frame=''>0 0.029 0.025 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/upper_leg.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='uleg_1_visual'>
+        <pose frame=''>0 0.029 0.028 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/upper_leg.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='motor1' type='revolute'>
+      <child>uleg_1</child>
+      <parent>link_0</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.1</lower>
+          <upper>1.1</upper>
+          <effort>100</effort>
+          <velocity>6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='con1'>
+      <pose frame=''>0 -0.28585 1.359 0.534996 -0 0</pose>
+      <inertial>
+        <pose frame=''>0.005 0 0 3.14159 1.57079 3.14159</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='con1_collision'>
+        <pose frame=''>0.005 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='con1_visual'>
+        <pose frame=''>0.005 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='uleg1_con' type='revolute'>
+      <child>con1</child>
+      <parent>uleg_1</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='lleg_12'>
+      <pose frame=''>0.03 -0.28585 1.359 0.534996 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='lleg_12_collision'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lleg_12_visual'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='con2_lleg_1' type='revolute'>
+      <child>lleg_12</child>
+      <parent>con1</parent>
+      <axis>
+        <xyz>0 0.860271 0.509838</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='con13'>
+      <pose frame=''>0.03 -0.025833 0.920262 0.534996 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.025 0 0 3.14159 1.57079 3.14159</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='con13_collision'>
+        <pose frame=''>-0.025 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='con13_visual'>
+        <pose frame=''>-0.025 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='con13_lleg_1' type='revolute'>
+      <child>con13</child>
+      <parent>lleg_12</parent>
+      <axis>
+        <xyz>0 0.860271 0.509838</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='low_base'>
+      <pose frame=''>0.03 -0.025833 0.920262 0.034996 -0 0</pose>
+      <inertial>
+        <pose frame=''>-0.03 0.03 0 0 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <visual name='low_base_visual'>
+        <pose frame=''>-0.07 -0.015 -0.012 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/Platform.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <visual name='low_base_fixed_joint_lump__ee_link_visual_1'>
+        <pose frame=''>-0.03 0.027 -0.04 3.14159 -1.57079 3.14159</pose>
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='lleg1_base' type='revolute'>
+      <child>low_base</child>
+      <parent>con13</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='lleg_1'>
+      <pose frame=''>-0.02 -0.28585 1.359 0.534996 -0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='lleg_1_collision'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lleg_1_visual'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='con_lleg_1' type='revolute'>
+      <child>lleg_1</child>
+      <parent>con1</parent>
+      <axis>
+        <xyz>0 0.860271 0.509838</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='uleg_2'>
+      <pose frame=''>-0.075 0.047925 1.359 0 -0 -2.0944</pose>
+      <inertial>
+        <pose frame=''>0 -0.071 0 1.5708 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='uleg_2_collision'>
+        <pose frame=''>0 0.029 0.025 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/upper_leg.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='uleg_2_visual'>
+        <pose frame=''>0 0.029 0.028 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/upper_leg.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='motor2' type='revolute'>
+      <child>uleg_2</child>
+      <parent>link_0</parent>
+      <axis>
+        <xyz>-0.5 -0.866025 0</xyz>
+        <limit>
+          <lower>-1.1</lower>
+          <upper>1.1</upper>
+          <effort>100</effort>
+          <velocity>6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='con2'>
+      <pose frame=''>-0.248205 0.147925 1.359 0.534996 0 -2.0944</pose>
+      <inertial>
+        <pose frame=''>0.005 0 0 3.14159 1.57079 3.14159</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='con2_collision'>
+        <pose frame=''>0.005 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='con2_visual'>
+        <pose frame=''>0.005 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='uleg2_con' type='revolute'>
+      <child>con2</child>
+      <parent>uleg_2</parent>
+      <axis>
+        <xyz>-0.5 -0.866025 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='lleg_22'>
+      <pose frame=''>-0.263205 0.121944 1.359 0.534996 0 -2.0944</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='lleg_22_collision'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lleg_22_visual'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='con2_lleg_2' type='revolute'>
+      <child>lleg_22</child>
+      <parent>con2</parent>
+      <axis>
+        <xyz>0.745016 -0.430135 0.509838</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='con23'>
+      <pose frame=''>-0.038024 -0.008064 0.920262 0.534996 0 -2.0944</pose>
+      <inertial>
+        <pose frame=''>-0.025 0 0 3.14159 1.57079 3.14159</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='con23_collision'>
+        <pose frame=''>-0.025 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='con23_visual'>
+        <pose frame=''>-0.025 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='con23_lleg_2' type='revolute'>
+      <child>con23</child>
+      <parent>lleg_22</parent>
+      <axis>
+        <xyz>0.745016 -0.430135 0.509838</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='lleg_2'>
+      <pose frame=''>-0.238205 0.165246 1.359 0.534996 0 -2.0944</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='lleg_2_collision'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lleg_2_visual'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='con_lleg_2' type='revolute'>
+      <child>lleg_2</child>
+      <parent>con2</parent>
+      <axis>
+        <xyz>0.745016 -0.430135 0.509838</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='uleg_3'>
+      <pose frame=''>0.075 0.042925 1.359 0 -0 2.0944</pose>
+      <inertial>
+        <pose frame=''>0 -0.071 0 1.5708 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='uleg_3_collision'>
+        <pose frame=''>0 0.029 0.025 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/upper_leg.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='uleg_3_visual'>
+        <pose frame=''>0 0.029 0.028 -1.5708 -0 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/upper_leg.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+    </link>
+    <joint name='motor3' type='revolute'>
+      <child>uleg_3</child>
+      <parent>link_0</parent>
+      <axis>
+        <xyz>-0.5 0.866025 0</xyz>
+        <limit>
+          <lower>-1.1</lower>
+          <upper>1.1</upper>
+          <effort>100</effort>
+          <velocity>6</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='con3'>
+      <pose frame=''>0.248205 0.142925 1.359 0.534996 -0 2.0944</pose>
+      <inertial>
+        <pose frame=''>0.005 0 0 3.14159 1.57079 3.14159</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='con3_collision'>
+        <pose frame=''>0.005 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='con3_visual'>
+        <pose frame=''>0.005 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='uleg3_con' type='revolute'>
+      <child>con3</child>
+      <parent>uleg_3</parent>
+      <axis>
+        <xyz>-0.5 0.866025 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='lleg_32'>
+      <pose frame=''>0.233205 0.168906 1.359 0.534996 -0 2.0944</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='lleg_32_collision'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lleg_32_visual'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='con2_lleg_3' type='revolute'>
+      <child>lleg_32</child>
+      <parent>con3</parent>
+      <axis>
+        <xyz>-0.745016 -0.430135 0.509838</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='con33'>
+      <pose frame=''>0.008023 0.038897 0.920262 0.534996 -0 2.0944</pose>
+      <inertial>
+        <pose frame=''>-0.025 0 0 3.14159 1.57079 3.14159</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='con33_collision'>
+        <pose frame=''>-0.025 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='con33_visual'>
+        <pose frame=''>-0.025 0 0 3.14159 1.57079 3.14159</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='con33_lleg_3' type='revolute'>
+      <child>con33</child>
+      <parent>lleg_32</parent>
+      <axis>
+        <xyz>-0.745016 -0.430135 0.509838</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='lleg_3'>
+      <pose frame=''>0.258205 0.125604 1.359 0.534996 -0 2.0944</pose>
+      <inertial>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <mass>0.00001</mass>
+        <inertia>
+          <ixx>0.0000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0000001</iyy>
+          <iyz>0</iyz>
+          <izz>0.0000001</izz>
+        </inertia>
+      </inertial>
+      <collision name='lleg_3_collision'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='lleg_3_visual'>
+        <pose frame=''>0 0 -0.255 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.51</length>
+            <radius>0.002</radius>
+          </cylinder>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='con_lleg_3' type='revolute'>
+      <child>lleg_3</child>
+      <parent>con3</parent>
+      <axis>
+        <xyz>-0.745016 -0.430135 0.509838</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name='lleg2_base' type='revolute'>
+      <child>con23</child>
+      <parent>low_base</parent>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0.0003</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name='lleg3_base' type='revolute'>
+      <child>con33</child>
+      <parent>low_base</parent>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0.0003</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name='con13_lleg_12' type='revolute'>
+      <child>con13</child>
+      <parent>lleg_1</parent>
+      <pose frame=''>-0.05 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0.0003</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name='con23_lleg_22' type='revolute'>
+      <child>con23</child>
+      <parent>lleg_2</parent>
+      <pose frame=''>-0.05 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0.0003</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name='con33_lleg_32' type='revolute'>
+      <child>con33</child>
+      <parent>lleg_3</parent>
+      <pose frame=''>-0.05 0 0 0 -0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0</damping>
+          <friction>0.0003</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <plugin name="delta_robot_control" filename="libdelta_robot_plugin.so">
+      <p>1</p>
+      <i>0.001</i>
+      <d>0</d>
+    </plugin>
+    <plugin name='joint_state_publisher' filename='libgazebo_ros_joint_state_publisher.so'>
+      <robotNamespace>delta_robot</robotNamespace>
+      <joint_name>motor1</joint_name>
+      <joint_name>motor2</joint_name>
+      <joint_name>motor3</joint_name>
+      <updateRate>100</updateRate>
+      <alwaysOn>1</alwaysOn>
+    </plugin>
+    <static>0</static>
+    <plugin name='gazebo_ros_joint_pose_trajectory' filename='libgazebo_ros_joint_pose_trajectory.so'>
+      <robotNamespace>delta_robot</robotNamespace>
+      <updateRate>2</updateRate>
+    </plugin>
+  </model>
+</sdf>

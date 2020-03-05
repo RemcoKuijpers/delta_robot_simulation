@@ -1,0 +1,693 @@
+<?xml version="1.0" ?>
+<robot name="delta_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- all links -->
+  <!-- all links -->
+  <!-- upper leg width -->
+  <!-- connector mass-->
+  <!--
+  <gazebo>
+    <plugin filename="libcontact.so" name="my_plugin"/>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/delta</robotNamespace>
+    </plugin>
+    <self_collide>true</self_collide>
+    <enable_wind>false</enable_wind>
+  </gazebo>
+-->
+  <!-- Used for fixing robot to Gazebo 'base_link'
+  <link name="world"/>-->
+  <link name="world"/>
+  <joint name="base" type="fixed">
+    <parent link="world"/>
+    <child link="link_0"/>
+    <axis xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 1.359"/>
+  </joint>
+  <gazebo reference="link_w_JOINT_w2">
+    <physics>
+      <ode>
+        <provide_feedback>true</provide_feedback>
+      </ode>
+    </physics>
+  </gazebo>
+  <link name="link_0">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.0"/>
+      <mass value="0.48"/>
+      <inertia ixx="0.003604" ixy="0.0" ixz="0.0" iyy="0.003604" iyz="0.0" izz="0.0072"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.147 -0.085 -0.01"/>
+      <geometry>
+        <mesh filename="/home/remco/ros2_ws/src/delta_robot_simulation/meshes/fixed_base2.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.0 0 0.06"/>
+      <geometry>
+        <box size="0.05 0.05 0.12  "/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.147 -0.085 -0.01"/>
+      <geometry>
+        <mesh filename="/home/remco/ros2_ws/src/delta_robot_simulation/meshes/fixed_base2.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="link_0">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Red</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <gazebo reference="uleg_1">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Red</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <gazebo reference="uleg_2">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Red</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <gazebo reference="uleg_3">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Red</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <gazebo reference="low_base">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Red</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <joint name="motor1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 -0.08585 0"/>
+    <parent link="link_0"/>
+    <child link="uleg_1"/>
+    <limit effort="20" lower="-1.1" upper="1.1" velocity="1.57"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <joint name="motor2" type="revolute">
+    <origin rpy="0 0 4.18879020479" xyz="-0.075 0.047925 0"/>
+    <parent link="link_0"/>
+    <child link="uleg_2"/>
+    <limit effort="20" lower="-1.1" upper="1.1" velocity="1.57"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <joint name="motor3" type="revolute">
+    <origin rpy="0 0 2.09439510239" xyz="0.075 0.042925 0"/>
+    <parent link="link_0"/>
+    <child link="uleg_3"/>
+    <limit effort="20" lower="-1.1" upper="1.1" velocity="1.57"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="uleg_1">
+    <inertial>
+      <origin rpy="1.57079632679 0 0" xyz="0 -0.071  0 "/>
+      <mass value="0.0466"/>
+      <inertia ixx="0.000165041666667" ixy="0.0" ixz="0.0" iyy="0.000165041666667" iyz="0.0" izz="1.94166666667e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.57079632679 3.14159265359 1.57079632679" xyz="0 0.029 0.028 "/>
+      <geometry>
+        <mesh filename="/home/remco/ros2_ws/src/delta_robot_simulation/meshes/upper_leg.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.57079632679 3.14159265359 1.57079632679" xyz="0 0.029 0.025 "/>
+      <geometry>
+        <mesh filename="/home/remco/ros2_ws/src/delta_robot_simulation/meshes/upper_leg.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="uleg_2">
+    <inertial>
+      <origin rpy="1.57079632679 0 0" xyz="0 -0.071  0 "/>
+      <mass value="0.0466"/>
+      <inertia ixx="0.000165041666667" ixy="0.0" ixz="0.0" iyy="0.000165041666667" iyz="0.0" izz="1.94166666667e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.57079632679 3.14159265359 1.57079632679" xyz="0 0.029 0.028 "/>
+      <geometry>
+        <mesh filename="/home/remco/ros2_ws/src/delta_robot_simulation/meshes/upper_leg.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.57079632679 3.14159265359 1.57079632679" xyz="0 0.029 0.025 "/>
+      <geometry>
+        <mesh filename="/home/remco/ros2_ws/src/delta_robot_simulation/meshes/upper_leg.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="uleg_3">
+    <inertial>
+      <origin rpy="1.57079632679 0 0" xyz="0 -0.071  0 "/>
+      <mass value="0.0466"/>
+      <inertia ixx="0.000165041666667" ixy="0.0" ixz="0.0" iyy="0.000165041666667" iyz="0.0" izz="1.94166666667e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.57079632679 3.14159265359 1.57079632679" xyz="0 0.029 0.028 "/>
+      <geometry>
+        <mesh filename="/home/remco/ros2_ws/src/delta_robot_simulation/meshes/upper_leg.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.57079632679 3.14159265359 1.57079632679" xyz="0 0.029 0.025 "/>
+      <geometry>
+        <mesh filename="/home/remco/ros2_ws/src/delta_robot_simulation/meshes/upper_leg.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="uleg1_con" type="continuous">
+    <origin rpy="0.534996326795 0 0" xyz="0 -0.2 0"/>
+    <parent link="uleg_1"/>
+    <child link="con1"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="con1">
+    <inertial>
+      <origin rpy="0 1.57079632679 0" xyz="0.005 0 0 "/>
+      <mass value="0.0173"/>
+      <inertia ixx="3.60993333333e-06" ixy="0.0" ixz="0.0" iyy="3.60993333333e-06" iyz="0.0" izz="1.15333333333e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57079632679 0" xyz="0.005 0 0 "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 1.57079632679 0 " xyz="0.005 0 0 "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con_lleg_1" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.02 0 0"/>
+    <parent link="con1"/>
+    <child link="lleg_1"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lleg_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 -0.255 "/>
+      <mass value="0.04"/>
+      <inertia ixx="0.000867013333333" ixy="0.0" ixz="0.0" iyy="0.000867013333333" iyz="0.0" izz="2.66666666667e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz=" 0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0 " xyz="0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con2_lleg_1" type="continuous">
+    <origin rpy="0 0 0" xyz="0.03 0 0"/>
+    <parent link="con1"/>
+    <child link="lleg_12"/>
+    <mimic joint="con_lleg_1"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lleg_12">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 -0.255 "/>
+      <mass value="0.04"/>
+      <inertia ixx="0.000867013333333" ixy="0.0" ixz="0.0" iyy="0.000867013333333" iyz="0.0" izz="2.66666666667e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz=" 0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0 " xyz="0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="uleg2_con" type="continuous">
+    <origin rpy="0.534996326795 0 0" xyz="0 -0.2 0"/>
+    <parent link="uleg_2"/>
+    <child link="con2"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="con2">
+    <inertial>
+      <origin rpy="0 1.57079632679 0" xyz="0.005 0 0 "/>
+      <mass value="0.0173"/>
+      <inertia ixx="3.60993333333e-06" ixy="0.0" ixz="0.0" iyy="3.60993333333e-06" iyz="0.0" izz="1.15333333333e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57079632679 0" xyz="0.005 0 0 "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 1.57079632679 0 " xyz="0.005 0 0 "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con_lleg_2" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.02 0 0"/>
+    <parent link="con2"/>
+    <child link="lleg_2"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lleg_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 -0.255 "/>
+      <mass value="0.04"/>
+      <inertia ixx="0.000867013333333" ixy="0.0" ixz="0.0" iyy="0.000867013333333" iyz="0.0" izz="2.66666666667e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz=" 0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0 " xyz="0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con2_lleg_2" type="continuous">
+    <origin rpy="0 0 0" xyz="0.03 0 0"/>
+    <parent link="con2"/>
+    <child link="lleg_22"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lleg_22">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 -0.255 "/>
+      <mass value="0.04"/>
+      <inertia ixx="0.000867013333333" ixy="0.0" ixz="0.0" iyy="0.000867013333333" iyz="0.0" izz="2.66666666667e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz=" 0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0 " xyz="0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="uleg3_con" type="continuous">
+    <origin rpy="0.534996326795 0 0" xyz="0 -0.2 0"/>
+    <parent link="uleg_3"/>
+    <child link="con3"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="con3">
+    <inertial>
+      <origin rpy="0 1.57079632679 0" xyz="0.005 0 0 "/>
+      <mass value="0.0173"/>
+      <inertia ixx="3.60993333333e-06" ixy="0.0" ixz="0.0" iyy="3.60993333333e-06" iyz="0.0" izz="1.15333333333e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57079632679 0" xyz="0.005 0 0 "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 1.57079632679 0 " xyz="0.005 0 0 "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con_lleg_3" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.02 0 0"/>
+    <parent link="con3"/>
+    <child link="lleg_3"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lleg_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 -0.255 "/>
+      <mass value="0.04"/>
+      <inertia ixx="0.000867013333333" ixy="0.0" ixz="0.0" iyy="0.000867013333333" iyz="0.0" izz="2.66666666667e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz=" 0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0 " xyz="0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con2_lleg_3" type="continuous">
+    <origin rpy="0 0 0" xyz="0.03 0 0"/>
+    <parent link="con3"/>
+    <child link="lleg_32"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="lleg_32">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 -0.255 "/>
+      <mass value="0.04"/>
+      <inertia ixx="0.000867013333333" ixy="0.0" ixz="0.0" iyy="0.000867013333333" iyz="0.0" izz="2.66666666667e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz=" 0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0 " xyz="0 0 -0.255 "/>
+      <geometry>
+        <cylinder length="0.51" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con33_lleg_3" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 -0.51"/>
+    <parent link="lleg_32"/>
+    <child link="con33"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="con33">
+    <inertial>
+      <origin rpy="0 1.57079632679 0" xyz="-0.025  0 0 "/>
+      <mass value="0.0173"/>
+      <inertia ixx="3.60993333333e-06" ixy="0.0" ixz="0.0" iyy="3.60993333333e-06" iyz="0.0" izz="1.15333333333e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57079632679 0" xyz="-0.025 0 0  "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 1.57079632679 0 " xyz="-0.025 0  0 "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con23_lleg_2" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 -0.51"/>
+    <parent link="lleg_22"/>
+    <child link="con23"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="con23">
+    <inertial>
+      <origin rpy="0 1.57079632679 0" xyz="-0.025  0 0 "/>
+      <mass value="0.0173"/>
+      <inertia ixx="3.60993333333e-06" ixy="0.0" ixz="0.0" iyy="3.60993333333e-06" iyz="0.0" izz="1.15333333333e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57079632679 0" xyz="-0.025 0 0  "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 1.57079632679 0 " xyz="-0.025 0  0 "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con13_lleg_1" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 -0.51"/>
+    <parent link="lleg_12"/>
+    <child link="con13"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <link name="con13">
+    <inertial>
+      <origin rpy="0 1.57079632679 0" xyz="-0.025  0 0 "/>
+      <mass value="0.0173"/>
+      <inertia ixx="3.60993333333e-06" ixy="0.0" ixz="0.0" iyy="3.60993333333e-06" iyz="0.0" izz="1.15333333333e-08"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57079632679 0" xyz="-0.025 0 0  "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 1.57079632679 0 " xyz="-0.025 0  0 "/>
+      <geometry>
+        <cylinder length="0.05" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="lleg1_base" type="continuous">
+    <origin rpy="-0.5 0 0" xyz=" 0 0 0"/>
+    <parent link="con13"/>
+    <child link="low_base"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="low_base">
+    <inertial>
+      <origin rpy="0 -0 0" xyz="-0.03 0.03 0"/>
+      <mass value="0.014"/> <!-- 0.03-->
+      <inertia ixx="4.5e-06" ixy="0.0" ixz="0.0" iyy="4.5e-06" iyz="0.0" izz="4.5e-06"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 -0 0" xyz="-0.07 -0.015 -0.012"/>
+      <geometry>
+        <mesh filename="/home/remco/ros2_ws/src/delta_robot_simulation/meshes/Platform.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <gazebo>
+    <joint name="lleg2_base" type="revolute">
+      <child>con23</child>
+      <parent>low_base</parent>
+      <pose> 0 0 0 0 0 0 </pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="lleg3_base" type="revolute">
+      <child>con33</child>
+      <parent>low_base</parent>
+      <pose> 0 0 0 0 0 0 </pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="con13_lleg_12" type="revolute">
+      <child>con13</child>
+      <parent>lleg_1</parent>
+      <pose> -0.05 0 0 0 0 0 </pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="con23_lleg_22" type="revolute">
+      <child>con23</child>
+      <parent>lleg_2</parent>
+      <pose> -0.05 0 0 0 0 0 </pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="con33_lleg_32" type="revolute">
+      <child>con33</child>
+      <parent>lleg_3</parent>
+      <pose> -0.05 0 0 0 0 0 </pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+
+  </gazebo>
+  <transmission name="uleg_1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor1">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="uleg_1_motor1">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="uleg_2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="uleg_2_motor2">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="uleg_3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="motor3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="uleg_3_motor3">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+    <link name="ee_link">
+      <visual>
+        <geometry>
+          <sphere radius="0.01"/>
+        </geometry>
+        <material name="Gazebo/Grey">
+          <color rgba="0. 0. 0. 1"/>
+        </material>
+      </visual>
+    </link>
+    <gazebo reference="ee_link">
+      <material>Gazebo/Blue</material>
+      <selfCollide>False</selfCollide>
+    </gazebo>
+    <joint name="ee_link" type="fixed">
+      <origin rpy="0 -1.57 0" xyz="-0.03 0.027 -0.04"/>
+      <parent link="low_base"/>
+      <child link="ee_link"/>
+    </joint>
+
+  <!-- Add Goal point in environment wrt word -->
+  <!--
+    <link name="goal_point">
+      <visual>
+        <geometry>
+          <sphere radius="0.01"/>
+        </geometry>
+        <material name="Gazebo/Grey">
+          <color rgba="0. 1. 0. 1"/>
+        </material>
+      </visual>
+    </link>
+    <gazebo reference="goal_point">
+      <material>Gazebo/Blue</material>
+      <selfCollide>False</selfCollide>
+    </gazebo>
+    <joint name= "link_0__goal_point" type="fixed">
+      <origin rpy="0 0 0" xyz="0.2 0.2 -0.5"/>
+      <parent link="link_0"/>
+      <child link="goal_point"/>
+    </joint>
+  -->
+
+  <gazebo>      
+    <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <robotNamespace>delta_robot</robotNamespace>
+      <joint_name>motor1</joint_name>
+      <joint_name>motor2</joint_name>
+      <joint_name>motor3</joint_name>
+      <updateRate>100</updateRate>
+      <alwaysOn>true</alwaysOn>
+    </plugin>
+  </gazebo>
+
+  <gazebo>      
+    <plugin name="gazebo_ros_joint_pose_trajectory" filename="libgazebo_ros_joint_pose_trajectory.so">
+      <robotNamespace>delta_robot</robotNamespace>
+      <updateRate>2</updateRate>
+    </plugin>
+  </gazebo>
+
+</robot>

@@ -1,0 +1,59 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"link_0" [label="link_0"];
+"uleg_1" [label="uleg_1"];
+"con1" [label="con1"];
+"lleg_12" [label="lleg_12"];
+"con13" [label="con13"];
+"low_base" [label="low_base"];
+"ee_link" [label="ee_link"];
+"lleg_1" [label="lleg_1"];
+"uleg_2" [label="uleg_2"];
+"con2" [label="con2"];
+"lleg_22" [label="lleg_22"];
+"con23" [label="con23"];
+"lleg_2" [label="lleg_2"];
+"uleg_3" [label="uleg_3"];
+"con3" [label="con3"];
+"lleg_32" [label="lleg_32"];
+"con33" [label="con33"];
+"lleg_3" [label="lleg_3"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "base" [label="xyz: 0 0 1.359 \nrpy: 0 -0 0"]
+"base" -> "link_0"
+"link_0" -> "motor1" [label="xyz: 0 -0.08585 0 \nrpy: 0 -0 0"]
+"motor1" -> "uleg_1"
+"uleg_1" -> "uleg1_con" [label="xyz: 0 -0.2 0 \nrpy: 0.534996 -0 0"]
+"uleg1_con" -> "con1"
+"con1" -> "con2_lleg_1" [label="xyz: 0.03 0 0 \nrpy: 0 -0 0"]
+"con2_lleg_1" -> "lleg_12"
+"lleg_12" -> "con13_lleg_1" [label="xyz: 0 0 -0.51 \nrpy: 0 -0 0"]
+"con13_lleg_1" -> "con13"
+"con13" -> "lleg1_base" [label="xyz: 0 0 0 \nrpy: -0.5 0 0"]
+"lleg1_base" -> "low_base"
+"low_base" -> "ee_link" [label="xyz: -0.03 0.027 -0.04 \nrpy: 0 -1.5708 0"]
+"ee_link" -> "ee_link"
+"con1" -> "con_lleg_1" [label="xyz: -0.02 0 0 \nrpy: 0 -0 0"]
+"con_lleg_1" -> "lleg_1"
+"link_0" -> "motor2" [label="xyz: -0.075 0.047925 0 \nrpy: 0 -0 -2.0944"]
+"motor2" -> "uleg_2"
+"uleg_2" -> "uleg2_con" [label="xyz: 0 -0.2 0 \nrpy: 0.534996 -0 0"]
+"uleg2_con" -> "con2"
+"con2" -> "con2_lleg_2" [label="xyz: 0.03 0 0 \nrpy: 0 -0 0"]
+"con2_lleg_2" -> "lleg_22"
+"lleg_22" -> "con23_lleg_2" [label="xyz: 0 0 -0.51 \nrpy: 0 -0 0"]
+"con23_lleg_2" -> "con23"
+"con2" -> "con_lleg_2" [label="xyz: -0.02 0 0 \nrpy: 0 -0 0"]
+"con_lleg_2" -> "lleg_2"
+"link_0" -> "motor3" [label="xyz: 0.075 0.042925 0 \nrpy: 0 -0 2.0944"]
+"motor3" -> "uleg_3"
+"uleg_3" -> "uleg3_con" [label="xyz: 0 -0.2 0 \nrpy: 0.534996 -0 0"]
+"uleg3_con" -> "con3"
+"con3" -> "con2_lleg_3" [label="xyz: 0.03 0 0 \nrpy: 0 -0 0"]
+"con2_lleg_3" -> "lleg_32"
+"lleg_32" -> "con33_lleg_3" [label="xyz: 0 0 -0.51 \nrpy: 0 -0 0"]
+"con33_lleg_3" -> "con33"
+"con3" -> "con_lleg_3" [label="xyz: -0.02 0 0 \nrpy: 0 -0 0"]
+"con_lleg_3" -> "lleg_3"
+}
