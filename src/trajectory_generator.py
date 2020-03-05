@@ -50,7 +50,7 @@ class TrajectoryGenerator(object):
         self.timer.start()
 
     def sender(self):
-        self.broadcaster.sendTransform((self.x[self.i]/1000, self.y[self.i]/1000, self.z[self.i]/1000),
+        self.broadcaster.sendTransform((self.x[self.i]/1000, self.y[self.i]/1000, (self.z[self.i]-997)/1000),
                                         tf.transformations.quaternion_from_euler(0, 0, radians(self.rz[self.i])),
                                         rospy.Time.now(), "trajectory", "world")
         self.timer.cancel()
