@@ -1,27 +1,11 @@
 <?xml version="1.0" ?>
 <robot name="delta_robot" xmlns:xacro="http://ros.org/wiki/xacro">
-  <!-- all links -->
-  <!-- all links -->
-  <!-- upper leg width -->
-  <!-- connector mass-->
-  <!--
-  <gazebo>
-    <plugin filename="libcontact.so" name="my_plugin"/>
-    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
-      <robotNamespace>/delta</robotNamespace>
-    </plugin>
-    <self_collide>true</self_collide>
-    <enable_wind>false</enable_wind>
-  </gazebo>
--->
-  <!-- Used for fixing robot to Gazebo 'base_link'
-  <link name="world"/>-->
   <link name="world"/>
   <joint name="base" type="fixed">
     <parent link="world"/>
     <child link="link_0"/>
     <axis xyz="0 0 0"/>
-    <origin rpy="0 0 0" xyz="0 0 1.359"/>
+    <origin rpy="0 0 0" xyz="0 0 1.5"/>
   </joint>
   <gazebo reference="link_w_JOINT_w2">
     <physics>
@@ -503,6 +487,7 @@
       </geometry>
     </visual>
   </link>
+
   <gazebo>
     <joint name="lleg2_base" type="revolute">
       <child>con23</child>
@@ -601,33 +586,6 @@
     </joint>
 
   </gazebo>
-  <transmission name="uleg_1_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="motor1">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="uleg_1_motor1">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <transmission name="uleg_2_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="motor2">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="uleg_2_motor2">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-  <transmission name="uleg_3_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="motor3">
-      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="uleg_3_motor3">
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
 
     <link name="ee_link">
       <visual>

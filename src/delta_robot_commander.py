@@ -18,7 +18,6 @@ class RobotCommander(object):
         self.convertToRadians()
         self.anglePub = rospy.Publisher("/delta_robot/pos_cmd", Vector3, queue_size=10)
         self.angles = Vector3()
-        #print(self.dt)
         self.startTimer(self.dt[0])
 
     def getTimeDifference(self):
@@ -55,4 +54,3 @@ if __name__ == "__main__":
         c = RobotCommander()
     except rospy.ROSException or KeyboardInterrupt:
         c.timer.cancel()
-    #c.sendAngles()
