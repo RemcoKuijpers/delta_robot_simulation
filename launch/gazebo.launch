@@ -8,7 +8,7 @@
     <arg name="roll" default="0"/>
     <arg name="pitch" default="0"/>
     <arg name="yaw" default="0.0" />
-    <arg name="sdf_robot_file" default="$(find delta_robot_simulation)/urdf/delta_robot.sdf" />
+    <arg name="sdf_robot_file" default="$(find delta_robot_simulation)/urdf/codian.urdf" />
     
 
     <node name="$(arg robot_name)_spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"

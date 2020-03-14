@@ -1,0 +1,575 @@
+<?xml version="1.0" ?>
+<robot name="codian" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="world"/>
+  <joint name="base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <axis xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 2"/>
+  </joint>
+  <gazebo reference="link_w_JOINT_w2">
+    <physics>
+      <ode>
+        <provide_feedback>true</provide_feedback>
+      </ode>
+    </physics>
+  </gazebo>
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/base_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/base_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="base_link">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Red</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <gazebo reference="uleg_1">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Green</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <gazebo reference="uleg_2">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Green</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <gazebo reference="uleg_3">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Green</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <gazebo reference="base_low">
+    <visual>
+      <material>
+        <script>
+          <uri>file://media/materials/scripts/gazebo.material</uri>
+          <name>Gazebo/Blue</name>
+        </script>
+      </material>
+    </visual>
+  </gazebo>
+  <joint name="motor1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 -0.2 0"/>
+    <parent link="base_link"/>
+    <child link="uleg_1"/>
+    <limit effort="1000" lower="-0.820" upper="1.727" velocity="10"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <joint name="motor2" type="revolute">
+    <origin rpy="0 0 4.1887902048" xyz="-0.1732050 0.100 0"/>
+    <parent link="base_link"/>
+    <child link="uleg_2"/>
+    <limit effort="1000" lower="-0.820" upper="1.727" velocity="10"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <joint name="motor3" type="revolute">
+    <origin rpy="0 0 2.0943951024" xyz="0.1732050 0.100 0"/>
+    <parent link="base_link"/>
+    <child link="uleg_3"/>
+    <limit effort="1000" lower="-0.820" upper="1.727" velocity="10"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="uleg_1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.044 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.044 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/uleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.044 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/uleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="uleg_2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.044 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.044 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/uleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.044 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/uleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="uleg_3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.044 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.044 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/uleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.044 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/uleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+<!--lleg1-->
+  <joint name="con_lleg_1" type="continuous">
+    <origin rpy="0 0 0" xyz="0.052 -0.320 0"/>
+    <parent link="uleg_1"/>
+    <child link="lleg_1"/>
+    <axis xyz="1 1 1"/>
+  </joint>
+  <link name="lleg_1">
+    <inertial>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0 "/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con2_lleg_1" type="continuous">
+    <origin rpy="0 3.1415926536 0" xyz="-0.052 -0.320 0"/>
+    <parent link="uleg_1"/>
+    <child link="lleg_12"/>
+    <!--<mimic joint="con_lleg_1"/>-->
+    <axis xyz="1 1 1"/>
+  </joint>
+  <link name="lleg_12">
+    <inertial>
+      <origin rpy="1.5707963268 0 0" xyz="0 0 0 "/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--lleg2-->
+  <joint name="con_lleg_2" type="continuous">
+    <origin rpy="0 0 0" xyz="0.052 -0.320 0"/>
+    <parent link="uleg_2"/>
+    <child link="lleg_2"/>
+    <axis xyz="1 1 1"/>
+  </joint>
+  <link name="lleg_2">
+    <inertial>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0 "/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con2_lleg_2" type="continuous">
+    <origin rpy="0 3.1415926536 0" xyz="-0.052 -0.320 0"/>
+    <parent link="uleg_2"/>
+    <child link="lleg_22"/>
+    <!--<mimic joint="con_lleg_2"/>-->
+    <axis xyz="1 1 1"/>
+  </joint>
+  <link name="lleg_22">
+    <inertial>
+      <origin rpy="1.5707963268 0 0" xyz="0 0 0 "/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <!--lleg3-->
+  <joint name="con_lleg_3" type="continuous">
+    <origin rpy="0 0 0" xyz="0.052 -0.320 0"/>
+    <parent link="uleg_3"/>
+    <child link="lleg_3"/>
+    <axis xyz="1 1 1"/>
+  </joint>
+  <link name="lleg_3">
+    <inertial>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0 "/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con2_lleg_3" type="continuous">
+    <origin rpy="0 3.1415926536 0" xyz="-0.052 -0.320 0"/>
+    <parent link="uleg_3"/>
+    <child link="lleg_32"/>
+    <!--<mimic joint="con_lleg_3"/>-->
+    <axis xyz="1 1 1"/>
+  </joint>
+  <link name="lleg_32">
+    <inertial>
+      <origin rpy="1.5707963268 0 0" xyz="0 0 0 "/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <!-- base -->
+  <joint name="con11" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.052 0 -0.850"/>
+    <parent link="lleg_1"/>
+    <child link="con11_link"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="con11_link">
+    <inertial>
+      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
+      <geometry>
+        <cylinder length="0.104" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
+      <geometry>
+        <cylinder length="0.104" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con11_lleg_1" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 -0.850"/>
+    <parent link="lleg_1"/>
+    <child link="low_base"/>
+    <axis xyz="1 1 1"/>
+  </joint>
+  <joint name="con22" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.052 0 -0.850"/>
+    <parent link="lleg_2"/>
+    <child link="con22_link"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="con22_link">
+    <inertial>
+      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
+      <geometry>
+        <cylinder length="0.104" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
+      <geometry>
+        <cylinder length="0.104" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="con33" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.052 0 -0.850"/>
+    <parent link="lleg_3"/>
+    <child link="con33_link"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <link name="con33_link">
+    <inertial>
+      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
+      <geometry>
+        <cylinder length="0.104" radius="0.002"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
+      <geometry>
+        <cylinder length="0.104" radius="0.002"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="low_base">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.052 0.05 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.052 0.05 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/base_low_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.052 0.05 0"/>
+      <geometry>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/base_low_link.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+
+  <gazebo>
+    <joint name="lleg2_base" type="revolute">
+      <child>con22_link</child>
+      <parent>low_base</parent>
+      <pose> 0 0 0 0 0 0 </pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="lleg3_base" type="revolute">
+      <child>con33_link</child>
+      <parent>low_base</parent>
+      <pose> 0 0 0 0 0 0 </pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="con12_lleg_1" type="revolute">
+      <child>con11_link</child>
+      <parent>lleg_12</parent>
+      <pose> -0.104 0 0.850 0 0 0 </pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="con22_lleg_1" type="revolute">
+      <child>con22_link</child>
+      <parent>lleg_22</parent>
+      <pose> -0.104 0 0.850 0 0 0 </pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="con33_lleg_1" type="revolute">
+      <child>con33_link</child>
+      <parent>lleg_32</parent>
+      <pose> -0.104 0 0.850 0 0 0 </pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+  </gazebo>
+
+    <!--<link name="ee_link">
+      <visual>
+        <geometry>
+          <sphere radius="0.01"/>
+        </geometry>
+        <material name="Gazebo/Grey">
+          <color rgba="0. 0. 0. 1"/>
+        </material>
+      </visual>
+    </link>
+    <gazebo reference="ee_link">
+      <material>Gazebo/Blue</material>
+      <selfCollide>False</selfCollide>
+    </gazebo>
+    <joint name="ee_link" type="fixed">
+      <origin rpy="0 -1.57 0" xyz="-0.03 0.027 -0.04"/>
+      <parent link="low_base"/>
+      <child link="ee_link"/>
+    </joint>
+
+    <link name="goal_point">
+      <visual>
+        <geometry>
+          <sphere radius="0.01"/>
+        </geometry>
+        <material name="Gazebo/Grey">
+          <color rgba="0. 1. 0. 1"/>
+        </material>
+      </visual>
+    </link>
+    <gazebo reference="goal_point">
+      <material>Gazebo/Blue</material>
+      <selfCollide>False</selfCollide>
+    </gazebo>
+    <joint name= "link_0__goal_point" type="fixed">
+      <origin rpy="0 0 0" xyz="0.2 0.2 -0.5"/>
+      <parent link="link_0"/>
+      <child link="goal_point"/>
+    </joint>
+
+  <gazebo>      
+    <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <robotNamespace>delta_robot</robotNamespace>
+      <joint_name>motor1</joint_name>
+      <joint_name>motor2</joint_name>
+      <joint_name>motor3</joint_name>
+      <updateRate>100</updateRate>
+      <alwaysOn>true</alwaysOn>
+    </plugin>
+  </gazebo>
+
+  <gazebo>      
+    <plugin name="gazebo_ros_joint_pose_trajectory" filename="libgazebo_ros_joint_pose_trajectory.so">
+      <robotNamespace>delta_robot</robotNamespace>
+      <updateRate>2</updateRate>
+    </plugin>
+  </gazebo>-->
+
+  <!--<gazebo>
+      <plugin name="delta_robot_control" filename="libdelta_robot_plugin.so">
+      <p>1</p>
+      <i>0.001</i>
+      <d>0</d>
+    </plugin>
+  </gazebo>-->
+</robot>
