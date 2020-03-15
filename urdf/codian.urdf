@@ -166,7 +166,7 @@
     <origin rpy="0.585890011 0 0" xyz="0.052 -0.320 0"/>
     <parent link="uleg_1"/>
     <child link="lleg_1"/>
-    <axis xyz="1 1 1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="lleg_1">
     <inertial>
@@ -188,28 +188,28 @@
     </collision>
   </link>
   <joint name="con2_lleg_1" type="continuous">
-    <origin rpy="2.555702653 0 3.141592654" xyz="-0.052 -0.320 0"/>
+    <origin rpy="0.585890011 0 0" xyz="-0.052 -0.320 0"/>
     <parent link="uleg_1"/>
     <child link="lleg_12"/>
     <mimic joint="con_lleg_1"/>
-    <axis xyz="-1 1 -1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="lleg_12">
     <inertial>
-      <origin rpy="1.5707963268 0 0" xyz="0 0 0 "/>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0 "/>
       <mass value="0.00001"/>
       <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
     </inertial>
     <visual>
-      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -218,7 +218,7 @@
     <origin rpy="0.585890011 0 0" xyz="0.052 -0.320 0"/>
     <parent link="uleg_2"/>
     <child link="lleg_2"/>
-    <axis xyz="1 1 1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="lleg_2">
     <inertial>
@@ -240,28 +240,28 @@
     </collision>
   </link>
   <joint name="con2_lleg_2" type="continuous">
-    <origin rpy="2.555702653 0 3.141592654" xyz="-0.052 -0.320 0"/>
+    <origin rpy="0.585890011 0 0" xyz="-0.052 -0.320 0"/>
     <parent link="uleg_2"/>
     <child link="lleg_22"/>
     <mimic joint="con_lleg_2"/>
-    <axis xyz="-1 1 -1"/>
+    <axis xyz="0 1 0"/>
   </joint>
   <link name="lleg_22">
     <inertial>
-      <origin rpy="1.5707963268 0 0" xyz="0 0 0 "/>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0 "/>
       <mass value="0.00001"/>
       <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
     </inertial>
     <visual>
-      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -270,7 +270,7 @@
     <origin rpy="0.585890011 0 0" xyz="0.052 -0.320 0"/>
     <parent link="uleg_3"/>
     <child link="lleg_3"/>
-    <axis xyz="1 1 1"/>
+    <axis xyz="1 0 0"/>
   </joint>
   <link name="lleg_3">
     <inertial>
@@ -292,28 +292,28 @@
     </collision>
   </link>
   <joint name="con2_lleg_3" type="continuous">
-    <origin rpy="2.555702653 0 3.141592654" xyz="-0.052 -0.320 0"/>
+    <origin rpy="0.585890011 0 0" xyz="-0.052 -0.320 0"/>
     <parent link="uleg_3"/>
     <child link="lleg_32"/>
     <mimic joint="con_lleg_3"/>
-    <axis xyz="-1 1 -1"/>
+    <axis xyz="0 1 0"/>
   </joint>
   <link name="lleg_32">
     <inertial>
-      <origin rpy="1.5707963268 0 0" xyz="0 0 0 "/>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0 "/>
       <mass value="0.00001"/>
       <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
     </inertial>
     <visual>
-      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="1.5707963268 0 0" xyz="0 0 0"/>
+      <origin rpy="-1.5707963268 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -493,9 +493,9 @@
     <joint name="lleg12_base" type="ball">
       <child>lleg_12</child>
       <parent>A12</parent>
-      <pose> 0 0 0.850 0 0 0 </pose>
+      <pose> 0 0 -0.850 0 0 0 </pose>
       <axis>
-        <xyz>-1 1 -1</xyz>
+        <xyz>1 1 1</xyz>
         <limit>
           <lower>-100</lower>
           <upper>100</upper>
@@ -510,12 +510,12 @@
       </axis>
     </joint>
 
-    <joint name="lleg21_base" type="ball">
+    <!--<joint name="lleg21_base" type="revolute">
       <child>lleg_2</child>
       <parent>A21</parent>
       <pose> 0 0 -0.850 0 0 0 </pose>
       <axis>
-        <xyz>1 1 1</xyz>
+        <xyz>1 0 0</xyz>
         <limit>
           <lower>-100</lower>
           <upper>100</upper>
@@ -529,12 +529,12 @@
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="lleg22_base" type="ball">
+    <joint name="lleg22_base" type="revolute">
       <child>lleg_22</child>
       <parent>A22</parent>
-      <pose> 0 0 0.850 0 0 0 </pose>
+      <pose> 0 0 -0.850 0 0 0 </pose>
       <axis>
-        <xyz>-1 1 -1</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
           <lower>-100</lower>
           <upper>100</upper>
@@ -549,12 +549,12 @@
       </axis>
     </joint>
 
-    <joint name="lleg31_base" type="ball">
+    <joint name="lleg31_base" type="revolute">
       <child>lleg_3</child>
       <parent>A31</parent>
       <pose> 0 0 -0.850 0 0 0 </pose>
       <axis>
-        <xyz>1 1 1</xyz>
+        <xyz>1 0 0</xyz>
         <limit>
           <lower>-100</lower>
           <upper>100</upper>
@@ -568,12 +568,12 @@
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="lleg32_base" type="ball">
+    <joint name="lleg32_base" type="revolute">
       <child>lleg_32</child>
       <parent>A32</parent>
-      <pose> 0 0 0.850 0 0 0 </pose>
+      <pose> 0 0 -0.850 0 0 0 </pose>
       <axis>
-        <xyz>-1 1 -1</xyz>
+        <xyz>0 1 0</xyz>
         <limit>
           <lower>-100</lower>
           <upper>100</upper>
@@ -587,7 +587,7 @@
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
-  </gazebo>
+  </gazebo>-->
 
     <!--<link name="ee_link">
       <visual>

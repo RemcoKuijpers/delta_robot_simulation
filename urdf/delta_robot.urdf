@@ -397,7 +397,7 @@
     <origin rpy="0 0 0" xyz="0 0 -0.51"/>
     <parent link="lleg_32"/>
     <child link="con33"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0 1zzz 0"/>
   </joint>
   <link name="con33">
     <inertial>
