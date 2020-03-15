@@ -73,7 +73,7 @@
       </material>
     </visual>
   </gazebo>
-  <gazebo reference="base_low">
+  <gazebo reference="low_base">
     <visual>
       <material>
         <script>
@@ -163,7 +163,7 @@
   </link>
 <!--lleg1-->
   <joint name="con_lleg_1" type="continuous">
-    <origin rpy="0 0 0" xyz="0.052 -0.320 0"/>
+    <origin rpy="0.585890011 0 0" xyz="0.052 -0.320 0"/>
     <parent link="uleg_1"/>
     <child link="lleg_1"/>
     <axis xyz="1 1 1"/>
@@ -188,11 +188,11 @@
     </collision>
   </link>
   <joint name="con2_lleg_1" type="continuous">
-    <origin rpy="0 3.1415926536 0" xyz="-0.052 -0.320 0"/>
+    <origin rpy="2.555702653 0 3.141592654" xyz="-0.052 -0.320 0"/>
     <parent link="uleg_1"/>
     <child link="lleg_12"/>
-    <!--<mimic joint="con_lleg_1"/>-->
-    <axis xyz="1 1 1"/>
+    <mimic joint="con_lleg_1"/>
+    <axis xyz="-1 1 -1"/>
   </joint>
   <link name="lleg_12">
     <inertial>
@@ -215,7 +215,7 @@
   </link>
   <!--lleg2-->
   <joint name="con_lleg_2" type="continuous">
-    <origin rpy="0 0 0" xyz="0.052 -0.320 0"/>
+    <origin rpy="0.585890011 0 0" xyz="0.052 -0.320 0"/>
     <parent link="uleg_2"/>
     <child link="lleg_2"/>
     <axis xyz="1 1 1"/>
@@ -240,11 +240,11 @@
     </collision>
   </link>
   <joint name="con2_lleg_2" type="continuous">
-    <origin rpy="0 3.1415926536 0" xyz="-0.052 -0.320 0"/>
+    <origin rpy="2.555702653 0 3.141592654" xyz="-0.052 -0.320 0"/>
     <parent link="uleg_2"/>
     <child link="lleg_22"/>
-    <!--<mimic joint="con_lleg_2"/>-->
-    <axis xyz="1 1 1"/>
+    <mimic joint="con_lleg_2"/>
+    <axis xyz="-1 1 -1"/>
   </joint>
   <link name="lleg_22">
     <inertial>
@@ -267,7 +267,7 @@
   </link>
   <!--lleg3-->
   <joint name="con_lleg_3" type="continuous">
-    <origin rpy="0 0 0" xyz="0.052 -0.320 0"/>
+    <origin rpy="0.585890011 0 0" xyz="0.052 -0.320 0"/>
     <parent link="uleg_3"/>
     <child link="lleg_3"/>
     <axis xyz="1 1 1"/>
@@ -292,11 +292,11 @@
     </collision>
   </link>
   <joint name="con2_lleg_3" type="continuous">
-    <origin rpy="0 3.1415926536 0" xyz="-0.052 -0.320 0"/>
+    <origin rpy="2.555702653 0 3.141592654" xyz="-0.052 -0.320 0"/>
     <parent link="uleg_3"/>
     <child link="lleg_32"/>
-    <!--<mimic joint="con_lleg_3"/>-->
-    <axis xyz="1 1 1"/>
+    <mimic joint="con_lleg_3"/>
+    <axis xyz="-1 1 -1"/>
   </joint>
   <link name="lleg_32">
     <inertial>
@@ -318,116 +318,165 @@
     </collision>
   </link>
   <!-- base -->
-  <joint name="con11" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.052 0 -0.850"/>
-    <parent link="lleg_1"/>
-    <child link="con11_link"/>
-    <axis xyz="1 0 0"/>
-  </joint>
-  <link name="con11_link">
-    <inertial>
-      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
-      <mass value="0.00001"/>
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
-      <geometry>
-        <cylinder length="0.104" radius="0.002"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
-      <geometry>
-        <cylinder length="0.104" radius="0.002"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="con11_lleg_1" type="continuous">
-    <origin rpy="0 0 0" xyz="0 0 -0.850"/>
-    <parent link="lleg_1"/>
-    <child link="low_base"/>
-    <axis xyz="1 1 1"/>
-  </joint>
-  <joint name="con22" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.052 0 -0.850"/>
-    <parent link="lleg_2"/>
-    <child link="con22_link"/>
-    <axis xyz="1 0 0"/>
-  </joint>
-  <link name="con22_link">
-    <inertial>
-      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
-      <mass value="0.00001"/>
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
-      <geometry>
-        <cylinder length="0.104" radius="0.002"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
-      <geometry>
-        <cylinder length="0.104" radius="0.002"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="con33" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.052 0 -0.850"/>
-    <parent link="lleg_3"/>
-    <child link="con33_link"/>
-    <axis xyz="1 0 0"/>
-  </joint>
-  <link name="con33_link">
-    <inertial>
-      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
-      <mass value="0.00001"/>
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
-    </inertial>
-    <visual>
-      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
-      <geometry>
-        <cylinder length="0.104" radius="0.002"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 1.57079632679 0" xyz="0 0 0 "/>
-      <geometry>
-        <cylinder length="0.104" radius="0.002"/>
-      </geometry>
-    </collision>
-  </link>
-
   <link name="low_base">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.052 0.05 0"/>
-      <mass value="0.00001"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.001"/>
       <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="-0.052 0.05 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/base_low_link.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.052 0.05 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/base_low_link.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
 
+  <joint name="base_spawn" type="floating">
+    <origin rpy="0 0 0" xyz="0 0 -0.710448"/>
+    <parent link="base_link"/>
+    <child link="low_base"/>
+  </joint>
+
+  <link name="A11">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="JA11" type="revolute">
+    <origin rpy="0 0 0" xyz="0.052 -0.05 0"/>
+    <parent link="low_base"/>
+    <child link="A11"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="A12">
+    <inertial>
+      <origin rpy="0 0 4.1887902048" xyz="0 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="JA12" type="revolute">
+    <origin rpy="0 0 0" xyz="-0.052 -0.05 0"/>
+    <parent link="low_base"/>
+    <child link="A12"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="A21">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="JA21" type="revolute">
+    <origin rpy="0 0 4.1887902048" xyz="-0.01698 0.07059 0"/>
+    <parent link="low_base"/>
+    <child link="A21"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="A22">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="JA22" type="revolute">
+    <origin rpy="0 0 4.1887902048" xyz="-0.06962 -0.02059 0"/>
+    <parent link="low_base"/>
+    <child link="A22"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="A31">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="JA31" type="revolute">
+    <origin rpy="0 0 2.0943951024" xyz="0.06962 -0.02059 0"/>
+    <parent link="low_base"/>
+    <child link="A31"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="A32">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.00001"/>
+      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="JA32" type="revolute">
+    <origin rpy="0 0 2.0943951024" xyz="0.01698 0.07059 0"/>
+    <parent link="low_base"/>
+    <child link="A32"/>
+    <limit lower="0" upper="0" effort="0" velocity="0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
 
   <gazebo>
-    <joint name="lleg2_base" type="revolute">
-      <child>con22_link</child>
-      <parent>low_base</parent>
-      <pose> 0 0 0 0 0 0 </pose>
+    <joint name="lleg11_base" type="ball">
+      <child>lleg_1</child>
+      <parent>A11</parent>
+      <pose> 0 0 -0.850 0 0 0 </pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>1 1 1</xyz>
         <limit>
           <lower>-100</lower>
           <upper>100</upper>
@@ -441,12 +490,12 @@
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="lleg3_base" type="revolute">
-      <child>con33_link</child>
-      <parent>low_base</parent>
-      <pose> 0 0 0 0 0 0 </pose>
+    <joint name="lleg12_base" type="ball">
+      <child>lleg_12</child>
+      <parent>A12</parent>
+      <pose> 0 0 0.850 0 0 0 </pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>-1 1 -1</xyz>
         <limit>
           <lower>-100</lower>
           <upper>100</upper>
@@ -460,12 +509,17 @@
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="con12_lleg_1" type="revolute">
-      <child>con11_link</child>
-      <parent>lleg_12</parent>
-      <pose> -0.104 0 0.850 0 0 0 </pose>
+
+    <joint name="lleg21_base" type="ball">
+      <child>lleg_2</child>
+      <parent>A21</parent>
+      <pose> 0 0 -0.850 0 0 0 </pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>1 1 1</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -475,12 +529,16 @@
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="con22_lleg_1" type="revolute">
-      <child>con22_link</child>
-      <parent>lleg_22</parent>
-      <pose> -0.104 0 0.850 0 0 0 </pose>
+    <joint name="lleg22_base" type="ball">
+      <child>lleg_22</child>
+      <parent>A22</parent>
+      <pose> 0 0 0.850 0 0 0 </pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>-1 1 -1</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -490,12 +548,36 @@
         <use_parent_model_frame>0</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="con33_lleg_1" type="revolute">
-      <child>con33_link</child>
-      <parent>lleg_32</parent>
-      <pose> -0.104 0 0.850 0 0 0 </pose>
+
+    <joint name="lleg31_base" type="ball">
+      <child>lleg_3</child>
+      <parent>A31</parent>
+      <pose> 0 0 -0.850 0 0 0 </pose>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>1 1 1</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.000000</damping>
+          <friction>0.00030000</friction>
+        </dynamics>
+        <use_parent_model_frame>0</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="lleg32_base" type="ball">
+      <child>lleg_32</child>
+      <parent>A32</parent>
+      <pose> 0 0 0.850 0 0 0 </pose>
+      <axis>
+        <xyz>-1 1 -1</xyz>
+        <limit>
+          <lower>-100</lower>
+          <upper>100</upper>
+        </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -568,7 +650,7 @@
   <!--<gazebo>
       <plugin name="delta_robot_control" filename="libdelta_robot_plugin.so">
       <p>1</p>
-      <i>0.001</i>
+      <i>0</i>
       <d>0</d>
     </plugin>
   </gazebo>-->
