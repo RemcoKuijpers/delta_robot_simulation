@@ -6,7 +6,7 @@ from geometry_msgs.msg import Vector3
 from math import sin, cos, radians
 
 if __name__ == "__main__":
-    rospy.init_node("Circle_publiosher")
+    rospy.init_node("circle_publisher")
     pub = rospy.Publisher("/delta_robot/pos_cmd", Vector3, queue_size=10)
     a = Vector3()
     kin = DeltaRobotKinematics()
@@ -21,4 +21,4 @@ if __name__ == "__main__":
             pub.publish(a)
             t+=1
         except rospy.ROSException or KeyboardInterrupt:
-            pass
+            break
