@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version='1.6'>
   <model name='codian'>
+    <!--Model structure-->
     <link name='base_link'>
       <pose frame=''>0 0 2 0 -0 0</pose>
       <inertial>
@@ -972,6 +973,54 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
+    <!--<link name='ee'>
+      <pose frame="low_base">0 0 0.5 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1e-05</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='ee_collision'>
+        <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>.05</radius>
+            </sphere>
+          </geometry>
+      </collision>
+      <visual name='ee_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+            <sphere>
+              <radius>.05</radius>
+            </sphere>
+          </geometry>
+      </visual>
+    </link>
+    <joint name='ee_joint' type='revolute'>
+      <pose>0 0 0 0 0</pose>
+      <child>ee</child>
+      <parent>low_base</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>-->
     <!--Plugins-->
     <plugin name='joint_state_publisher' filename='libgazebo_ros_joint_state_publisher.so'>
       <robotNamespace>delta_robot</robotNamespace>
