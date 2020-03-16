@@ -38,16 +38,16 @@ class RobotCommander(object):
         self.timer.start()
 
     def publish(self):
-        self.angles.x = -self.a[self.i]
-        self.angles.y = -self.b[self.i]
-        self.angles.z = -self.c[self.i]
-        self.anglePub.publish(self.angles)
-
         self.timer.cancel()
         self.i += 1
         if self.i == len(self.t)-1:
             return
         self.startTimer(self.dt[self.i])
+
+        self.angles.x = -self.a[self.i]
+        self.angles.y = -self.b[self.i]
+        self.angles.z = -self.c[self.i]
+        self.anglePub.publish(self.angles)
 
 if __name__ == "__main__":
     try:
