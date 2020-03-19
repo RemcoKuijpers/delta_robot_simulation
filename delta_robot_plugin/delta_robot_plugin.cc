@@ -3,14 +3,12 @@
 
 #include <gazebo/gazebo.hh>
 #include <gazebo/physics/physics.hh>
-#include <gazebo/transport/transport.hh>
-#include <gazebo/msgs/msgs.hh>
 
 #include <thread>
 #include "ros/ros.h"
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
-#include "geometry_msgs/Vector3.h"
+#include "geometry_msgs/Vector3Stamped.h"
 
 namespace gazebo
 {
@@ -46,14 +44,7 @@ namespace gazebo
       this->joint2->GetScopedName(), this->pid);
     this->model->GetJointController()->SetPositionPID(
       this->joint3->GetScopedName(), this->pid);
-    this->SetPositions(0.5, 0.5, 0.5);
-
-    this->node = transport::NodePtr(new transport::Node());
-    this->node->Init(this->model->GetWorld()->Name());
-    std::string topicName = "~/" + this->model->GetName() + "/pos_cmd";
-    this->sub = this->node->Subscribe(topicName,
-      &DeltaRobotPlugin::OnMsg, this);
-
+    this->SetPositions(0, 0, 0);
 
     if (!ros::isInitialized())
     {
@@ -73,9 +64,12 @@ namespace gazebo
           ros::VoidPtr(), &this->rosQueue);
 
     this->rosSub = this->rosNode->subscribe(so);
+    this->rosPub = this->rosNode->advertise<geometry_msgs::Vector3Stamped>("/motor_angles", 10);
 
     this->rosQueueThread =
       std::thread(std::bind(&DeltaRobotPlugin::QueueThread, this));
+    this->updateConnection = event::Events::ConnectWorldUpdateBegin(
+      std::bind(&DeltaRobotPlugin::OnUpdate, this));
     }
 
     public: void SetPositions(const double &_a1, const double &_a2, const double &_a3)
@@ -86,11 +80,6 @@ namespace gazebo
         this->joint2->GetScopedName(), _a2);
       this->model->GetJointController()->SetPositionTarget(
         this->joint3->GetScopedName(), _a3);
-    }
-
-    private: void OnMsg(ConstVector3dPtr &_msg)
-    {
-        this->SetPositions(_msg->x(), _msg->y(), _msg->z());
     }
 
     public: void OnRosMsg(const geometry_msgs::Vector3ConstPtr _msg)
@@ -107,6 +96,16 @@ namespace gazebo
         this->rosQueue.callAvailable(ros::WallDuration(timeout));
       }
     }
+    
+    private: void OnUpdate()
+    {
+      geometry_msgs::Vector3Stamped msg;
+      msg.header.stamp = ros::Time::now();
+      msg.vector.x = this->joint1->Position();
+      msg.vector.y = this->joint2->Position();
+      msg.vector.z = this->joint3->Position();
+      this->rosPub.publish(msg);
+    }
 
     private: physics::ModelPtr model;
 
@@ -116,13 +115,13 @@ namespace gazebo
 
     private: common::PID pid;
 
-    private: transport::NodePtr node;
-    private: transport::SubscriberPtr sub;
-
     private: std::unique_ptr<ros::NodeHandle> rosNode;
     private: ros::Subscriber rosSub;
     private: ros::CallbackQueue rosQueue;
     private: std::thread rosQueueThread;
+
+    private: ros::Publisher rosPub;
+    private: event::ConnectionPtr updateConnection;
     };
 
   GZ_REGISTER_MODEL_PLUGIN(DeltaRobotPlugin)

@@ -6,6 +6,7 @@ CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/incl
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/boost_161_pthread_condition_variable.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/boost_161_pthread_condition_variable_fwd.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/geometry_msgs/Vector3.h
+CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/geometry_msgs/Vector3Stamped.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/ros/advertise_options.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/ros/advertise_service_options.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/ros/assert.h
@@ -64,6 +65,7 @@ CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/incl
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/ros/wall_timer.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/ros/wall_timer_options.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/rosconsole/macros_generated.h
+CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/std_msgs/Header.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /usr/include/gazebo-9/gazebo/Master.hh

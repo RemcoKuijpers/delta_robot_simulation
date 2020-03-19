@@ -154,19 +154,6 @@ geometry_msgs_generate_messages_lisp/fast:
 .PHONY : geometry_msgs_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named pos
-
-# Build rule for target.
-pos: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 pos
-.PHONY : pos
-
-# fast build rule for target.
-pos/fast:
-	$(MAKE) -f CMakeFiles/pos.dir/build.make CMakeFiles/pos.dir/build
-.PHONY : pos/fast
-
-#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -440,33 +427,6 @@ delta_robot_plugin.cc.s:
 	$(MAKE) -f CMakeFiles/delta_robot_plugin.dir/build.make CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.s
 .PHONY : delta_robot_plugin.cc.s
 
-pos.o: pos.cc.o
-
-.PHONY : pos.o
-
-# target to build an object file
-pos.cc.o:
-	$(MAKE) -f CMakeFiles/pos.dir/build.make CMakeFiles/pos.dir/pos.cc.o
-.PHONY : pos.cc.o
-
-pos.i: pos.cc.i
-
-.PHONY : pos.i
-
-# target to preprocess a source file
-pos.cc.i:
-	$(MAKE) -f CMakeFiles/pos.dir/build.make CMakeFiles/pos.dir/pos.cc.i
-.PHONY : pos.cc.i
-
-pos.s: pos.cc.s
-
-.PHONY : pos.s
-
-# target to generate assembly for a file
-pos.cc.s:
-	$(MAKE) -f CMakeFiles/pos.dir/build.make CMakeFiles/pos.dir/pos.cc.s
-.PHONY : pos.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -496,13 +456,9 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... delta_robot_plugin"
-	@echo "... pos"
 	@echo "... delta_robot_plugin.o"
 	@echo "... delta_robot_plugin.i"
 	@echo "... delta_robot_plugin.s"
-	@echo "... pos.o"
-	@echo "... pos.i"
-	@echo "... pos.s"
 .PHONY : help
 
 
