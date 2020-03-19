@@ -2,6 +2,7 @@
 
 from kinematics import DeltaRobotKinematics, DeltaPositionError
 import rospy
+import time
 from geometry_msgs.msg import Vector3
 from math import sin, cos, radians
 
@@ -11,14 +12,13 @@ if __name__ == "__main__":
     a = Vector3()
     kin = DeltaRobotKinematics()
     z = -800
-    t = 0
     while not rospy.is_shutdown():
         try:
-            x = 300*sin(t*0.0001)
-            y = 300*cos(t*0.0001)
+            x = 300*sin(time.time()*2)
+            y = 300*cos(time.time()*4)
+            z = 100*cos(time.time()*2)-900
             m1, m2, m3 = kin.reverse(x,y,z)
             a.x, a.y, a.z = radians(m1), radians(m2), radians(m3)
             pub.publish(a)
-            t+=1
         except rospy.ROSException or KeyboardInterrupt:
             break
