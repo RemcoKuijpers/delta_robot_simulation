@@ -5,6 +5,10 @@ CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: ../delta_robot_plugin
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/boost_161_condition_variable.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/boost_161_pthread_condition_variable.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/boost_161_pthread_condition_variable_fwd.h
+CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/geometry_msgs/Point.h
+CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/geometry_msgs/Pose.h
+CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/geometry_msgs/PoseStamped.h
+CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/geometry_msgs/Quaternion.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/geometry_msgs/Vector3.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/geometry_msgs/Vector3Stamped.h
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o: /opt/ros/melodic/include/ros/advertise_options.h

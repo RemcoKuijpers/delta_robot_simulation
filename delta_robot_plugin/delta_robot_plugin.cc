@@ -9,6 +9,7 @@
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
 #include "geometry_msgs/Vector3Stamped.h"
+#include "geometry_msgs/PoseStamped.h"
 
 namespace gazebo
 {
@@ -28,6 +29,7 @@ namespace gazebo
     this->joint1 = _model->GetJoint("motor1");
     this->joint2 = _model->GetJoint("motor2");
     this->joint3 = _model->GetJoint("motor3");
+    this->ee = _model->GetLink("low_base");
 
     int p, i, d;
     if (_sdf->HasElement("p"))
@@ -64,7 +66,8 @@ namespace gazebo
           ros::VoidPtr(), &this->rosQueue);
 
     this->rosSub = this->rosNode->subscribe(so);
-    this->rosPub = this->rosNode->advertise<geometry_msgs::Vector3Stamped>("/motor_angles", 10);
+    this->rosMotorStatePub = this->rosNode->advertise<geometry_msgs::Vector3Stamped>("/motor_angles", 10);
+    this->rosPosePub = this->rosNode->advertise<geometry_msgs::PoseStamped>("/ee_pose", 10);
 
     this->rosQueueThread =
       std::thread(std::bind(&DeltaRobotPlugin::QueueThread, this));
@@ -100,11 +103,24 @@ namespace gazebo
     private: void OnUpdate()
     {
       geometry_msgs::Vector3Stamped msg;
+      geometry_msgs::PoseStamped msg2;
+
       msg.header.stamp = ros::Time::now();
       msg.vector.x = this->joint1->Position();
       msg.vector.y = this->joint2->Position();
       msg.vector.z = this->joint3->Position();
-      this->rosPub.publish(msg);
+
+      msg2.header.stamp = ros::Time::now();
+      msg2.pose.position.x = this->ee->WorldCoGPose().Pos().X();
+      msg2.pose.position.y = this->ee->WorldCoGPose().Pos().Y();
+      msg2.pose.position.z = this->ee->WorldCoGPose().Pos().Z();
+      msg2.pose.orientation.w = this->ee->WorldCoGPose().Rot().W();
+      msg2.pose.orientation.x = this->ee->WorldCoGPose().Rot().X();
+      msg2.pose.orientation.y = this->ee->WorldCoGPose().Rot().Y();
+      msg2.pose.orientation.z = this->ee->WorldCoGPose().Rot().Z();
+
+      this->rosMotorStatePub.publish(msg);
+      this->rosPosePub.publish(msg2);
     }
 
     private: physics::ModelPtr model;
@@ -112,6 +128,7 @@ namespace gazebo
     private: physics::JointPtr joint1;
     private: physics::JointPtr joint2;
     private: physics::JointPtr joint3;
+    private: physics::LinkPtr ee;
 
     private: common::PID pid;
 
@@ -120,7 +137,8 @@ namespace gazebo
     private: ros::CallbackQueue rosQueue;
     private: std::thread rosQueueThread;
 
-    private: ros::Publisher rosPub;
+    private: ros::Publisher rosMotorStatePub;
+    private: ros::Publisher rosPosePub;
     private: event::ConnectionPtr updateConnection;
     };
 
