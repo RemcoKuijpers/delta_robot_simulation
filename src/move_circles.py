@@ -14,9 +14,8 @@ if __name__ == "__main__":
     z = -800
     while not rospy.is_shutdown():
         try:
-            x = 300*sin(time.time()*2)
-            y = 300*cos(time.time()*4)
-            z = 100*cos(time.time()*2)-900
+            x = 100*sin(time.time())
+            y = 100*cos(time.time())
             m1, m2, m3 = kin.reverse(x,y,z)
             a.x, a.y, a.z = radians(m1), radians(m2), radians(m3)
             pub.publish(a)
