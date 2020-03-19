@@ -1,14 +1,4 @@
 #!/usr/bin/env python
-"""
-Delta Robot Kinematics code, liberally borrowed from tutorial:
-http://forums.trossenrobotics.com/tutorials/introduction-129/delta-robot-kinematics-3276/
-License: "You can freely use this code in your applications."
-Note that the above tutorial defines the lengths f and e differently to me.  The
-tutorial uses the side length of the equilateral triangle which has either the
-servo output (for f) or the parallel link anchor (for e) in the middle of the side.
-I use the convention that f or e is the displacement from the servo output/parallel
-link anchor to the centre of the triangle, which is easier to measure.
-"""
 
 import math
 from mpl_toolkits.mplot3d import Axes3D
@@ -127,7 +117,7 @@ class DeltaRobotKinematics(object):
                     there_and_back = bot.reverse(*bot.forward(*servos))
                     err = map(lambda a,b: abs(a-b), servos, there_and_back)
                     if max(err) > 0.0000000000001:
-                        print servos, there_and_back, err
+                        print(servos, there_and_back, err)
 
         fig = plt.figure()
         ax = fig.add_subplot(1,1,1, projection='3d')
