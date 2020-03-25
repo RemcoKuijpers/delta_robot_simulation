@@ -17,6 +17,7 @@ class RobotCommander(object):
         self.getTimeDifference()
         self.convertToRadians()
         self.anglePub = rospy.Publisher("/delta_robot/pos_cmd", Vector3, queue_size=10)
+        self.anglePub2 = rospy.Publisher("/delta_robot2/pos_cmd", Vector3, queue_size=10)
         self.angles = Vector3()
         self.startTimer(self.dt[0])
 
@@ -48,6 +49,7 @@ class RobotCommander(object):
         self.angles.y = -self.b[self.i]
         self.angles.z = -self.c[self.i]
         self.anglePub.publish(self.angles)
+        self.anglePub2.publish(self.angles)
 
 if __name__ == "__main__":
     try:
