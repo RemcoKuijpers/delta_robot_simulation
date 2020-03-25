@@ -21,9 +21,10 @@ def main():
                 elif event.button == 5:
                     z -= 10
             if event.type == pygame.MOUSEMOTION:
-                x = (event.pos[0] - 320) * 0.625
-                y = (event.pos[1] - 240) * 0.8333333333333
-                print(x,y)
+                x = -(event.pos[0] - 320) * (320/200)
+                y = -(event.pos[1] - 240) * (240/200)
+            
+            print(x,y,z)
 
         robot.movePositionCartesian(x, y, z)
 main()
