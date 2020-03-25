@@ -6,7 +6,7 @@ from delta_robot import DeltaRobot
 def main():
     robot = DeltaRobot()
     pygame.init()
-    pygame.display.set_mode((640, 480))
+    pygame.display.set_mode((640, 640))
     pygame.time.Clock()
     x = 0
     y = 0
@@ -22,7 +22,7 @@ def main():
                     z -= 10
             if event.type == pygame.MOUSEMOTION:
                 x = -(event.pos[0] - 320) * (320/200)
-                y = -(event.pos[1] - 240) * (240/200)
+                y = -(event.pos[1] - 320) * (320/200)
             
             print(x,y,z)
 
