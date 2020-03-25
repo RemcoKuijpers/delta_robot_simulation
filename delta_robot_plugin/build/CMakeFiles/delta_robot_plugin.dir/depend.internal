@@ -3,9 +3,6 @@
 
 CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o
  /home/remco/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/delta_robot_plugin.cc
- /opt/ros/melodic/include/boost_161_condition_variable.h
- /opt/ros/melodic/include/boost_161_pthread_condition_variable.h
- /opt/ros/melodic/include/boost_161_pthread_condition_variable_fwd.h
  /opt/ros/melodic/include/geometry_msgs/Point.h
  /opt/ros/melodic/include/geometry_msgs/Pose.h
  /opt/ros/melodic/include/geometry_msgs/PoseStamped.h

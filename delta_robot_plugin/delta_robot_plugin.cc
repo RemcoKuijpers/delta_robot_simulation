@@ -66,8 +66,8 @@ namespace gazebo
           ros::VoidPtr(), &this->rosQueue);
 
     this->rosSub = this->rosNode->subscribe(so);
-    this->rosMotorStatePub = this->rosNode->advertise<geometry_msgs::Vector3Stamped>("/motor_angles", 10);
-    this->rosPosePub = this->rosNode->advertise<geometry_msgs::PoseStamped>("/ee_pose", 10);
+    this->rosMotorStatePub = this->rosNode->advertise<geometry_msgs::Vector3Stamped>("/" + this->model->GetName() + "/motor_angles", 10);
+    this->rosPosePub = this->rosNode->advertise<geometry_msgs::PoseStamped>("/" + this->model->GetName() + "/ee_pose", 10);
 
     this->rosQueueThread =
       std::thread(std::bind(&DeltaRobotPlugin::QueueThread, this));

@@ -143,7 +143,6 @@ libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-common1.so.1.0.1
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-fuel_tools1.so.1.0.0
 libdelta_robot_plugin.so: /opt/ros/melodic/lib/libroscpp.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libdelta_robot_plugin.so: /opt/ros/melodic/lib/librosconsole.so
 libdelta_robot_plugin.so: /opt/ros/melodic/lib/librosconsole_log4cxx.so
 libdelta_robot_plugin.so: /opt/ros/melodic/lib/librosconsole_backend_interface.so
