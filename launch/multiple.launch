@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="extra_gazebo_args" default="--verbose" />
+    </include>
+
+    <arg name="robot_name" default="delta_robot" />
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="0" />
+    <arg name="roll" default="0"/>
+    <arg name="pitch" default="0"/>
+    <arg name="yaw" default="0.0" />
+    <arg name="sdf_robot_file" default="$(find delta_robot_simulation)/urdf/codian.sdf" />
+
+    <arg name="pi" value= "3.141592653589793238" />
+    <arg name="2/3pi" value= "2.094395102" />
+
+    <node name="$(arg robot_name)_spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-file $(arg sdf_robot_file) -sdf -x 0.530 -y 0.440 -z $(arg z)  -R $(arg roll) -P $(arg pitch) -Y $(arg pi) -model $(arg robot_name)"/>
+
+    <node name="$(arg robot_name)_spawn_urdf2" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-file $(arg sdf_robot_file) -sdf -x 1.155 -y 1.040 -z $(arg z)  -R $(arg roll) -P $(arg pitch) -Y $(arg 2/3pi) -model delta_robot2"/>
+
+    <node name="$(arg robot_name)_spawn_urdf3" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-file $(find delta_robot_simulation)/urdf/box.urdf -urdf -x 0.855 -y -0.380 -model box"/>
+</launch>
