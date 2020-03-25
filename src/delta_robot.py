@@ -6,9 +6,9 @@ from kinematics import DeltaRobotKinematics, DeltaPositionError
 from math import radians
 
 class DeltaRobot(object):
-    def __init__(self):
-        rospy.init_node("delta_robot_control")
-        self.commander = rospy.Publisher("/delta_robot/pos_cmd", Vector3, queue_size=10)
+    def __init__(self, name):
+        rospy.init_node("control")
+        self.commander = rospy.Publisher("/" + name + "/pos_cmd", Vector3, queue_size=10)
         self.kinematics = DeltaRobotKinematics()
     
     def moveMotors(self, m1, m2, m3):
