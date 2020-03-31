@@ -27,4 +27,7 @@
 
     <node name="$(arg robot_name)_spawn_urdf3" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-file $(find delta_robot_simulation)/urdf/box.urdf -urdf -x 0.855 -y -0.380 -model box"/>
+
+    <!--<node name="$(arg robot_name)_spawn_urdf4" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-file $(find delta_robot_simulation)/urdf/object.urdf -urdf -x 0.5 -z 1.131 -model potato1"/>-->
 </launch>
