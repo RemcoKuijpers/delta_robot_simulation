@@ -26,7 +26,7 @@
     args="-file $(arg sdf_robot_file) -sdf -x 1.155 -y 1.040 -z $(arg z)  -R $(arg roll) -P $(arg pitch) -Y $(arg 2/3pi) -model delta_robot2"/>
 
     <node name="$(arg robot_name)_spawn_urdf3" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-file $(find delta_robot_simulation)/urdf/box.urdf -urdf -x 0.855 -y -0.380 -model box"/>
+    args="-file $(find delta_robot_simulation)/urdf/conveyor.urdf -urdf -z 1 -model conveyor"/> <!-- Z was 1.08-->
 
     <!--<node name="$(arg robot_name)_spawn_urdf4" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-file $(find delta_robot_simulation)/urdf/object.urdf -urdf -x 0.5 -z 1.131 -model potato1"/>-->

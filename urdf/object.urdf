@@ -23,6 +23,7 @@
   </gazebo>
   <gazebo>
     <plugin name="object_plugin" filename="libobject_plugin.so">
+      <speed>0.3</speed>
     </plugin>
   </gazebo>
 </robot>
