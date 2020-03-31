@@ -8,9 +8,13 @@ namespace gazebo
 {
   class ObjectPlugin : public ModelPlugin
   {
-    public: void Load(physics::ModelPtr _model, sdf::ElementPtr /*_sdf*/)
+    public: void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
     {
       this->model = _model;
+
+      if (_sdf->HasElement("speed")){
+        this->speed = _sdf->Get<float>("speed");
+      }
 
       this->updateConnection = event::Events::ConnectWorldUpdateBegin(
           std::bind(&ObjectPlugin::OnUpdate, this));
@@ -18,11 +22,12 @@ namespace gazebo
 
     public: void OnUpdate()
     {
-      this->model->SetLinearVel(ignition::math::Vector3d(0, 0.3, 0));
+      this->model->SetLinearVel(ignition::math::Vector3d(0, this->speed, 0));
     }
 
     private: physics::ModelPtr model;
     private: event::ConnectionPtr updateConnection;
+    private: std::float_t speed;
   };
 
   GZ_REGISTER_MODEL_PLUGIN(ObjectPlugin)
