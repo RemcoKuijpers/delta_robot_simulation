@@ -13,5 +13,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 # Build our plugin
 add_library(delta_robot_plugin SHARED delta_robot_plugin.cc)
+add_library(object_plugin SHARED object_plugin.cc)
 
-target_link_libraries(delta_robot_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
+target_link_libraries(delta_robot_plugin object_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})

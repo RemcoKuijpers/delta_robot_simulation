@@ -96,6 +96,7 @@ delta_robot_plugin_EXTERNAL_OBJECTS =
 
 libdelta_robot_plugin.so: CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o
 libdelta_robot_plugin.so: CMakeFiles/delta_robot_plugin.dir/build.make
+libdelta_robot_plugin.so: libobject_plugin.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libSimTKsimbody.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libSimTKmath.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libSimTKcommon.so

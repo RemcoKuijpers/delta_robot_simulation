@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/remco/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/delta_robot_plugin.cc" "/home/remco/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/build/CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o"
+  "/home/remco/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/object_plugin.cc" "/home/remco/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/build/CMakeFiles/object_plugin.dir/object_plugin.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -14,7 +14,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "LIBBULLET_VERSION_GT_282"
   "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_PACKAGE_NAME=\"Project\""
-  "delta_robot_plugin_EXPORTS"
+  "object_plugin_EXPORTS"
   )
 
 # The include file search paths:
@@ -25,20 +25,18 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/bullet"
   "/usr/include/simbody"
   "/usr/include/sdformat-6.0"
+  "/usr/include/ignition/math4"
   "/usr/include/OGRE"
   "/usr/include/OGRE/Terrain"
   "/usr/include/OGRE/Paging"
-  "/usr/include/ignition/math4"
   "/usr/include/ignition/transport4"
   "/usr/include/ignition/msgs1"
   "/usr/include/ignition/common1"
   "/usr/include/ignition/fuel_tools1"
-  "/usr/include/uuid"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/remco/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/build/CMakeFiles/object_plugin.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
