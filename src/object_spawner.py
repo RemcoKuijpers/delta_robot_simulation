@@ -7,7 +7,7 @@ import rospkg
 import time
 import random
 from gazebo_msgs.srv import DeleteModel, SpawnModel
-from geometry_msgs.msg import *
+from geometry_msgs.msg import Pose, Quaternion, Point
 
 class PotatoSpawner(object):
     def __init__(self):
