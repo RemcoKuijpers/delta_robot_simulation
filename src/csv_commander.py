@@ -2,10 +2,11 @@
 
 import rospy
 from geometry_msgs.msg import Vector3
+from std_msgs.msg import Float32
 from math import radians
 import os, rospkg
-import threading
 import numpy as np
+import time
 
 class RobotCommander(object):
     def __init__(self):
@@ -18,8 +19,9 @@ class RobotCommander(object):
         self.convertToRadians()
         self.anglePub = rospy.Publisher("/delta_robot/pos_cmd", Vector3, queue_size=10)
         self.anglePub2 = rospy.Publisher("/delta_robot2/pos_cmd", Vector3, queue_size=10)
-        self.angles = Vector3()
-        self.startTimer(self.dt[0])
+        self.anglePub_ee = rospy.Publisher("/delta_robot/ee_cmd", Float32, queue_size=10)
+        self.anglePub_ee2 = rospy.Publisher("/delta_robot2/ee_cmd", Float32, queue_size=10)
+        self.publish()
 
     def getTimeDifference(self):
         for x in range(len(self.t)):
@@ -34,25 +36,21 @@ class RobotCommander(object):
             self.c[x] = radians(self.c[x])
             self.d[x] = radians(self.d[x])
 
-    def startTimer(self, us):
-        self.timer = threading.Timer(us/1000000, self.publish)
-        self.timer.start()
-
     def publish(self):
-        self.timer.cancel()
-        self.i += 1
-        if self.i == len(self.t)-1:
-            return
-        self.startTimer(self.dt[self.i])
-
-        self.angles.x = -self.a[self.i]
-        self.angles.y = -self.b[self.i]
-        self.angles.z = -self.c[self.i]
-        self.anglePub.publish(self.angles)
-        self.anglePub2.publish(self.angles)
+        msg = Vector3()
+        ee_msg = Float32()
+        for t, i in zip(self.dt, range(len(self.dt))):
+            now = time.time()
+            msg.x = -self.a[i]
+            msg.y = -self.b[i]
+            msg.z = -self.c[i]
+            ee_msg = self.d[i]
+            self.anglePub.publish(msg)
+            self.anglePub2.publish(msg)
+            self.anglePub_ee.publish(ee_msg)
+            self.anglePub_ee2.publish(ee_msg)
+            elapsed = time.time() - now
+            time.sleep(t/1000000 - elapsed)
 
 if __name__ == "__main__":
-    try:
-        c = RobotCommander()
-    except rospy.ROSException or KeyboardInterrupt:
-        c.timer.cancel()
+    c = RobotCommander()
