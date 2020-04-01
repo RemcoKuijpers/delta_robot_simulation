@@ -23,6 +23,8 @@ geometry_msgs/Vector3Stamped.h
 /home/remco/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/geometry_msgs/Vector3Stamped.h
 geometry_msgs/PoseStamped.h
 /home/remco/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/geometry_msgs/PoseStamped.h
+std_msgs/Float32.h
+/home/remco/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/std_msgs/Float32.h
 
 /opt/ros/melodic/include/geometry_msgs/Point.h
 string
@@ -807,6 +809,22 @@ ros/forwards.h
 /opt/ros/melodic/include/ros/ros/forwards.h
 
 /opt/ros/melodic/include/rosconsole/macros_generated.h
+
+/opt/ros/melodic/include/std_msgs/Float32.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
 
 /opt/ros/melodic/include/std_msgs/Header.h
 string
