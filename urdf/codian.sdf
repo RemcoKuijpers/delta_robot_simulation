@@ -973,8 +973,8 @@
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    <!--<link name='ee'>
-      <pose frame="low_base">0 0 0.5 0 0</pose>
+    <link name='ee'>
+      <pose frame="">0 0 1.23955 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>1e-05</mass>
@@ -987,25 +987,23 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='ee_collision'>
-        <pose>0 0 0 0 0 0</pose>
-          <geometry>
-            <sphere>
-              <radius>.05</radius>
-            </sphere>
-          </geometry>
-      </collision>
       <visual name='ee_visual'>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
-            <sphere>
-              <radius>.05</radius>
-            </sphere>
-          </geometry>
+            <box>
+              <size>.1 .06 .05</size>
+            </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
       </visual>
     </link>
     <joint name='ee_joint' type='revolute'>
-      <pose>0 0 0 0 0</pose>
+      <pose>0 0 0.05 0 0</pose>
       <child>ee</child>
       <parent>low_base</parent>
       <axis>
@@ -1020,7 +1018,7 @@
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
-    </joint>-->
+    </joint>
     <!--Plugins-->
     <plugin name='joint_state_publisher' filename='libgazebo_ros_joint_state_publisher.so'>
       <robotNamespace>delta_robot</robotNamespace>
