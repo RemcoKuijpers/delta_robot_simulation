@@ -18,7 +18,7 @@ class PotatoSpawner(object):
         self.delete = rospy.ServiceProxy("gazebo/delete_model", DeleteModel)
         self.spawn = rospy.ServiceProxy("gazebo/spawn_sdf_model", SpawnModel)
         rospack = rospkg.RosPack()
-        with open(os.path.join(rospack.get_path("delta_robot_simulation"), "urdf", "potato.urdf"), "r") as f:
+        with open(os.path.join(rospack.get_path("delta_robot_simulation"), "urdf", "object.urdf"), "r") as f:
             self.model = f.read()
 
     def spawnPotato(self, x_position, id):
