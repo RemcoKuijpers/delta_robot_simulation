@@ -2,7 +2,7 @@
 
 import rospy
 from geometry_msgs.msg import Vector3
-from kinematics_old import DeltaRobotKinematics
+from kinematics import DeltaRobotKinematics
 from math import radians, sin, degrees, cos
 import time
 
@@ -14,7 +14,7 @@ class DeltaRobot(object):
     
     def moveMotors(self, m1, m2, m3):
         msg = Vector3()
-        msg.x, msg.y, msg.z = radians(m1), radians(m2), radians(m3)
+        msg.x, msg.y, msg.z = -radians(m1), -radians(m2), -radians(m3)
         self.commander.publish(msg)
 
     def movePositionCartesian(self, x, y, z):
