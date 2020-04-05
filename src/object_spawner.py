@@ -24,7 +24,7 @@ class PotatoSpawner(object):
     def spawnPotato(self, x_position, id):
         item_name = "potato_{0}".format(id)
         quat = tf.transformations.quaternion_from_euler(0,0,random.uniform(0,2*pi))
-        pose = Pose(Point(x=x_position, y=0, z=1.02),   Quaternion(x=quat[0], y=quat[1], z=quat[2], w=quat[3]))
+        pose = Pose(Point(x=x_position, y=0, z=1.1),   Quaternion(x=quat[0], y=quat[1], z=quat[2], w=quat[3]))
         self.spawn(item_name, self.model, "", pose, "world")
 
     def deletePotato(self, id):
