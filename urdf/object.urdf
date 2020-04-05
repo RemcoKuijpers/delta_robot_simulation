@@ -1,20 +1,20 @@
 <robot name="potato">
   <link name="potato">
     <inertial>
-      <origin xyz="0 0 0.05" />
+      <origin xyz="0 0 -0.05" />
       <mass value="0.001" />
       <inertia  ixx="0.001" ixy="0.0"  ixz="0.0"  iyy="0.001"  iyz="0.0"  izz="0.001" />
     </inertial>
     <visual>
-      <origin xyz="0 0 0.05" />
+      <origin xyz="0 0 -0.05" />
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.01"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0.05" />
+      <origin xyz="0 0 -0.05" />
       <geometry>
-         <sphere radius="0.05"/>
+         <sphere radius="0.01"/>
       </geometry>
     </collision>
   </link>
@@ -23,7 +23,8 @@
   </gazebo>
   <gazebo>
     <plugin name="object_plugin" filename="libobject_plugin.so">
-      <speed>0.3</speed>
+      <speed>0.15</speed>
+      <distance>1.5</distance>
     </plugin>
   </gazebo>
 </robot>
