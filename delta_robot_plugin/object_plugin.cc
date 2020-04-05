@@ -3,6 +3,7 @@
 #include <gazebo/physics/physics.hh>
 #include <gazebo/common/common.hh>
 #include <ignition/math/Vector3.hh>
+#include <iostream>
 
 namespace gazebo
 {
@@ -15,19 +16,29 @@ namespace gazebo
       if (_sdf->HasElement("speed")){
         this->speed = _sdf->Get<float>("speed");
       }
+      if (_sdf->HasElement("distance")){
+        this->distance = _sdf->Get<float>("distance");
+      }
 
       this->updateConnection = event::Events::ConnectWorldUpdateBegin(
-          std::bind(&ObjectPlugin::OnUpdate, this));
+          std::bind(&ObjectPlugin::OnUpdate, this));   
     }
 
     public: void OnUpdate()
     {
       this->model->SetLinearVel(ignition::math::Vector3d(0, this->speed, 0));
+      
+      this->position = this->model->WorldPose().Pos().Y();
+      if (this->position > this->distance){
+        this->model->Fini();
+      }
     }
 
     private: physics::ModelPtr model;
     private: event::ConnectionPtr updateConnection;
     private: std::float_t speed;
+    private: std::float_t distance;
+    private: std::double_t position;
   };
 
   GZ_REGISTER_MODEL_PLUGIN(ObjectPlugin)
