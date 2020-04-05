@@ -5,7 +5,8 @@ import re
 from delta_robot import DeltaRobot
 import time
 
-class TCP_Server(object):
+
+class TCPServerRobots(object):
     def __init__(self):
         self.robot = DeltaRobot("delta_robot")
         self.robot2 = DeltaRobot("delta_robot2")
@@ -31,6 +32,8 @@ class TCP_Server(object):
             except UnicodeDecodeError:
                 pass
 
+
+
 def twos_comp(val, bits):
     """compute the 2's complement of int value val"""
     if (val & (1 << (bits - 1))) != 0: # if sign bit is set e.g., 8bit: 128-255
@@ -38,5 +41,5 @@ def twos_comp(val, bits):
     return val                         # return positive value as is
 
 if __name__ == "__main__":
-    server = TCP_Server()
-    server.listen()
+    robots = TCPServerRobots()
+    robots.listen()
