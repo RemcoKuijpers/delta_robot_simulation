@@ -14,7 +14,7 @@
     <collision>
       <origin xyz="0 0 0" />
       <geometry>
-        <mesh filename="/home/remco/catkin_ws/src/delta_robot_simulation/meshes/conveyor.dae" scale="2 1 1"/>
+        <box size="10 10 0.1"/>
       </geometry>
     </collision>
   </link>
