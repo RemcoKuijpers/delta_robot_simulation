@@ -19,10 +19,10 @@
     <arg name="2/3pi" value= "2.094395102" />
 
     <node name="$(arg robot_name)_spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-file $(arg sdf_robot_file) -sdf -x 0.530 -y 0.440 -z $(arg z)  -R $(arg roll) -P $(arg pitch) -Y $(arg pi) -model $(arg robot_name)"/>
+    args="-file $(arg sdf_robot_file) -sdf -x 0.560 -y 0.440 -z 0 -Y -1.5707963268 -model $(arg robot_name)"/>
 
     <node name="$(arg robot_name)_spawn_urdf2" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-file $(arg sdf_robot_file) -sdf -x 1.155 -y 1.040 -z $(arg z)  -R $(arg roll) -P $(arg pitch) -Y $(arg 2/3pi) -model delta_robot2"/>
+    args="-file $(arg sdf_robot_file) -sdf -x 1.155 -y 1.040 -z 0 -Y 0.55850536064 -model delta_robot2"/>
 
     <node name="$(arg robot_name)_spawn_urdf3" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-file $(find delta_robot_simulation)/urdf/conveyor.urdf -urdf -z 1 -model conveyor"/> <!-- Z was 1.08-->
