@@ -21,10 +21,10 @@
   <gazebo reference="potato">
     <material>Gazebo/Yellow</material>
   </gazebo>
-  <gazebo>
+  <!--<gazebo>
     <plugin name="object_plugin" filename="libobject_plugin.so">
       <speed>0.15</speed>
       <distance>1.5</distance>
     </plugin>
-  </gazebo>
+  </gazebo>-->
 </robot>
