@@ -11,7 +11,7 @@ class DeltaPositionError(Exception):
 class DeltaRobotKinematics(object):
 
     def __init__(self):
-        self.e = 50
+        self.e = 100
         self.f = 200
         self.re = 850
         self.rf = 320
