@@ -22,7 +22,7 @@ class TCPServerRobots(object):
     def listen(self):
         while True:
             try:
-                BUFFER_SIZE = 1000
+                BUFFER_SIZE = 81
                 data = self.conn.recv(BUFFER_SIZE)
                 if not data: break
                 data = data.decode()
