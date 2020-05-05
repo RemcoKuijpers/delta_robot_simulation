@@ -11,10 +11,6 @@ class TCPServerObjectSpawner():
         TCP_PORT = 5006
         self.s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.s.bind((TCP_IP, TCP_PORT))
-        #s.listen(1)
-        print("Waiting for client to connect...")
-        #self.conn, addr = s.accept()
-        #print("Client connected: ", addr)
         self.p = PotatoSpawner()
         self.p.spawnManyPotatos(30)
 
