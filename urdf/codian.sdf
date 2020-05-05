@@ -74,7 +74,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/base_low_link.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_base_low.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -91,7 +91,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/base_low_link.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_base_low.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -438,7 +438,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegl.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -447,7 +447,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegl.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -487,7 +487,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegr.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -496,7 +496,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegr.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -605,7 +605,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegl.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -614,7 +614,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegl.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -654,7 +654,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegr.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -663,7 +663,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegr.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -772,7 +772,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegl.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -781,7 +781,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg2.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegl.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -821,7 +821,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegr.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -830,7 +830,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lleg_link.dae</uri>
+            <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegr.dae</uri>
           </mesh>
         </geometry>
       </visual>
