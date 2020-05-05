@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <include file="$(find gazebo_ros)/launch/bullet_world.launch">
+        <arg name="extra_gazebo_args" default="--verbose" />
+    </include>
+
+    <arg name="robot_name" default="delta_robot" />
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="0" />
+    <arg name="roll" default="0"/>
+    <arg name="pitch" default="0"/>
+    <arg name="yaw" default="0.0" />
+    <arg name="sdf_robot_file" default="$(find delta_robot_simulation)/urdf/codian.sdf" />
+
+    <arg name="pi" value= "3.141592653589793238" />
+    <arg name="2/3pi" value= "2.094395102" />
+
+    <node name="$(arg robot_name)_spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-file $(arg sdf_robot_file) -sdf -x 0.560 -y 0.440 -z 0 -Y -1.5707963268 -model $(arg robot_name)"/>
+
+    <node name="$(arg robot_name)_spawn_urdf2" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-file $(arg sdf_robot_file) -sdf -x 1.155 -y 1.040 -z 0 -Y 0.55850536064 -model delta_robot2"/>
+
+    <node name="$(arg robot_name)_spawn_urdf3" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-file $(find delta_robot_simulation)/urdf/conveyor.urdf -urdf -z 1 -model conveyor"/> <!-- Z was 1.08-->
+</launch>
