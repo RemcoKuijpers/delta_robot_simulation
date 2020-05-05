@@ -12,7 +12,7 @@ class TCPServerObjectSpawner():
         self.s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.s.bind((TCP_IP, TCP_PORT))
         self.p = PotatoSpawner()
-        self.p.spawnManyPotatos(30)
+        self.p.spawnManyPotatos(14)
 
     def listen(self):
         data = self.s.recvfrom(81)
@@ -22,7 +22,7 @@ class TCPServerObjectSpawner():
                 num = int(data[0])
                 x = float(data[1])/1000
                 y = float(data[2])/1000
-                self.p.updatePose(num,x,y)
+                self.p.updatePoseDebug(num,x,y,14)
             except IndexError:
                 pass
                 

@@ -23,6 +23,7 @@ class PotatoSpawner(object):
         self.set = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
         rospack = rospkg.RosPack()
         self.ids = []
+        self.dids = []
         with open(os.path.join(rospack.get_path("delta_robot_simulation"), "urdf", "object.urdf"), "r") as f:
             self.model = f.read()
 
@@ -33,23 +34,16 @@ class PotatoSpawner(object):
         self.spawn(item_name, self.model, "", pose, "world")
 
     def spawnManyPotatos(self, n):
-        for id in range(n):
+        for id in range(1,n+1):
             self.spawnPotato(id, 0, 0)
-            self.ids.append(id)
 
     def deletePotato(self, id):
         item_name = "potato_{0}".format(id)
         self.delete(item_name)
-        
-    def updatePose(self, id, x_position, y_position):
-        if id not in self.ids:
-            #self.spawnPotato(id, x_position, y_position)
-            #self.ids.append(id)
-            #print("Spawned potato {0}".format(id))
-            pass
-        else:
+
+    def update(self, i, x_position, y_position):
             msg = ModelState()
-            msg.model_name = "potato_{0}".format(id)
+            msg.model_name = "potato_{0}".format(i)
             msg.pose.position.y = y_position
             msg.pose.position.x = x_position
             msg.pose.position.z = 1.1
@@ -64,14 +58,21 @@ class PotatoSpawner(object):
             msg.twist.angular.y = 0
             msg.twist.angular.z = 0
             msg.reference_frame = "world"
-            self.set(msg)
-            #print("Updated pose {0}".format(id))
+            self.set(msg)        
+        
+    def updatePose(self, i, x_position, y_position):
+        if y_position > 1.4 and i not in self.dids:
+            self.deletePotato(i)
+            self.dids.append(i)
+        elif i not in self.ids and i not in self.dids:
+            self.spawnPotato(i, x_position, y_position)
+            self.ids.append(i)
+        elif i not in self.dids:
+            self.update(i, x_position, y_position)
 
-if __name__ == "__main__":
-    s = PotatoSpawner()
-    for i in range(11):
-        s.spawnPotato(random.uniform(0.1, 1.71), i)
-        time.sleep(1)
-    for j in range(11):
-        s.deletePotato(j)
-        time.sleep(1)
+    def updatePoseDebug(self, i, x_position, y_position, active):
+        d = i/float(active)
+        if d > 1:
+            i = i - active*int(d)
+        if i != 0:
+            self.update(i, x_position, y_position)
