@@ -24,5 +24,7 @@ class DeltaRobot(object):
 
 if __name__ == "__main__":
     robot = DeltaRobot("delta_robot")
+    robot2 = DeltaRobot("delta_robot2")
     while not rospy.is_shutdown():
         robot.movePositionCartesian(300*sin(time.time()), 300*cos(time.time()), -700)
+        robot2.movePositionCartesian(300*sin(time.time()), 300*cos(time.time()), -700)
