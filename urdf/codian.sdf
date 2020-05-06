@@ -991,7 +991,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
             <box>
-              <size>.1 .06 .05</size>
+              <size>.04 .06 .06</size>
             </box>
         </geometry>
         <material>

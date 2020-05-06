@@ -12,7 +12,7 @@ class TCPServerObjectSpawner():
         self.s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.s.bind((TCP_IP, TCP_PORT))
         self.p = PotatoSpawner()
-        self.p.spawnManyPotatos(14)
+        self.p.spawnManyPotatos(25)
         print("UDP connection for objects started")
 
     def listen(self):
@@ -24,7 +24,7 @@ class TCPServerObjectSpawner():
                         num = int(data[0])
                         x = float(data[1])/1000
                         y = float(data[2])/1000
-                        self.p.updatePoseNew(num,x,y,14)
+                        self.p.updatePoseNew(num,x,y,25)
             except KeyboardInterrupt:
                 break
             except IndexError:
