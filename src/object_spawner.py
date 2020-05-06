@@ -20,7 +20,7 @@ class PotatoSpawner(object):
         rospy.wait_for_service('/gazebo/set_model_state')
         self.delete = rospy.ServiceProxy("gazebo/delete_model", DeleteModel)
         self.spawn = rospy.ServiceProxy("gazebo/spawn_sdf_model", SpawnModel)
-        self.set = rospy.ServiceProxy('/gazebo/set_model_state', SetModelState)
+        self.pub = rospy.Publisher('/gazebo/set_model_state', ModelState)
         rospack = rospkg.RosPack()
         self.ids = []
         self.dids = []
@@ -58,7 +58,7 @@ class PotatoSpawner(object):
             msg.twist.angular.y = 0
             msg.twist.angular.z = 0
             msg.reference_frame = "world"
-            self.set(msg)        
+            self.pub.publish(msg)    
         
     def updatePose(self, i, x_position, y_position):
         if y_position > 1.4 and i not in self.dids:
@@ -70,7 +70,7 @@ class PotatoSpawner(object):
         elif i not in self.dids:
             self.update(i, x_position, y_position)
 
-    def updatePoseDebug(self, i, x_position, y_position, active):
+    def updatePoseNew(self, i, x_position, y_position, active):
         d = i/float(active)
         if d > 1:
             i = i - active*int(d)
