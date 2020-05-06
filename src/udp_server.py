@@ -8,7 +8,7 @@ import time
 
 class TCPServerRobots(object):
     def __init__(self):
-        self.robot = DeltaRobot("delta_robot")
+        self.robot = DeltaRobot("delta_robot1")
         self.robot2 = DeltaRobot("delta_robot2")
         TCP_IP = '10.139.10.6'
         TCP_PORT = 5005
@@ -22,8 +22,8 @@ class TCPServerRobots(object):
                 data = self.s.recvfrom(81)
                 if not data: break
                 angles = [twos_comp(int(s), 16) for s in re.findall(r'-?\d+', data[0])]
-                self.robot.moveMotors(angles[0], angles[1], angles[2])
-                self.robot2.moveMotors(angles[3], angles[4], angles[5])
+                self.robot.moveMotors(angles[0], angles[1], angles[2], angles[6])
+                self.robot2.moveMotors(angles[3], angles[4], angles[5], angles[7])
             except KeyboardInterrupt:
                 break
             except UnicodeDecodeError:
