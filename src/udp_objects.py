@@ -13,20 +13,23 @@ class TCPServerObjectSpawner():
         self.s.bind((TCP_IP, TCP_PORT))
         self.p = PotatoSpawner()
         self.p.spawnManyPotatos(14)
+        print("UDP connection for objects started")
 
     def listen(self):
-        data = self.s.recvfrom(81)
-        data = re.findall(r'-?\d+', data[0])
-        if data != []:
+        while True:
             try:
-                num = int(data[0])
-                x = float(data[1])/1000
-                y = float(data[2])/1000
-                self.p.updatePoseDebug(num,x,y,14)
+                data = self.s.recvfrom(81)
+                data = re.findall(r'-?\d+', data[0])
+                if data != []:
+                        num = int(data[0])
+                        x = float(data[1])/1000
+                        y = float(data[2])/1000
+                        self.p.updatePoseNew(num,x,y,14)
+            except KeyboardInterrupt:
+                break
             except IndexError:
                 pass
-                
+                    
 if __name__ == "__main__":
     obj = TCPServerObjectSpawner()
-    while True:
-        obj.listen()
+    obj.listen()

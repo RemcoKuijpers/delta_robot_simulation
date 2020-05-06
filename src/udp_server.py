@@ -14,6 +14,7 @@ class TCPServerRobots(object):
         TCP_PORT = 5005
         self.s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.s.bind((TCP_IP, TCP_PORT))
+        print("UDP connection for robots started")
 
     def listen(self):
         while True:
@@ -23,6 +24,8 @@ class TCPServerRobots(object):
                 angles = [twos_comp(int(s), 16) for s in re.findall(r'-?\d+', data[0])]
                 self.robot.moveMotors(angles[0], angles[1], angles[2])
                 self.robot2.moveMotors(angles[3], angles[4], angles[5])
+            except KeyboardInterrupt:
+                break
             except UnicodeDecodeError:
                 pass
 
