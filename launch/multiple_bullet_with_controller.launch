@@ -24,7 +24,7 @@
     args="-file $(arg sdf_robot_file) -sdf -x $(arg 2/x) -y $(arg 2/y) -z $(arg 2/z) -Y $(arg rZ2) -model $(arg 2/robot_name)"/><!-- Y 0.55850536064-->
 
     <node name="robot_spawn_urdf3" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-    args="-file $(find delta_robot_simulation)/urdf/conveyor.urdf -urdf -z 1.08 -model conveyor"/> <!-- Z was 1.08-->
+    args="-file $(find delta_robot_simulation)/urdf/conveyor.urdf -urdf -z 1 -model conveyor"/> <!-- Z was 1.08-->
 
     <node name="robot_control" pkg="delta_robot_simulation" type="udp_server.py" respawn="true"/>
     <node name="potato_control" pkg="delta_robot_simulation" type="udp_objects.py" respawn="true"/>
