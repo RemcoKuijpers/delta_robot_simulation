@@ -14,18 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//Path to a library.
-AVCODEC_LIBRARY_avcodec:FILEPATH=/usr/lib/x86_64-linux-gnu/libavcodec.so
-
-//Path to a library.
-AVDEVICE_LIBRARY_avdevice:FILEPATH=/usr/lib/x86_64-linux-gnu/libavdevice.so
-
-//Path to a library.
-AVFORMAT_LIBRARY_avformat:FILEPATH=/usr/lib/x86_64-linux-gnu/libavformat.so
-
-//Path to a library.
-AVUTIL_LIBRARY_avutil:FILEPATH=/usr/lib/x86_64-linux-gnu/libavutil.so
-
 //Boost atomic library (debug)
 Boost_ATOMIC_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_atomic.so
 
@@ -79,12 +67,6 @@ Boost_REGEX_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_regex.so
 
 //Boost regex library (release)
 Boost_REGEX_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_regex.so
-
-//Boost signals library (debug)
-Boost_SIGNALS_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_signals.so
-
-//Boost signals library (release)
-Boost_SIGNALS_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_signals.so
 
 //Boost system library (debug)
 Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libboost_system.so
@@ -313,27 +295,6 @@ DL_INCLUDE_DIRS:PATH=/usr/include
 
 //Path to a library.
 DL_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libdl.so
-
-//Path to a file.
-FreeImage_INCLUDE_DIRS:PATH=/usr/include
-
-//Path to a library.
-FreeImage_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libfreeimage.so
-
-//Path to a library.
-GTS_LIBRARY_glib-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libglib-2.0.so
-
-//Path to a library.
-GTS_LIBRARY_gmodule-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so
-
-//Path to a library.
-GTS_LIBRARY_gthread-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgthread-2.0.so
-
-//Path to a library.
-GTS_LIBRARY_gts:FILEPATH=/usr/lib/x86_64-linux-gnu/libgts.so
-
-//Path to a library.
-GTS_LIBRARY_m:FILEPATH=/usr/lib/x86_64-linux-gnu/libm.so
 
 //Path to a library.
 JSONCPP_LIBRARY_jsoncpp:FILEPATH=/usr/lib/x86_64-linux-gnu/libjsoncpp.so
@@ -608,12 +569,6 @@ Protobuf_PROTOC_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotoc.so
 //Path to a library.
 Protobuf_PROTOC_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotoc.so
 
-//The directory containing a CMake configuration file for SDFormat.
-SDFormat_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/sdformat
-
-//Path to a library.
-SWSCALE_LIBRARY_swscale:FILEPATH=/usr/lib/x86_64-linux-gnu/libswscale.so
-
 //The directory containing a CMake configuration file for Simbody.
 Simbody_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/simbody
 
@@ -648,7 +603,7 @@ ZeroMQ_LIBRARY_zmq:FILEPATH=/usr/lib/x86_64-linux-gnu/libzmq.so
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 
 //Dependencies for the target
-delta_robot_plugin_LIB_DEPENDS:STATIC=general;object_plugin;general;BulletSoftBody;general;BulletDynamics;general;BulletCollision;general;LinearMath;general;/usr/lib/x86_64-linux-gnu/libSimTKsimbody.so;general;/usr/lib/x86_64-linux-gnu/libSimTKmath.so;general;/usr/lib/x86_64-linux-gnu/libSimTKcommon.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;/usr/lib/x86_64-linux-gnu/liblapack.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;pthread;general;rt;general;dl;general;m;general;/usr/lib/x86_64-linux-gnu/libgazebo.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_client.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gui.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_sensors.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_rendering.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_physics.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_ode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_transport.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_util.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_common.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opcode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libprotobuf.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libsdformat.so;general;ignition-math4::ignition-math4;optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;general;ignition-math4::ignition-math4;general;ignition-transport4::ignition-transport4;general;ignition-msgs1::ignition-msgs1;general;ignition-common1::ignition-common1;general;ignition-fuel_tools1::ignition-fuel_tools1;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+delta_robot_plugin_LIB_DEPENDS:STATIC=general;BulletSoftBody;general;BulletDynamics;general;BulletCollision;general;LinearMath;general;/usr/lib/x86_64-linux-gnu/libSimTKsimbody.so;general;/usr/lib/x86_64-linux-gnu/libSimTKmath.so;general;/usr/lib/x86_64-linux-gnu/libSimTKcommon.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;/usr/lib/x86_64-linux-gnu/liblapack.so;general;/usr/lib/x86_64-linux-gnu/libblas.so;general;pthread;general;rt;general;dl;general;m;general;/usr/lib/x86_64-linux-gnu/libgazebo.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_client.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gui.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_sensors.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_rendering.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_physics.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_ode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_transport.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_util.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_common.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opcode.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so;general;/usr/lib/x86_64-linux-gnu/libgazebo_ccd.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libprotobuf.so;general;-lpthread;general;sdformat9::sdformat9;optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;-lpthread;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;general;ignition-common3::ignition-common3-graphics;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
 
 //The directory containing a CMake configuration file for gazebo.
 gazebo_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/gazebo
@@ -659,23 +614,26 @@ gazebo_proto_msgs_lib:FILEPATH=/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/melodic/share/geometry_msgs/cmake
 
-//The directory containing a CMake configuration file for ignition-cmake0.
-ignition-cmake0_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-cmake0
+//The directory containing a CMake configuration file for ignition-cmake2.
+ignition-cmake2_DIR:PATH=/usr/share/cmake/ignition-cmake2
 
-//The directory containing a CMake configuration file for ignition-common1.
-ignition-common1_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-common1
+//The directory containing a CMake configuration file for ignition-common3-graphics.
+ignition-common3-graphics_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-common3-graphics
 
-//The directory containing a CMake configuration file for ignition-fuel_tools1.
-ignition-fuel_tools1_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-fuel_tools1
+//The directory containing a CMake configuration file for ignition-common3.
+ignition-common3_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-common3
 
-//The directory containing a CMake configuration file for ignition-math4.
-ignition-math4_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-math4
+//The directory containing a CMake configuration file for ignition-fuel_tools4.
+ignition-fuel_tools4_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-fuel_tools4
 
-//The directory containing a CMake configuration file for ignition-msgs1.
-ignition-msgs1_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-msgs1
+//The directory containing a CMake configuration file for ignition-math6.
+ignition-math6_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-math6
 
-//The directory containing a CMake configuration file for ignition-transport4.
-ignition-transport4_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-transport4
+//The directory containing a CMake configuration file for ignition-msgs5.
+ignition-msgs5_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-msgs5
+
+//The directory containing a CMake configuration file for ignition-transport8.
+ignition-transport8_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-transport8
 
 //The directory containing a CMake configuration file for jsoncpp.
 jsoncpp_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/jsoncpp
@@ -687,19 +645,7 @@ lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so
 message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
 
 //Path to a library.
-onelib:FILEPATH=/usr/lib/x86_64-linux-gnu/libsdformat.so
-
-//Path to a library.
-pkgcfg_lib_AVCODEC_avcodec:FILEPATH=/usr/lib/x86_64-linux-gnu/libavcodec.so
-
-//Path to a library.
-pkgcfg_lib_AVDEVICE_avdevice:FILEPATH=/usr/lib/x86_64-linux-gnu/libavdevice.so
-
-//Path to a library.
-pkgcfg_lib_AVFORMAT_avformat:FILEPATH=/usr/lib/x86_64-linux-gnu/libavformat.so
-
-//Path to a library.
-pkgcfg_lib_AVUTIL_avutil:FILEPATH=/usr/lib/x86_64-linux-gnu/libavutil.so
+onelib:FILEPATH=/usr/lib/x86_64-linux-gnu/libgazebo_ccd.so
 
 //Path to a library.
 pkgcfg_lib_BULLET_BulletCollision:FILEPATH=/usr/lib/x86_64-linux-gnu/libBulletCollision.so
@@ -714,21 +660,6 @@ pkgcfg_lib_BULLET_BulletSoftBody:FILEPATH=/usr/lib/x86_64-linux-gnu/libBulletSof
 pkgcfg_lib_BULLET_LinearMath:FILEPATH=/usr/lib/x86_64-linux-gnu/libLinearMath.so
 
 //Path to a library.
-pkgcfg_lib_GTS_glib-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libglib-2.0.so
-
-//Path to a library.
-pkgcfg_lib_GTS_gmodule-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so
-
-//Path to a library.
-pkgcfg_lib_GTS_gthread-2.0:FILEPATH=/usr/lib/x86_64-linux-gnu/libgthread-2.0.so
-
-//Path to a library.
-pkgcfg_lib_GTS_gts:FILEPATH=/usr/lib/x86_64-linux-gnu/libgts.so
-
-//Path to a library.
-pkgcfg_lib_GTS_m:FILEPATH=/usr/lib/x86_64-linux-gnu/libm.so
-
-//Path to a library.
 pkgcfg_lib_JSONCPP_jsoncpp:FILEPATH=/usr/lib/x86_64-linux-gnu/libjsoncpp.so
 
 //Path to a library.
@@ -739,9 +670,6 @@ pkgcfg_lib_OGRE_PKGC_pthread:FILEPATH=/usr/lib/x86_64-linux-gnu/libpthread.so
 
 //Path to a library.
 pkgcfg_lib_PC_CURL_curl:FILEPATH=/usr/lib/x86_64-linux-gnu/libcurl.so
-
-//Path to a library.
-pkgcfg_lib_SWSCALE_swscale:FILEPATH=/usr/lib/x86_64-linux-gnu/libswscale.so
 
 //Path to a library.
 pkgcfg_lib_TINYXML2_tinyxml2:FILEPATH=/usr/lib/x86_64-linux-gnu/libtinyxml2.so
@@ -779,153 +707,23 @@ rosgraph_msgs_DIR:PATH=/opt/ros/melodic/share/rosgraph_msgs/cmake
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/melodic/share/rostime/cmake
 
+//The directory containing a CMake configuration file for sdformat9.
+sdformat9_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/sdformat9
+
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
 
+//The directory containing a CMake configuration file for yaml.
+yaml_DIR:PATH=yaml_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries
 ########################
 
-AVCODEC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-AVCODEC_CFLAGS_I:INTERNAL=
-AVCODEC_CFLAGS_OTHER:INTERNAL=
-AVCODEC_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
-AVCODEC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-AVCODEC_LDFLAGS:INTERNAL=-lavcodec
-AVCODEC_LDFLAGS_OTHER:INTERNAL=
-AVCODEC_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-AVCODEC_LIBRARIES:INTERNAL=avcodec
-AVCODEC_LIBRARY_DIRS:INTERNAL=
-AVCODEC_LIBS:INTERNAL=
-AVCODEC_LIBS_L:INTERNAL=
-AVCODEC_LIBS_OTHER:INTERNAL=
-AVCODEC_LIBS_PATHS:INTERNAL=
-AVCODEC_MODULE_NAME:INTERNAL=libavcodec
-AVCODEC_PREFIX:INTERNAL=/usr
-AVCODEC_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-AVCODEC_STATIC_CFLAGS_I:INTERNAL=
-AVCODEC_STATIC_CFLAGS_OTHER:INTERNAL=
-AVCODEC_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-AVCODEC_STATIC_LDFLAGS:INTERNAL=-lavcodec;-lXv;-lX11;-lXext;-lSDL2;-lzmq;-lwebp;-lssh;-lpulse;-lopenmpt;-ldrm;-lbs2b;-lbluray;-lass;-lgnutls;-lSDL2;-lcrystalhd;-lvdpau;-lX11;-lva;-lva-x11;-lX11;-lva;-lva-drm;-lva;-lxcb;-lxcb-shm;-lxcb-xfixes;-lxcb-shape;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lsndio;-ljack;-lasound;-lSDL2;-lGL;-lopenal;-lxml2;-lzvbi;-lzmq;-lxvidcore;-lx265;-lx264;-lwebpmux;-lwebp;-lwavpack;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvorbisenc;-lvorbis;-ltwolame;-ltheoraenc;-ltheoradec;-logg;-lspeex;-lssh;-lsoxr;-lsnappy;-lm;-lshine;-lrubberband;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lpulse;-lopus;-lopenmpt;-lopenjp2;-lopencv_core;-lopencv_imgproc;-lmysofa;-lmp3lame;-lgsm;-lgme;-lstdc++;-lfribidi;-lfreetype;-lfontconfig;-lfreetype;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-ldrm;-ldc1394;-lcaca;-lbs2b;-lbluray;-lass;-lraw1394;-lavc1394;-lrom1394;-liec61883;-lgnutls;-lchromaprint;-lm;-ldl;-llzma;-lbz2;-lz;-pthread;-lswresample;-lm;-lsoxr;-lavutil;-ldrm;-lm
-AVCODEC_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
-AVCODEC_STATIC_LIBDIR:INTERNAL=
-AVCODEC_STATIC_LIBRARIES:INTERNAL=avcodec;Xv;X11;Xext;SDL2;zmq;webp;ssh;pulse;openmpt;drm;bs2b;bluray;ass;gnutls;SDL2;crystalhd;vdpau;X11;va;va-x11;X11;va;va-drm;va;xcb;xcb-shm;xcb-xfixes;xcb-shape;cdio_paranoia;cdio_cdda;cdio;sndio;jack;asound;SDL2;GL;openal;xml2;zvbi;zmq;xvidcore;x265;x264;webpmux;webp;wavpack;vpx;m;vpx;m;vpx;m;vpx;m;vorbisenc;vorbis;twolame;theoraenc;theoradec;ogg;speex;ssh;soxr;snappy;m;shine;rubberband;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;pulse;opus;openmpt;openjp2;opencv_core;opencv_imgproc;mysofa;mp3lame;gsm;gme;stdc++;fribidi;freetype;fontconfig;freetype;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;drm;dc1394;caca;bs2b;bluray;ass;raw1394;avc1394;rom1394;iec61883;gnutls;chromaprint;m;dl;lzma;bz2;z;swresample;m;soxr;avutil;drm;m
-AVCODEC_STATIC_LIBRARY_DIRS:INTERNAL=
-AVCODEC_STATIC_LIBS:INTERNAL=
-AVCODEC_STATIC_LIBS_L:INTERNAL=
-AVCODEC_STATIC_LIBS_OTHER:INTERNAL=
-AVCODEC_STATIC_LIBS_PATHS:INTERNAL=
-AVCODEC_VERSION:INTERNAL=57.107.100
-AVCODEC_libavcodec_INCLUDEDIR:INTERNAL=
-AVCODEC_libavcodec_LIBDIR:INTERNAL=
-AVCODEC_libavcodec_PREFIX:INTERNAL=
-AVCODEC_libavcodec_VERSION:INTERNAL=
-AVDEVICE_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-AVDEVICE_CFLAGS_I:INTERNAL=
-AVDEVICE_CFLAGS_OTHER:INTERNAL=
-AVDEVICE_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
-AVDEVICE_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-AVDEVICE_LDFLAGS:INTERNAL=-lavdevice
-AVDEVICE_LDFLAGS_OTHER:INTERNAL=
-AVDEVICE_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-AVDEVICE_LIBRARIES:INTERNAL=avdevice
-AVDEVICE_LIBRARY_DIRS:INTERNAL=
-AVDEVICE_LIBS:INTERNAL=
-AVDEVICE_LIBS_L:INTERNAL=
-AVDEVICE_LIBS_OTHER:INTERNAL=
-AVDEVICE_LIBS_PATHS:INTERNAL=
-AVDEVICE_MODULE_NAME:INTERNAL='libavdevice '
-AVDEVICE_PREFIX:INTERNAL=/usr
-AVDEVICE_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-AVDEVICE_STATIC_CFLAGS_I:INTERNAL=
-AVDEVICE_STATIC_CFLAGS_OTHER:INTERNAL=
-AVDEVICE_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-AVDEVICE_STATIC_LDFLAGS:INTERNAL=-lavdevice;-lXv;-lX11;-lXext;-lSDL2;-lzmq;-lwebp;-lssh;-lpulse;-lopenmpt;-ldrm;-lbs2b;-lbluray;-lass;-lgnutls;-lSDL2;-lcrystalhd;-lvdpau;-lX11;-lva;-lva-x11;-lX11;-lva;-lva-drm;-lva;-lxcb;-lxcb-shm;-lxcb-xfixes;-lxcb-shape;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lsndio;-ljack;-lasound;-lSDL2;-lGL;-lopenal;-lxml2;-lzvbi;-lzmq;-lxvidcore;-lx265;-lx264;-lwebpmux;-lwebp;-lwavpack;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvorbisenc;-lvorbis;-ltwolame;-ltheoraenc;-ltheoradec;-logg;-lspeex;-lssh;-lsoxr;-lsnappy;-lm;-lshine;-lrubberband;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lpulse;-lopus;-lopenmpt;-lopenjp2;-lopencv_core;-lopencv_imgproc;-lmysofa;-lmp3lame;-lgsm;-lgme;-lstdc++;-lfribidi;-lfreetype;-lfontconfig;-lfreetype;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-ldrm;-ldc1394;-lcaca;-lbs2b;-lbluray;-lass;-lraw1394;-lavc1394;-lrom1394;-liec61883;-lgnutls;-lchromaprint;-lm;-ldl;-llzma;-lbz2;-lz;-pthread;-lavfilter;-lXv;-lX11;-lXext;-lSDL2;-lzmq;-lwebp;-lssh;-lpulse;-lopenmpt;-ldrm;-lbs2b;-lbluray;-lass;-lgnutls;-lSDL2;-lcrystalhd;-lvdpau;-lX11;-lva;-lva-x11;-lX11;-lva;-lva-drm;-lva;-lxcb;-lxcb-shm;-lxcb-xfixes;-lxcb-shape;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lsndio;-ljack;-lasound;-lSDL2;-lGL;-lopenal;-lxml2;-lzvbi;-lzmq;-lxvidcore;-lx265;-lx264;-lwebpmux;-lwebp;-lwavpack;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvorbisenc;-lvorbis;-ltwolame;-ltheoraenc;-ltheoradec;-logg;-lspeex;-lssh;-lsoxr;-lsnappy;-lm;-lshine;-lrubberband;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lpulse;-lopus;-lopenmpt;-lopenjp2;-lopencv_core;-lopencv_imgproc;-lmysofa;-lmp3lame;-lgsm;-lgme;-lstdc++;-lfribidi;-lfreetype;-lfontconfig;-lfreetype;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-ldrm;-ldc1394;-lcaca;-lbs2b;-lbluray;-lass;-lraw1394;-lavc1394;-lrom1394;-liec61883;-lgnutls;-lchromaprint;-lm;-ldl;-llzma;-lbz2;-lz;-pthread;-lavresample;-lm;-lswscale;-lm;-lpostproc;-lavformat;-lXv;-lX11;-lXext;-lSDL2;-lzmq;-lwebp;-lssh;-lpulse;-lopenmpt;-ldrm;-lbs2b;-lbluray;-lass;-lgnutls;-lSDL2;-lcrystalhd;-lvdpau;-lX11;-lva;-lva-x11;-lX11;-lva;-lva-drm;-lva;-lxcb;-lxcb-shm;-lxcb-xfixes;-lxcb-shape;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lsndio;-ljack;-lasound;-lSDL2;-lGL;-lopenal;-lxml2;-lzvbi;-lzmq;-lxvidcore;-lx265;-lx264;-lwebpmux;-lwebp;-lwavpack;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvorbisenc;-lvorbis;-ltwolame;-ltheoraenc;-ltheoradec;-logg;-lspeex;-lssh;-lsoxr;-lsnappy;-lm;-lshine;-lrubberband;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lpulse;-lopus;-lopenmpt;-lopenjp2;-lopencv_core;-lopencv_imgproc;-lmysofa;-lmp3lame;-lgsm;-lgme;-lstdc++;-lfribidi;-lfreetype;-lfontconfig;-lfreetype;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-ldrm;-ldc1394;-lcaca;-lbs2b;-lbluray;-lass;-lraw1394;-lavc1394;-lrom1394;-liec61883;-lgnutls;-lchromaprint;-lm;-ldl;-llzma;-lbz2;-lz;-pthread;-lavcodec;-lXv;-lX11;-lXext;-lSDL2;-lzmq;-lwebp;-lssh;-lpulse;-lopenmpt;-ldrm;-lbs2b;-lbluray;-lass;-lgnutls;-lSDL2;-lcrystalhd;-lvdpau;-lX11;-lva;-lva-x11;-lX11;-lva;-lva-drm;-lva;-lxcb;-lxcb-shm;-lxcb-xfixes;-lxcb-shape;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lsndio;-ljack;-lasound;-lSDL2;-lGL;-lopenal;-lxml2;-lzvbi;-lzmq;-lxvidcore;-lx265;-lx264;-lwebpmux;-lwebp;-lwavpack;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvorbisenc;-lvorbis;-ltwolame;-ltheoraenc;-ltheoradec;-logg;-lspeex;-lssh;-lsoxr;-lsnappy;-lm;-lshine;-lrubberband;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lpulse;-lopus;-lopenmpt;-lopenjp2;-lopencv_core;-lopencv_imgproc;-lmysofa;-lmp3lame;-lgsm;-lgme;-lstdc++;-lfribidi;-lfreetype;-lfontconfig;-lfreetype;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-ldrm;-ldc1394;-lcaca;-lbs2b;-lbluray;-lass;-lraw1394;-lavc1394;-lrom1394;-liec61883;-lgnutls;-lchromaprint;-lm;-ldl;-llzma;-lbz2;-lz;-pthread;-lswresample;-lm;-lsoxr;-lavutil;-ldrm;-lm
-AVDEVICE_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
-AVDEVICE_STATIC_LIBDIR:INTERNAL=
-AVDEVICE_STATIC_LIBRARIES:INTERNAL=avdevice;Xv;X11;Xext;SDL2;zmq;webp;ssh;pulse;openmpt;drm;bs2b;bluray;ass;gnutls;SDL2;crystalhd;vdpau;X11;va;va-x11;X11;va;va-drm;va;xcb;xcb-shm;xcb-xfixes;xcb-shape;cdio_paranoia;cdio_cdda;cdio;sndio;jack;asound;SDL2;GL;openal;xml2;zvbi;zmq;xvidcore;x265;x264;webpmux;webp;wavpack;vpx;m;vpx;m;vpx;m;vpx;m;vorbisenc;vorbis;twolame;theoraenc;theoradec;ogg;speex;ssh;soxr;snappy;m;shine;rubberband;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;pulse;opus;openmpt;openjp2;opencv_core;opencv_imgproc;mysofa;mp3lame;gsm;gme;stdc++;fribidi;freetype;fontconfig;freetype;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;drm;dc1394;caca;bs2b;bluray;ass;raw1394;avc1394;rom1394;iec61883;gnutls;chromaprint;m;dl;lzma;bz2;z;avfilter;Xv;X11;Xext;SDL2;zmq;webp;ssh;pulse;openmpt;drm;bs2b;bluray;ass;gnutls;SDL2;crystalhd;vdpau;X11;va;va-x11;X11;va;va-drm;va;xcb;xcb-shm;xcb-xfixes;xcb-shape;cdio_paranoia;cdio_cdda;cdio;sndio;jack;asound;SDL2;GL;openal;xml2;zvbi;zmq;xvidcore;x265;x264;webpmux;webp;wavpack;vpx;m;vpx;m;vpx;m;vpx;m;vorbisenc;vorbis;twolame;theoraenc;theoradec;ogg;speex;ssh;soxr;snappy;m;shine;rubberband;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;pulse;opus;openmpt;openjp2;opencv_core;opencv_imgproc;mysofa;mp3lame;gsm;gme;stdc++;fribidi;freetype;fontconfig;freetype;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;drm;dc1394;caca;bs2b;bluray;ass;raw1394;avc1394;rom1394;iec61883;gnutls;chromaprint;m;dl;lzma;bz2;z;avresample;m;swscale;m;postproc;avformat;Xv;X11;Xext;SDL2;zmq;webp;ssh;pulse;openmpt;drm;bs2b;bluray;ass;gnutls;SDL2;crystalhd;vdpau;X11;va;va-x11;X11;va;va-drm;va;xcb;xcb-shm;xcb-xfixes;xcb-shape;cdio_paranoia;cdio_cdda;cdio;sndio;jack;asound;SDL2;GL;openal;xml2;zvbi;zmq;xvidcore;x265;x264;webpmux;webp;wavpack;vpx;m;vpx;m;vpx;m;vpx;m;vorbisenc;vorbis;twolame;theoraenc;theoradec;ogg;speex;ssh;soxr;snappy;m;shine;rubberband;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;pulse;opus;openmpt;openjp2;opencv_core;opencv_imgproc;mysofa;mp3lame;gsm;gme;stdc++;fribidi;freetype;fontconfig;freetype;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;drm;dc1394;caca;bs2b;bluray;ass;raw1394;avc1394;rom1394;iec61883;gnutls;chromaprint;m;dl;lzma;bz2;z;avcodec;Xv;X11;Xext;SDL2;zmq;webp;ssh;pulse;openmpt;drm;bs2b;bluray;ass;gnutls;SDL2;crystalhd;vdpau;X11;va;va-x11;X11;va;va-drm;va;xcb;xcb-shm;xcb-xfixes;xcb-shape;cdio_paranoia;cdio_cdda;cdio;sndio;jack;asound;SDL2;GL;openal;xml2;zvbi;zmq;xvidcore;x265;x264;webpmux;webp;wavpack;vpx;m;vpx;m;vpx;m;vpx;m;vorbisenc;vorbis;twolame;theoraenc;theoradec;ogg;speex;ssh;soxr;snappy;m;shine;rubberband;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;pulse;opus;openmpt;openjp2;opencv_core;opencv_imgproc;mysofa;mp3lame;gsm;gme;stdc++;fribidi;freetype;fontconfig;freetype;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;drm;dc1394;caca;bs2b;bluray;ass;raw1394;avc1394;rom1394;iec61883;gnutls;chromaprint;m;dl;lzma;bz2;z;swresample;m;soxr;avutil;drm;m
-AVDEVICE_STATIC_LIBRARY_DIRS:INTERNAL=
-AVDEVICE_STATIC_LIBS:INTERNAL=
-AVDEVICE_STATIC_LIBS_L:INTERNAL=
-AVDEVICE_STATIC_LIBS_OTHER:INTERNAL=
-AVDEVICE_STATIC_LIBS_PATHS:INTERNAL=
-AVDEVICE_VERSION:INTERNAL=57.10.100
-AVDEVICE_libavdevice _INCLUDEDIR:INTERNAL=
-AVDEVICE_libavdevice _LIBDIR:INTERNAL=
-AVDEVICE_libavdevice _PREFIX:INTERNAL=
-AVDEVICE_libavdevice _VERSION:INTERNAL=
-AVFORMAT_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-AVFORMAT_CFLAGS_I:INTERNAL=
-AVFORMAT_CFLAGS_OTHER:INTERNAL=
-AVFORMAT_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
-AVFORMAT_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-AVFORMAT_LDFLAGS:INTERNAL=-lavformat
-AVFORMAT_LDFLAGS_OTHER:INTERNAL=
-AVFORMAT_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-AVFORMAT_LIBRARIES:INTERNAL=avformat
-AVFORMAT_LIBRARY_DIRS:INTERNAL=
-AVFORMAT_LIBS:INTERNAL=
-AVFORMAT_LIBS_L:INTERNAL=
-AVFORMAT_LIBS_OTHER:INTERNAL=
-AVFORMAT_LIBS_PATHS:INTERNAL=
-AVFORMAT_MODULE_NAME:INTERNAL=libavformat
-AVFORMAT_PREFIX:INTERNAL=/usr
-AVFORMAT_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-AVFORMAT_STATIC_CFLAGS_I:INTERNAL=
-AVFORMAT_STATIC_CFLAGS_OTHER:INTERNAL=
-AVFORMAT_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-AVFORMAT_STATIC_LDFLAGS:INTERNAL=-lavformat;-lXv;-lX11;-lXext;-lSDL2;-lzmq;-lwebp;-lssh;-lpulse;-lopenmpt;-ldrm;-lbs2b;-lbluray;-lass;-lgnutls;-lSDL2;-lcrystalhd;-lvdpau;-lX11;-lva;-lva-x11;-lX11;-lva;-lva-drm;-lva;-lxcb;-lxcb-shm;-lxcb-xfixes;-lxcb-shape;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lsndio;-ljack;-lasound;-lSDL2;-lGL;-lopenal;-lxml2;-lzvbi;-lzmq;-lxvidcore;-lx265;-lx264;-lwebpmux;-lwebp;-lwavpack;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvorbisenc;-lvorbis;-ltwolame;-ltheoraenc;-ltheoradec;-logg;-lspeex;-lssh;-lsoxr;-lsnappy;-lm;-lshine;-lrubberband;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lpulse;-lopus;-lopenmpt;-lopenjp2;-lopencv_core;-lopencv_imgproc;-lmysofa;-lmp3lame;-lgsm;-lgme;-lstdc++;-lfribidi;-lfreetype;-lfontconfig;-lfreetype;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-ldrm;-ldc1394;-lcaca;-lbs2b;-lbluray;-lass;-lraw1394;-lavc1394;-lrom1394;-liec61883;-lgnutls;-lchromaprint;-lm;-ldl;-llzma;-lbz2;-lz;-pthread;-lavcodec;-lXv;-lX11;-lXext;-lSDL2;-lzmq;-lwebp;-lssh;-lpulse;-lopenmpt;-ldrm;-lbs2b;-lbluray;-lass;-lgnutls;-lSDL2;-lcrystalhd;-lvdpau;-lX11;-lva;-lva-x11;-lX11;-lva;-lva-drm;-lva;-lxcb;-lxcb-shm;-lxcb-xfixes;-lxcb-shape;-lcdio_paranoia;-lcdio_cdda;-lcdio;-lsndio;-ljack;-lasound;-lSDL2;-lGL;-lopenal;-lxml2;-lzvbi;-lzmq;-lxvidcore;-lx265;-lx264;-lwebpmux;-lwebp;-lwavpack;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvpx;-lm;-lvorbisenc;-lvorbis;-ltwolame;-ltheoraenc;-ltheoradec;-logg;-lspeex;-lssh;-lsoxr;-lsnappy;-lm;-lshine;-lrubberband;-lrsvg-2;-lm;-lgio-2.0;-lgdk_pixbuf-2.0;-lgobject-2.0;-lglib-2.0;-lcairo;-lpulse;-lopus;-lopenmpt;-lopenjp2;-lopencv_core;-lopencv_imgproc;-lmysofa;-lmp3lame;-lgsm;-lgme;-lstdc++;-lfribidi;-lfreetype;-lfontconfig;-lfreetype;-lflite_cmu_time_awb;-lflite_cmu_us_awb;-lflite_cmu_us_kal;-lflite_cmu_us_kal16;-lflite_cmu_us_rms;-lflite_cmu_us_slt;-lflite_usenglish;-lflite_cmulex;-lflite;-ldrm;-ldc1394;-lcaca;-lbs2b;-lbluray;-lass;-lraw1394;-lavc1394;-lrom1394;-liec61883;-lgnutls;-lchromaprint;-lm;-ldl;-llzma;-lbz2;-lz;-pthread;-lswresample;-lm;-lsoxr;-lavutil;-ldrm;-lm
-AVFORMAT_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
-AVFORMAT_STATIC_LIBDIR:INTERNAL=
-AVFORMAT_STATIC_LIBRARIES:INTERNAL=avformat;Xv;X11;Xext;SDL2;zmq;webp;ssh;pulse;openmpt;drm;bs2b;bluray;ass;gnutls;SDL2;crystalhd;vdpau;X11;va;va-x11;X11;va;va-drm;va;xcb;xcb-shm;xcb-xfixes;xcb-shape;cdio_paranoia;cdio_cdda;cdio;sndio;jack;asound;SDL2;GL;openal;xml2;zvbi;zmq;xvidcore;x265;x264;webpmux;webp;wavpack;vpx;m;vpx;m;vpx;m;vpx;m;vorbisenc;vorbis;twolame;theoraenc;theoradec;ogg;speex;ssh;soxr;snappy;m;shine;rubberband;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;pulse;opus;openmpt;openjp2;opencv_core;opencv_imgproc;mysofa;mp3lame;gsm;gme;stdc++;fribidi;freetype;fontconfig;freetype;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;drm;dc1394;caca;bs2b;bluray;ass;raw1394;avc1394;rom1394;iec61883;gnutls;chromaprint;m;dl;lzma;bz2;z;avcodec;Xv;X11;Xext;SDL2;zmq;webp;ssh;pulse;openmpt;drm;bs2b;bluray;ass;gnutls;SDL2;crystalhd;vdpau;X11;va;va-x11;X11;va;va-drm;va;xcb;xcb-shm;xcb-xfixes;xcb-shape;cdio_paranoia;cdio_cdda;cdio;sndio;jack;asound;SDL2;GL;openal;xml2;zvbi;zmq;xvidcore;x265;x264;webpmux;webp;wavpack;vpx;m;vpx;m;vpx;m;vpx;m;vorbisenc;vorbis;twolame;theoraenc;theoradec;ogg;speex;ssh;soxr;snappy;m;shine;rubberband;rsvg-2;m;gio-2.0;gdk_pixbuf-2.0;gobject-2.0;glib-2.0;cairo;pulse;opus;openmpt;openjp2;opencv_core;opencv_imgproc;mysofa;mp3lame;gsm;gme;stdc++;fribidi;freetype;fontconfig;freetype;flite_cmu_time_awb;flite_cmu_us_awb;flite_cmu_us_kal;flite_cmu_us_kal16;flite_cmu_us_rms;flite_cmu_us_slt;flite_usenglish;flite_cmulex;flite;drm;dc1394;caca;bs2b;bluray;ass;raw1394;avc1394;rom1394;iec61883;gnutls;chromaprint;m;dl;lzma;bz2;z;swresample;m;soxr;avutil;drm;m
-AVFORMAT_STATIC_LIBRARY_DIRS:INTERNAL=
-AVFORMAT_STATIC_LIBS:INTERNAL=
-AVFORMAT_STATIC_LIBS_L:INTERNAL=
-AVFORMAT_STATIC_LIBS_OTHER:INTERNAL=
-AVFORMAT_STATIC_LIBS_PATHS:INTERNAL=
-AVFORMAT_VERSION:INTERNAL=57.83.100
-AVFORMAT_libavformat_INCLUDEDIR:INTERNAL=
-AVFORMAT_libavformat_LIBDIR:INTERNAL=
-AVFORMAT_libavformat_PREFIX:INTERNAL=
-AVFORMAT_libavformat_VERSION:INTERNAL=
-AVUTIL_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-AVUTIL_CFLAGS_I:INTERNAL=
-AVUTIL_CFLAGS_OTHER:INTERNAL=
-AVUTIL_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
-AVUTIL_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-AVUTIL_LDFLAGS:INTERNAL=-lavutil
-AVUTIL_LDFLAGS_OTHER:INTERNAL=
-AVUTIL_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-AVUTIL_LIBRARIES:INTERNAL=avutil
-AVUTIL_LIBRARY_DIRS:INTERNAL=
-AVUTIL_LIBS:INTERNAL=
-AVUTIL_LIBS_L:INTERNAL=
-AVUTIL_LIBS_OTHER:INTERNAL=
-AVUTIL_LIBS_PATHS:INTERNAL=
-AVUTIL_MODULE_NAME:INTERNAL=libavutil
-AVUTIL_PREFIX:INTERNAL=/usr
-AVUTIL_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-AVUTIL_STATIC_CFLAGS_I:INTERNAL=
-AVUTIL_STATIC_CFLAGS_OTHER:INTERNAL=
-AVUTIL_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-AVUTIL_STATIC_LDFLAGS:INTERNAL=-lavutil;-ldrm;-lm
-AVUTIL_STATIC_LDFLAGS_OTHER:INTERNAL=
-AVUTIL_STATIC_LIBDIR:INTERNAL=
-AVUTIL_STATIC_LIBRARIES:INTERNAL=avutil;drm;m
-AVUTIL_STATIC_LIBRARY_DIRS:INTERNAL=
-AVUTIL_STATIC_LIBS:INTERNAL=
-AVUTIL_STATIC_LIBS_L:INTERNAL=
-AVUTIL_STATIC_LIBS_OTHER:INTERNAL=
-AVUTIL_STATIC_LIBS_PATHS:INTERNAL=
-AVUTIL_VERSION:INTERNAL=55.78.100
-AVUTIL_libavutil_INCLUDEDIR:INTERNAL=
-AVUTIL_libavutil_LIBDIR:INTERNAL=
-AVUTIL_libavutil_PREFIX:INTERNAL=
-AVUTIL_libavutil_VERSION:INTERNAL=
 BULLET_CFLAGS:INTERNAL=-I/usr/include/bullet
 BULLET_CFLAGS_I:INTERNAL=
 BULLET_CFLAGS_OTHER:INTERNAL=
@@ -997,10 +795,6 @@ Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 Boost_REGEX_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_REGEX_LIBRARY_RELEASE
 Boost_REGEX_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_SIGNALS_LIBRARY_DEBUG
-Boost_SIGNALS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Boost_SIGNALS_LIBRARY_RELEASE
-Boost_SIGNALS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_SYSTEM_LIBRARY_DEBUG
 Boost_SYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_SYSTEM_LIBRARY_RELEASE
@@ -1162,6 +956,8 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/local/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPPZMQ_INCLUDE_DIRS
+CPPZMQ_INCLUDE_DIRS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CURL_DIR
 CURL_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CURL_INCLUDE_DIR
@@ -1170,30 +966,22 @@ CURL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 CURL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CURL_LIBRARY_RELEASE
 CURL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//Details about finding AVCODEC
-FIND_PACKAGE_MESSAGE_DETAILS_AVCODEC:INTERNAL=[true][v()]
-//Details about finding AVDEVICE
-FIND_PACKAGE_MESSAGE_DETAILS_AVDEVICE:INTERNAL=[true][v(56.4.100)]
-//Details about finding AVFORMAT
-FIND_PACKAGE_MESSAGE_DETAILS_AVFORMAT:INTERNAL=[true][v()]
-//Details about finding AVUTIL
-FIND_PACKAGE_MESSAGE_DETAILS_AVUTIL:INTERNAL=[true][v()]
+//ADVANCED property for variable: DL_INCLUDE_DIRS
+DL_INCLUDE_DIRS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DL_LIBRARIES
+DL_LIBRARIES-ADVANCED:INTERNAL=1
 //Details about finding Boost
-FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/include][c ][v1.65.1()]
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/include][cfound components: thread system filesystem program_options regex iostreams date_time chrono atomic ][v1.65.1(1.40.0)]
 //Details about finding CURL
 FIND_PACKAGE_MESSAGE_DETAILS_CURL:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcurl.so][/usr/include/x86_64-linux-gnu][c ][v7.58.0()]
 //Details about finding DL
 FIND_PACKAGE_MESSAGE_DETAILS_DL:INTERNAL=[true][v()]
-//Details about finding GTS
-FIND_PACKAGE_MESSAGE_DETAILS_GTS:INTERNAL=[true][v()]
 //Details about finding JSONCPP
-FIND_PACKAGE_MESSAGE_DETAILS_JSONCPP:INTERNAL=[true][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_JSONCPP:INTERNAL=[TRUE][v()]
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 //Details about finding Protobuf
-FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread][/usr/include][v3.0.0(2.3.0)]
-//Details about finding SWSCALE
-FIND_PACKAGE_MESSAGE_DETAILS_SWSCALE:INTERNAL=[true][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread][/usr/include][v3.0.0(3)]
 //Details about finding Simbody
 FIND_PACKAGE_MESSAGE_DETAILS_Simbody:INTERNAL=[/usr/include/simbody][v()]
 //Details about finding Threads
@@ -1201,49 +989,11 @@ FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding UUID
 FIND_PACKAGE_MESSAGE_DETAILS_UUID:INTERNAL=[TRUE][v()]
 //Details about finding YAML
-FIND_PACKAGE_MESSAGE_DETAILS_YAML:INTERNAL=[true][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_YAML:INTERNAL=[TRUE][v()]
 //Details about finding ZIP
-FIND_PACKAGE_MESSAGE_DETAILS_ZIP:INTERNAL=[true][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_ZIP:INTERNAL=[TRUE][v()]
 //Details about finding ZeroMQ
-FIND_PACKAGE_MESSAGE_DETAILS_ZeroMQ:INTERNAL=[true][v(4)]
-//Result of TRY_COMPILE
-FREEIMAGE_COMPILES:INTERNAL=TRUE
-//Result of TRY_RUN
-FREEIMAGE_RUNS:INTERNAL=1
-GTS_CFLAGS:INTERNAL=-pthread;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
-GTS_CFLAGS_I:INTERNAL=
-GTS_CFLAGS_OTHER:INTERNAL=-pthread
-GTS_INCLUDEDIR:INTERNAL=/usr/include
-GTS_INCLUDE_DIRS:INTERNAL=/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
-GTS_LDFLAGS:INTERNAL=-lgts;-lm;-lgthread-2.0;-pthread;-Wl,--export-dynamic;-lgmodule-2.0;-pthread;-lglib-2.0
-GTS_LDFLAGS_OTHER:INTERNAL=-pthread;-Wl,--export-dynamic;-pthread
-GTS_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-GTS_LIBRARIES:INTERNAL=gts;m;gthread-2.0;gmodule-2.0;glib-2.0
-GTS_LIBRARY_DIRS:INTERNAL=
-GTS_LIBS:INTERNAL=
-GTS_LIBS_L:INTERNAL=
-GTS_LIBS_OTHER:INTERNAL=
-GTS_LIBS_PATHS:INTERNAL=
-GTS_MODULE_NAME:INTERNAL=gts
-GTS_PREFIX:INTERNAL=/usr
-GTS_STATIC_CFLAGS:INTERNAL=-pthread;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
-GTS_STATIC_CFLAGS_I:INTERNAL=
-GTS_STATIC_CFLAGS_OTHER:INTERNAL=-pthread
-GTS_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/glib-2.0;/usr/lib/x86_64-linux-gnu/glib-2.0/include
-GTS_STATIC_LDFLAGS:INTERNAL=-lgts;-lm;-lgthread-2.0;-pthread;-Wl,--export-dynamic;-lgmodule-2.0;-pthread;-ldl;-lglib-2.0;-pthread;-lpcre;-pthread
-GTS_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread;-Wl,--export-dynamic;-pthread
-GTS_STATIC_LIBDIR:INTERNAL=
-GTS_STATIC_LIBRARIES:INTERNAL=gts;m;gthread-2.0;gmodule-2.0;dl;glib-2.0;pcre
-GTS_STATIC_LIBRARY_DIRS:INTERNAL=
-GTS_STATIC_LIBS:INTERNAL=
-GTS_STATIC_LIBS_L:INTERNAL=
-GTS_STATIC_LIBS_OTHER:INTERNAL=
-GTS_STATIC_LIBS_PATHS:INTERNAL=
-GTS_VERSION:INTERNAL=0.7.6
-GTS_gts_INCLUDEDIR:INTERNAL=
-GTS_gts_LIBDIR:INTERNAL=
-GTS_gts_PREFIX:INTERNAL=
-GTS_gts_VERSION:INTERNAL=
+FIND_PACKAGE_MESSAGE_DETAILS_ZeroMQ:INTERNAL=[TRUE][v(4)]
 JSONCPP_CFLAGS:INTERNAL=-I/usr/include/jsoncpp
 JSONCPP_CFLAGS_I:INTERNAL=
 JSONCPP_CFLAGS_OTHER:INTERNAL=
@@ -1254,6 +1004,8 @@ JSONCPP_LDFLAGS_OTHER:INTERNAL=
 JSONCPP_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 JSONCPP_LIBRARIES:INTERNAL=jsoncpp
 JSONCPP_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: JSONCPP_LIBRARY_jsoncpp
+JSONCPP_LIBRARY_jsoncpp-ADVANCED:INTERNAL=1
 JSONCPP_LIBS:INTERNAL=
 JSONCPP_LIBS_L:INTERNAL=
 JSONCPP_LIBS_OTHER:INTERNAL=
@@ -1524,40 +1276,6 @@ Protobuf_PROTOC_EXECUTABLE-ADVANCED:INTERNAL=1
 Protobuf_PROTOC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Protobuf_PROTOC_LIBRARY_RELEASE
 Protobuf_PROTOC_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-SWSCALE_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-SWSCALE_CFLAGS_I:INTERNAL=
-SWSCALE_CFLAGS_OTHER:INTERNAL=
-SWSCALE_INCLUDEDIR:INTERNAL=/usr/include/x86_64-linux-gnu
-SWSCALE_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-SWSCALE_LDFLAGS:INTERNAL=-lswscale
-SWSCALE_LDFLAGS_OTHER:INTERNAL=
-SWSCALE_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-SWSCALE_LIBRARIES:INTERNAL=swscale
-SWSCALE_LIBRARY_DIRS:INTERNAL=
-SWSCALE_LIBS:INTERNAL=
-SWSCALE_LIBS_L:INTERNAL=
-SWSCALE_LIBS_OTHER:INTERNAL=
-SWSCALE_LIBS_PATHS:INTERNAL=
-SWSCALE_MODULE_NAME:INTERNAL=libswscale
-SWSCALE_PREFIX:INTERNAL=/usr
-SWSCALE_STATIC_CFLAGS:INTERNAL=-I/usr/include/x86_64-linux-gnu
-SWSCALE_STATIC_CFLAGS_I:INTERNAL=
-SWSCALE_STATIC_CFLAGS_OTHER:INTERNAL=
-SWSCALE_STATIC_INCLUDE_DIRS:INTERNAL=/usr/include/x86_64-linux-gnu
-SWSCALE_STATIC_LDFLAGS:INTERNAL=-lswscale;-lm;-lavutil;-ldrm;-lm
-SWSCALE_STATIC_LDFLAGS_OTHER:INTERNAL=
-SWSCALE_STATIC_LIBDIR:INTERNAL=
-SWSCALE_STATIC_LIBRARIES:INTERNAL=swscale;m;avutil;drm;m
-SWSCALE_STATIC_LIBRARY_DIRS:INTERNAL=
-SWSCALE_STATIC_LIBS:INTERNAL=
-SWSCALE_STATIC_LIBS_L:INTERNAL=
-SWSCALE_STATIC_LIBS_OTHER:INTERNAL=
-SWSCALE_STATIC_LIBS_PATHS:INTERNAL=
-SWSCALE_VERSION:INTERNAL=4.8.100
-SWSCALE_libswscale_INCLUDEDIR:INTERNAL=
-SWSCALE_libswscale_LIBDIR:INTERNAL=
-SWSCALE_libswscale_PREFIX:INTERNAL=
-SWSCALE_libswscale_VERSION:INTERNAL=
 //ADVANCED property for variable: Simbody_LIBRARIES
 Simbody_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Simbody_STATIC_LIBRARIES
@@ -1566,12 +1284,13 @@ TINYXML2_CFLAGS:INTERNAL=
 TINYXML2_CFLAGS_I:INTERNAL=
 TINYXML2_CFLAGS_OTHER:INTERNAL=
 TINYXML2_INCLUDEDIR:INTERNAL=/usr/include
-TINYXML2_INCLUDE_DIRS:INTERNAL=
 TINYXML2_LDFLAGS:INTERNAL=-ltinyxml2
 TINYXML2_LDFLAGS_OTHER:INTERNAL=
 TINYXML2_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 TINYXML2_LIBRARIES:INTERNAL=tinyxml2
 TINYXML2_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: TINYXML2_LIBRARY_tinyxml2
+TINYXML2_LIBRARY_tinyxml2-ADVANCED:INTERNAL=1
 TINYXML2_LIBS:INTERNAL=
 TINYXML2_LIBS_L:INTERNAL=
 TINYXML2_LIBS_OTHER:INTERNAL=
@@ -1606,6 +1325,8 @@ UUID_LDFLAGS_OTHER:INTERNAL=
 UUID_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 UUID_LIBRARIES:INTERNAL=uuid
 UUID_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: UUID_LIBRARY_uuid
+UUID_LIBRARY_uuid-ADVANCED:INTERNAL=1
 UUID_LIBS:INTERNAL=
 UUID_LIBS_L:INTERNAL=
 UUID_LIBS_OTHER:INTERNAL=
@@ -1634,12 +1355,13 @@ YAML_CFLAGS:INTERNAL=
 YAML_CFLAGS_I:INTERNAL=
 YAML_CFLAGS_OTHER:INTERNAL=
 YAML_INCLUDEDIR:INTERNAL=/usr/include
-YAML_INCLUDE_DIRS:INTERNAL=
 YAML_LDFLAGS:INTERNAL=-lyaml
 YAML_LDFLAGS_OTHER:INTERNAL=
 YAML_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 YAML_LIBRARIES:INTERNAL=yaml
 YAML_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: YAML_LIBRARY_yaml
+YAML_LIBRARY_yaml-ADVANCED:INTERNAL=1
 YAML_LIBS:INTERNAL=
 YAML_LIBS_L:INTERNAL=
 YAML_LIBS_OTHER:INTERNAL=
@@ -1674,6 +1396,10 @@ ZIP_LDFLAGS_OTHER:INTERNAL=
 ZIP_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 ZIP_LIBRARIES:INTERNAL=zip;z
 ZIP_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: ZIP_LIBRARY_z
+ZIP_LIBRARY_z-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZIP_LIBRARY_zip
+ZIP_LIBRARY_zip-ADVANCED:INTERNAL=1
 ZIP_LIBS:INTERNAL=
 ZIP_LIBS_L:INTERNAL=
 ZIP_LIBS_OTHER:INTERNAL=
@@ -1702,12 +1428,13 @@ ZeroMQ_CFLAGS:INTERNAL=
 ZeroMQ_CFLAGS_I:INTERNAL=
 ZeroMQ_CFLAGS_OTHER:INTERNAL=
 ZeroMQ_INCLUDEDIR:INTERNAL=/usr/include
-ZeroMQ_INCLUDE_DIRS:INTERNAL=
 ZeroMQ_LDFLAGS:INTERNAL=-lzmq
 ZeroMQ_LDFLAGS_OTHER:INTERNAL=
 ZeroMQ_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 ZeroMQ_LIBRARIES:INTERNAL=zmq
 ZeroMQ_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: ZeroMQ_LIBRARY_zmq
+ZeroMQ_LIBRARY_zmq-ADVANCED:INTERNAL=1
 ZeroMQ_LIBS:INTERNAL=
 ZeroMQ_LIBS_L:INTERNAL=
 ZeroMQ_LIBS_OTHER:INTERNAL=
@@ -1733,7 +1460,7 @@ ZeroMQ_libzmq _LIBDIR:INTERNAL=
 ZeroMQ_libzmq _PREFIX:INTERNAL=
 ZeroMQ_libzmq _VERSION:INTERNAL=
 //Components requested for this build tree.
-_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;iostreams;program_options;regex;signals;system;thread
+_Boost_COMPONENTS_SEARCHED:INTERNAL=atomic;chrono;date_time;filesystem;iostreams;program_options;regex;system;thread
 //Last used Boost_INCLUDE_DIR value.
 _Boost_INCLUDE_DIR_LAST:INTERNAL=/usr/include
 //Last used Boost_LIBRARY_DIR_DEBUG value.
@@ -1744,44 +1471,24 @@ _Boost_LIBRARY_DIR_RELEASE_LAST:INTERNAL=/usr/lib/x86_64-linux-gnu
 _Boost_NAMESPACE_LAST:INTERNAL=boost
 //Last used Boost_USE_MULTITHREADED value.
 _Boost_USE_MULTITHREADED_LAST:INTERNAL=TRUE
-__pkg_config_arguments_AVCODEC:INTERNAL=libavcodec
-__pkg_config_arguments_AVDEVICE:INTERNAL=libavdevice >= 56.4.100
-__pkg_config_arguments_AVFORMAT:INTERNAL=libavformat
-__pkg_config_arguments_AVUTIL:INTERNAL=libavutil
 __pkg_config_arguments_BULLET:INTERNAL=bullet>=2.82
-__pkg_config_arguments_GTS:INTERNAL=gts
 __pkg_config_arguments_JSONCPP:INTERNAL=jsoncpp
 __pkg_config_arguments_OGRE_PKGC:INTERNAL=OGRE
 __pkg_config_arguments_PC_CURL:INTERNAL=QUIET;libcurl
-__pkg_config_arguments_SWSCALE:INTERNAL=libswscale
 __pkg_config_arguments_TINYXML2:INTERNAL=tinyxml2
 __pkg_config_arguments_UUID:INTERNAL=uuid
 __pkg_config_arguments_YAML:INTERNAL=yaml-0.1
 __pkg_config_arguments_ZIP:INTERNAL=libzip
 __pkg_config_arguments_ZeroMQ:INTERNAL=libzmq >= 4
-__pkg_config_checked_AVCODEC:INTERNAL=1
-__pkg_config_checked_AVDEVICE:INTERNAL=1
-__pkg_config_checked_AVFORMAT:INTERNAL=1
-__pkg_config_checked_AVUTIL:INTERNAL=1
 __pkg_config_checked_BULLET:INTERNAL=1
-__pkg_config_checked_GTS:INTERNAL=1
 __pkg_config_checked_JSONCPP:INTERNAL=1
 __pkg_config_checked_OGRE_PKGC:INTERNAL=1
 __pkg_config_checked_PC_CURL:INTERNAL=1
-__pkg_config_checked_SWSCALE:INTERNAL=1
 __pkg_config_checked_TINYXML2:INTERNAL=1
 __pkg_config_checked_UUID:INTERNAL=1
 __pkg_config_checked_YAML:INTERNAL=1
 __pkg_config_checked_ZIP:INTERNAL=1
 __pkg_config_checked_ZeroMQ:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_AVCODEC_avcodec
-pkgcfg_lib_AVCODEC_avcodec-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_AVDEVICE_avdevice
-pkgcfg_lib_AVDEVICE_avdevice-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_AVFORMAT_avformat
-pkgcfg_lib_AVFORMAT_avformat-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_AVUTIL_avutil
-pkgcfg_lib_AVUTIL_avutil-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_BULLET_BulletCollision
 pkgcfg_lib_BULLET_BulletCollision-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_BULLET_BulletDynamics
@@ -1790,16 +1497,6 @@ pkgcfg_lib_BULLET_BulletDynamics-ADVANCED:INTERNAL=1
 pkgcfg_lib_BULLET_BulletSoftBody-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_BULLET_LinearMath
 pkgcfg_lib_BULLET_LinearMath-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_GTS_glib-2.0
-pkgcfg_lib_GTS_glib-2.0-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_GTS_gmodule-2.0
-pkgcfg_lib_GTS_gmodule-2.0-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_GTS_gthread-2.0
-pkgcfg_lib_GTS_gthread-2.0-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_GTS_gts
-pkgcfg_lib_GTS_gts-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_GTS_m
-pkgcfg_lib_GTS_m-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_JSONCPP_jsoncpp
 pkgcfg_lib_JSONCPP_jsoncpp-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_OGRE_PKGC_OgreMain
@@ -1808,8 +1505,6 @@ pkgcfg_lib_OGRE_PKGC_OgreMain-ADVANCED:INTERNAL=1
 pkgcfg_lib_OGRE_PKGC_pthread-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_CURL_curl
 pkgcfg_lib_PC_CURL_curl-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: pkgcfg_lib_SWSCALE_swscale
-pkgcfg_lib_SWSCALE_swscale-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_TINYXML2_tinyxml2
 pkgcfg_lib_TINYXML2_tinyxml2-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_UUID_uuid

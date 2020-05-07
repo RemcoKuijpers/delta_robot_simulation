@@ -21,18 +21,18 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/usr/include/gazebo-9"
+  "/usr/include/gazebo-11"
   "/usr/include/bullet"
   "/usr/include/simbody"
-  "/usr/include/sdformat-6.0"
-  "/usr/include/ignition/math4"
+  "/usr/include/sdformat-9.2"
+  "/usr/include/ignition/math6"
   "/usr/include/OGRE"
   "/usr/include/OGRE/Terrain"
   "/usr/include/OGRE/Paging"
-  "/usr/include/ignition/transport4"
-  "/usr/include/ignition/msgs1"
-  "/usr/include/ignition/common1"
-  "/usr/include/ignition/fuel_tools1"
+  "/usr/include/ignition/transport8"
+  "/usr/include/ignition/msgs5"
+  "/usr/include/ignition/common3"
+  "/usr/include/ignition/fuel_tools4"
   )
 
 # Targets to which this target links.

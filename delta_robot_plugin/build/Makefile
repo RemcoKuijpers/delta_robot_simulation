@@ -375,19 +375,6 @@ std_msgs_generate_messages_nodejs/fast:
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named object_plugin
-
-# Build rule for target.
-object_plugin: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 object_plugin
-.PHONY : object_plugin
-
-# fast build rule for target.
-object_plugin/fast:
-	$(MAKE) -f CMakeFiles/object_plugin.dir/build.make CMakeFiles/object_plugin.dir/build
-.PHONY : object_plugin/fast
-
-#=============================================================================
 # Target rules for targets named roscpp_generate_messages_nodejs
 
 # Build rule for target.
@@ -440,33 +427,6 @@ delta_robot_plugin.cc.s:
 	$(MAKE) -f CMakeFiles/delta_robot_plugin.dir/build.make CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.s
 .PHONY : delta_robot_plugin.cc.s
 
-object_plugin.o: object_plugin.cc.o
-
-.PHONY : object_plugin.o
-
-# target to build an object file
-object_plugin.cc.o:
-	$(MAKE) -f CMakeFiles/object_plugin.dir/build.make CMakeFiles/object_plugin.dir/object_plugin.cc.o
-.PHONY : object_plugin.cc.o
-
-object_plugin.i: object_plugin.cc.i
-
-.PHONY : object_plugin.i
-
-# target to preprocess a source file
-object_plugin.cc.i:
-	$(MAKE) -f CMakeFiles/object_plugin.dir/build.make CMakeFiles/object_plugin.dir/object_plugin.cc.i
-.PHONY : object_plugin.cc.i
-
-object_plugin.s: object_plugin.cc.s
-
-.PHONY : object_plugin.s
-
-# target to generate assembly for a file
-object_plugin.cc.s:
-	$(MAKE) -f CMakeFiles/object_plugin.dir/build.make CMakeFiles/object_plugin.dir/object_plugin.cc.s
-.PHONY : object_plugin.cc.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -496,13 +456,9 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... delta_robot_plugin"
-	@echo "... object_plugin"
 	@echo "... delta_robot_plugin.o"
 	@echo "... delta_robot_plugin.i"
 	@echo "... delta_robot_plugin.s"
-	@echo "... object_plugin.o"
-	@echo "... object_plugin.i"
-	@echo "... object_plugin.s"
 .PHONY : help
 
 

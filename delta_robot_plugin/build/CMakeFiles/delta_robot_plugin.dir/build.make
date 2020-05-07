@@ -96,7 +96,6 @@ delta_robot_plugin_EXTERNAL_OBJECTS =
 
 libdelta_robot_plugin.so: CMakeFiles/delta_robot_plugin.dir/delta_robot_plugin.cc.o
 libdelta_robot_plugin.so: CMakeFiles/delta_robot_plugin.dir/build.make
-libdelta_robot_plugin.so: libobject_plugin.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libSimTKsimbody.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libSimTKmath.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libSimTKcommon.so
@@ -117,8 +116,8 @@ libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_common.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opcode.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so
+libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_ccd.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
@@ -128,7 +127,7 @@ libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libprotobuf.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libsdformat.so
+libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libsdformat9.so.9.2.0
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreMain.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
@@ -138,10 +137,7 @@ libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-transport4.so.4.0.0
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-msgs1.so.1.0.0
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-common1.so.1.0.1
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-fuel_tools1.so.1.0.0
+libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-common3-graphics.so.3.5.0
 libdelta_robot_plugin.so: /opt/ros/melodic/lib/libroscpp.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libdelta_robot_plugin.so: /opt/ros/melodic/lib/librosconsole.so
@@ -175,8 +171,8 @@ libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_common.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opcode.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so
+libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libgazebo_ccd.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
@@ -186,7 +182,6 @@ libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libprotobuf.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libsdformat.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreMain.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
@@ -200,7 +195,6 @@ libdelta_robot_plugin.so: /opt/ros/melodic/lib/libxmlrpcpp.so
 libdelta_robot_plugin.so: /opt/ros/melodic/lib/librostime.so
 libdelta_robot_plugin.so: /opt/ros/melodic/lib/libcpp_common.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
@@ -210,7 +204,6 @@ libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libprotobuf.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libsdformat.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreMain.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
@@ -225,20 +218,14 @@ libdelta_robot_plugin.so: /opt/ros/melodic/lib/librostime.so
 libdelta_robot_plugin.so: /opt/ros/melodic/lib/libcpp_common.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libpthread.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
+libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-transport8.so.8.0.0
+libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-fuel_tools4.so.4.1.0
+libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-msgs5.so.5.1.0
+libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-math6.so.6.4.0
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libprotobuf.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-math4.so.4.0.0
+libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libignition-common3.so.3.5.0
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libuuid.so
 libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libuuid.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libswscale.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libswscale.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libavdevice.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libavdevice.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libavformat.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libavformat.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libavcodec.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libavcodec.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libavutil.so
-libdelta_robot_plugin.so: /usr/lib/x86_64-linux-gnu/libavutil.so
 libdelta_robot_plugin.so: CMakeFiles/delta_robot_plugin.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/remco/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libdelta_robot_plugin.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/delta_robot_plugin.dir/link.txt --verbose=$(VERBOSE)
