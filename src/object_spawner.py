@@ -20,7 +20,7 @@ class PotatoSpawner(object):
         rospy.wait_for_service('/gazebo/set_model_state')
         self.delete = rospy.ServiceProxy("gazebo/delete_model", DeleteModel)
         self.spawn = rospy.ServiceProxy("gazebo/spawn_sdf_model", SpawnModel)
-        self.pub = rospy.Publisher('/gazebo/set_model_state', ModelState)
+        self.pub = rospy.Publisher('/gazebo/set_model_state', ModelState, queue_size=10)
         rospack = rospkg.RosPack()
         self.ids = []
         self.dids = []
