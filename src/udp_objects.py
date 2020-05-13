@@ -5,7 +5,7 @@ import re
 import time
 from object_spawner import PotatoSpawner
 
-class TCPServerObjectSpawner():
+class UDPClientObjectSpawner():
     def __init__(self):
         TCP_IP = '10.139.10.6'
         TCP_PORT = 5006
@@ -31,5 +31,5 @@ class TCPServerObjectSpawner():
                 pass
                     
 if __name__ == "__main__":
-    obj = TCPServerObjectSpawner()
+    obj = UDPClientObjectSpawner()
     obj.listen()

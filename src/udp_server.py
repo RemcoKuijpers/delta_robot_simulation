@@ -6,7 +6,7 @@ from delta_robot import DeltaRobot
 import time
 
 
-class TCPServerRobots(object):
+class UDPClientRobots(object):
     def __init__(self):
         self.robot = DeltaRobot("delta_robot1")
         self.robot2 = DeltaRobot("delta_robot2")
@@ -36,5 +36,5 @@ def twos_comp(val, bits):
     return val                         # return positive value as is
 
 if __name__ == "__main__":
-    robots = TCPServerRobots()
+    robots = UDPClientRobots()
     robots.listen()
