@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+TerminalOptions=bash
+Exec=bash -c "source /opt/ros/melodic/setup.bash;source ~/catkin_ws/devel/setup.bash;export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:~/catkin_ws/src/delta_robot_simulation/delta_robot_plugin/build/;roslaunch delta_robot_simulation PIP.launch"
+Icon=/home/remco/Pictures/PIP.png
+Name=PIP Machine Simulation
+GenericName[en_US.UTF-8]=Start Gazebo simulation of machine
