@@ -9,11 +9,12 @@ from object_spawner import PotatoSpawner
 class UDPClientObjectSpawner():
     def __init__(self):
         TCP_IP = rospy.get_param("/robot_controller_ip_address")
+        potatoes = rospy.get_param("/amount_of_potatoes")
         TCP_PORT = 5006
         self.s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.s.bind((TCP_IP, TCP_PORT))
         self.p = PotatoSpawner()
-        self.p.spawnManyPotatos(25)
+        self.p.spawnManyPotatos(potatoes)
         print("UDP connection for objects started")
 
     def listen(self):
