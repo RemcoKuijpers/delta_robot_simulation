@@ -3,11 +3,12 @@
 import socket
 import re
 import time
+import rospy
 from object_spawner import PotatoSpawner
 
 class UDPClientObjectSpawner():
     def __init__(self):
-        TCP_IP = '10.139.10.6'
+        TCP_IP = rospy.get_param("/robot_controller_ip_address")
         TCP_PORT = 5006
         self.s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.s.bind((TCP_IP, TCP_PORT))

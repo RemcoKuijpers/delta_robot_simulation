@@ -1,21 +1,7 @@
 <launch>
 
-<arg name="1/robot_name" value="delta_robot1"/>
-<arg name="1/x" value="0.560" />
-<arg name="1/y" value="0.440" />
-<arg name="1/z" value="$(eval 0.920-1)" />
-<arg name="1/rx" value="0.0" />
-<arg name="1/ry" value="0.0" />
-<arg name="1/rz" value="-90" />
+<param name="/robot_controller_ip_address" type="str" value="10.139.10.6" />
 
-<arg name="2/robot_name" value="delta_robot2"/>
-<arg name="2/x" value="1.155" />
-<arg name="2/y" value="1.040" />
-<arg name="2/z" value="$(eval 0.920-1)" />
-<arg name="2/rx" value="0.0" />
-<arg name="2/ry" value="0.0" />
-<arg name="2/rz" value="-32" />
-
-<include file="$(find delta_robot_simulation)/launch/multiple_bullet_with_controller.launch" pass_all_args="true" />
-
+<!--<include file="$(find delta_robot_simulation)/launch/multiple_bullet_with_controller.launch" pass_all_args="true" />-->
+<include file="$(find delta_robot_simulation)/launch/auto.launch" pass_all_args="true" />
 </launch>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <include file="$(find gazebo_ros)/launch/bullet_world.launch">
+        <arg name="extra_gazebo_args" default="--verbose" />
+    </include>
+
+    <node name="robot_spawn_conveyor" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-file $(find delta_robot_simulation)/urdf/conveyor.urdf -urdf -z 1 -model conveyor"/> <!-- Z was 1.08-->
+
+    
+    <node name="robot_spawner" pkg="delta_robot_simulation" type="spawn_robots.py" respawn="false"/>
+    <node name="robot_control" pkg="delta_robot_simulation" type="udp_server.py" respawn="true"/>
+    <node name="potato_control" pkg="delta_robot_simulation" type="udp_objects.py" respawn="true"/>
+</launch>
