@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="" productName="SoMachine Motion Logic Builder" productVersion="V1.56.49.0" creationDateTime="2020-05-25T16:32:27.539003" />
+  <contentHeader name="ARR NG V1.0" version="0.0.0.0" modificationDateTime="2020-05-15T14:58:38.6738722" author="SESA100920">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation>
+          <property name="Author" type="string">SESA100920</property>
+          <property name="Company" type="string" />
+          <property name="DefaultNamespace" type="string">RoboticModuleExample</property>
+          <property name="Description" type="string" />
+          <property name="Project" type="string">ARRNG128_Democel_TPB</property>
+          <property name="Title" type="string">ARR NG V1.0</property>
+          <property name="Version" type="version">0.0.0.0</property>
+        </ProjectInformation>
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <pou name="DigitalTwin" pouType="program">
+        <interface>
+          <localVars>
+            <variable name="sIp">
+              <type>
+                <string length="15" />
+              </type>
+              <initialValue>
+                <simpleValue value="'10.139.10.6'" />
+              </initialValue>
+            </variable>
+            <variable name="uiPort">
+              <type>
+                <UINT />
+              </type>
+              <initialValue>
+                <simpleValue value="5005" />
+              </initialValue>
+            </variable>
+            <variable name="fbUdpPeer">
+              <type>
+                <derived name="TCPUDP.FB_UDPPeer" />
+              </type>
+            </variable>
+            <variable name="uiVal1">
+              <type>
+                <UINT />
+              </type>
+            </variable>
+            <variable name="uiVal2">
+              <type>
+                <UINT />
+              </type>
+            </variable>
+            <variable name="uiVal3">
+              <type>
+                <UINT />
+              </type>
+            </variable>
+            <variable name="uiVal4">
+              <type>
+                <UINT />
+              </type>
+            </variable>
+            <variable name="uiVal5">
+              <type>
+                <UINT />
+              </type>
+            </variable>
+            <variable name="uiVal6">
+              <type>
+                <UINT />
+              </type>
+            </variable>
+            <variable name="uiVal7">
+              <type>
+                <UINT />
+              </type>
+            </variable>
+            <variable name="uiVal8">
+              <type>
+                <UINT />
+              </type>
+            </variable>
+            <variable name="s1">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="s2">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="s3">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="s4">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="s5">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="s6">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="s7">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="s8">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="sStringToSend">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="udiSize">
+              <type>
+                <UDINT />
+              </type>
+            </variable>
+            <variable name="iVal">
+              <type>
+                <INT />
+              </type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">CASE iVal OF
+	0: IF fbUdpPeer.Open() THEN
+		iVal := 1;
+		END_IF
+	1: 
+		uiVal1 := LREAL_TO_UINT(DRV_Robot1_A.Position);
+		uiVal2 := LREAL_TO_UINT(DRV_Robot1_B.Position);
+		uiVal3 := LREAL_TO_UINT(DRV_Robot1_C.Position);
+		uiVal4 := LREAL_TO_UINT(DRV_Robot2_A.Position);
+		uiVal5 := LREAL_TO_UINT(DRV_Robot2_B.Position);
+		uiVal6 := LREAL_TO_UINT(DRV_Robot2_C.Position);
+		uiVal7 := LREAL_TO_INT(DRV_Robot1_AuxAx1.Position);
+		uiVal8 := LREAL_TO_INT(DRV_Robot2_AuxAx1.Position);
+		s1 := UINT_TO_STRING(uiVal1);
+		s2 := UINT_TO_STRING(uiVal2);
+		s3 := UINT_TO_STRING(uiVal3);
+		s4 := UINT_TO_STRING(uiVal4);
+		s5 := UINT_TO_STRING(uiVal5);
+		s6 := UINT_TO_STRING(uiVal6);
+		s7 := UINT_TO_STRING(uiVal7);
+		s8 := UINT_TO_STRING(uiVal8);
+		s1 := CONCAT('X',s1);
+		s2 := CONCAT('Y',s2);
+		s3 := CONCAT('Z',s3);
+		s4 := CONCAT('X',s4);
+		s5 := CONCAT('Y',s5);
+		s6 := CONCAT('Z',s6);
+		s7 := CONCAT('A',s7);
+		s8 := CONCAT('B',s8);
+		sStringToSend := CONCAT(CONCAT(CONCAT(s1,s2), CONCAT(s3,s4)), CONCAT(CONCAT(s5,s6), CONCAT(s7,s8)));
+		udiSize := SIZEOF(sStringToSend);
+		fbUdpPeer.SendTo(sIp, uiPort, ADR(sStringToSend), udiSize);		
+END_CASE</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>899dce9b-cb41-4545-9fd0-9d0c5bcfb20a</ObjectId>
+          </data>
+        </addData>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Folder Name="DigitalTwin">
+          <Object Name="DigitalTwin" ObjectId="899dce9b-cb41-4545-9fd0-9d0c5bcfb20a" />
+        </Folder>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>

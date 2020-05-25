@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="" productName="SoMachine Motion Logic Builder" productVersion="V1.56.49.0" creationDateTime="2020-05-25T16:35:19.8150034" />
+  <contentHeader name="ARR NG V1.0" version="0.0.0.0" modificationDateTime="2020-05-15T14:58:38.6738722" author="SESA100920">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation>
+          <property name="Author" type="string">SESA100920</property>
+          <property name="Company" type="string" />
+          <property name="DefaultNamespace" type="string">RoboticModuleExample</property>
+          <property name="Description" type="string" />
+          <property name="Project" type="string">ARRNG128_Democel_TPB</property>
+          <property name="Title" type="string">ARR NG V1.0</property>
+          <property name="Version" type="version">0.0.0.0</property>
+        </ProjectInformation>
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <pou name="RobotParser" pouType="program">
+        <interface>
+          <localVars>
+            <variable name="sIp">
+              <type>
+                <string length="15" />
+              </type>
+              <initialValue>
+                <simpleValue value="'10.139.10.6'" />
+              </initialValue>
+            </variable>
+            <variable name="uiPort">
+              <type>
+                <UINT />
+              </type>
+              <initialValue>
+                <simpleValue value="5007" />
+              </initialValue>
+            </variable>
+            <variable name="fbUdpPeer">
+              <type>
+                <derived name="TCPUDP.FB_UDPPeer" />
+              </type>
+            </variable>
+            <variable name="stStringToSend">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="udiSize">
+              <type>
+                <UDINT />
+              </type>
+            </variable>
+            <variable name="iVal">
+              <type>
+                <INT />
+              </type>
+            </variable>
+            <variable name="stX">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stY">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stZ">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stRX">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stRY">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stRZ">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stX2">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stY2">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stZ2">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stRX2">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stRY2">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stRZ2">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stNum">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stRobot1">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stRObot2">
+              <type>
+                <string />
+              </type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">CASE iVal OF
+	0: IF fbUdpPeer.Open() THEN
+		iVal := 1;
+		END_IF
+		
+	1: 	
+			stNum := '2';
+			stX := CONCAT('X', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrOffsetRobotToMC_X));
+			stY := CONCAT('Y', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrOffsetRobotToMC_Y));
+			stZ := CONCAT('Z', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrOffset_Z_Robot));
+			stRX := CONCAT('RX', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrRotationAngle_Robot_rX));
+			stRY := CONCAT('RY', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrRotationAngle_Robot_rY));
+			stRZ := CONCAT('RZ', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrRotationAngle_Robot_rZ));
+			
+			stX2 := CONCAT('X', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrOffsetRobotToMC_X));
+			stY2 := CONCAT('Y', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrOffsetRobotToMC_Y));
+			stZ2 := CONCAT('Z', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrOffset_Z_Robot));
+			stRX2 := CONCAT('RX', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrRotationAngle_Robot_rX));
+			stRY2 := CONCAT('RY', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrRotationAngle_Robot_rY));
+			stRZ2 := CONCAT('RZ', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrRotationAngle_Robot_rZ));
+			
+			stRobot1 := CONCAT(stNum, CONCAT(stX, CONCAT(stY, CONCAT(stZ, CONCAT(stRX, CONCAT(stRY, stRZ))))));
+			stRobot2 := CONCAT(stX2, CONCAT(stY2, CONCAT(stZ2, CONCAT(stRX2, CONCAT(stRY2, stRZ2)))));
+			
+			stStringToSend := CONCAT(stRobot1, stRobot2);
+			udiSize := SIZEOF(stStringToSend);
+			fbUdpPeer.SendTo(sIp, uiPort, ADR(stStringToSend), udiSize);
+		
+END_CASE</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>533995b7-83c5-4649-9845-f1771fcf7ec6</ObjectId>
+          </data>
+        </addData>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Folder Name="DigitalTwin">
+          <Object Name="RobotParser" ObjectId="533995b7-83c5-4649-9845-f1771fcf7ec6" />
+        </Folder>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>

@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="" productName="SoMachine Motion Logic Builder" productVersion="V1.56.49.0" creationDateTime="2020-05-25T16:35:11.2835369" />
+  <contentHeader name="ARR NG V1.0" version="0.0.0.0" modificationDateTime="2020-05-15T14:58:38.6738722" author="SESA100920">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation>
+          <property name="Author" type="string">SESA100920</property>
+          <property name="Company" type="string" />
+          <property name="DefaultNamespace" type="string">RoboticModuleExample</property>
+          <property name="Description" type="string" />
+          <property name="Project" type="string">ARRNG128_Democel_TPB</property>
+          <property name="Title" type="string">ARR NG V1.0</property>
+          <property name="Version" type="version">0.0.0.0</property>
+        </ProjectInformation>
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <pou name="ObjectSpawner" pouType="program">
+        <interface>
+          <localVars>
+            <variable name="sIp">
+              <type>
+                <string length="15" />
+              </type>
+              <initialValue>
+                <simpleValue value="'10.139.10.6'" />
+              </initialValue>
+            </variable>
+            <variable name="uiPort">
+              <type>
+                <UINT />
+              </type>
+              <initialValue>
+                <simpleValue value="5006" />
+              </initialValue>
+            </variable>
+            <variable name="fbUdpPeer">
+              <type>
+                <derived name="TCPUDP.FB_UDPPeer" />
+              </type>
+            </variable>
+            <variable name="stStringToSend">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stX">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stY">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stID">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="stProduct">
+              <type>
+                <string />
+              </type>
+            </variable>
+            <variable name="udiSize">
+              <type>
+                <UDINT />
+              </type>
+            </variable>
+            <variable name="iCounter">
+              <type>
+                <INT />
+              </type>
+              <initialValue>
+                <simpleValue value="1" />
+              </initialValue>
+            </variable>
+            <variable name="iBeginCounter">
+              <type>
+                <INT />
+              </type>
+              <initialValue>
+                <simpleValue value="1" />
+              </initialValue>
+            </variable>
+            <variable name="bFirstProductActive">
+              <type>
+                <BOOL />
+              </type>
+            </variable>
+            <variable name="iVal">
+              <type>
+                <INT />
+              </type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">CASE iVal OF
+	0: IF fbUdpPeer.Open() THEN
+		iVal := 1;
+		END_IF
+	1: 
+		IF g_astPickLocations[1].astLocations[iCounter].lrActMCPosX &lt;&gt; 0 AND g_astPickLocations[1].astLocations[iCounter].lrActMCPosX &gt; 0 THEN
+			stID := CONCAT('ID', INT_TO_STRING(iCounter));
+			stX := CONCAT('X', INT_TO_STRING(LREAL_TO_INT(g_astPickLocations[1].astLocations[iCounter].lrActMCPosX)));
+			stY := CONCAT('Y', INT_TO_STRING(LREAL_TO_INT(g_astPickLocations[1].astLocations[iCounter].lrActMCPosY)));
+			stStringToSend := CONCAT(stID, CONCAT(stX, stY));
+			udiSize := SIZEOF(stStringToSend);
+			fbUdpPeer.SendTo(sIp, uiPort, ADR(stStringToSend), udiSize);
+			iCounter := iCounter + 1;
+		ELSIF g_astPickLocations[1].astLocations[iBeginCounter].lrActMCPosX = 0 THEN
+			iVal := 2;
+			iCounter := iBeginCounter;
+		ELSE
+			iCounter := iBeginCounter;
+		END_IF
+	2: 
+		IF g_astPickLocations[1].astLocations[iCounter].lrActMCPosX = 0 AND bFirstProductActive = TRUE THEN
+			iCounter := iCounter + 1;
+		ELSE
+			iBeginCounter := iCounter;
+			iVal := 1;
+		END_IF
+		
+END_CASE
+		
+		IF g_astPickLocations[1].astLocations[1].lrActMCPosX &lt;&gt; 0 THEN
+			bFirstProductActive := TRUE;
+		END_IF</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>f4601113-d90a-4f4e-9df3-92660d84e554</ObjectId>
+          </data>
+        </addData>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Folder Name="DigitalTwin">
+          <Object Name="ObjectSpawner" ObjectId="f4601113-d90a-4f4e-9df3-92660d84e554" />
+        </Folder>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
