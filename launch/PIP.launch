@@ -1,8 +1,8 @@
 <launch>
 
-<param name="/robot_controller_ip_address" type="str" value="10.139.10.6" />
+<param name="/robot_controller_ip_address" type="str" value="172.27.128.188" />
 <param name="/amount_of_potatoes" type="int" value="25" />
-
+ 
 <!--<include file="$(find delta_robot_simulation)/launch/multiple_bullet_with_controller.launch" pass_all_args="true" />-->
 <include file="$(find delta_robot_simulation)/launch/auto.launch" pass_all_args="true" />
 </launch>
