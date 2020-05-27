@@ -12,7 +12,7 @@ class UDPClientRobots(object):
         self.robot = DeltaRobot("delta_robot1")
         self.robot2 = DeltaRobot("delta_robot2")
         TCP_IP = rospy.get_param("/robot_controller_ip_address")
-        TCP_PORT = 5005
+        TCP_PORT = 5008
         self.s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.s.bind((TCP_IP, TCP_PORT))
         print("UDP connection for robots started")
@@ -23,8 +23,8 @@ class UDPClientRobots(object):
                 data = self.s.recvfrom(81)
                 if not data: break
                 angles = [twos_comp(int(s), 16) for s in re.findall(r'-?\d+', data[0])]
-                self.robot.moveMotors(angles[0], angles[1], angles[2], angles[6])
-                self.robot2.moveMotors(angles[3], angles[4], angles[5], angles[7])
+                self.robot.moveMotors(float(angles[0])/100, float(angles[1])/100, float(angles[2])/100, -float(angles[6])/100)
+                self.robot2.moveMotors(float(angles[3])/100, float(angles[4])/100, float(angles[5])/100, -float(angles[7])/100)
             except KeyboardInterrupt:
                 break
             except UnicodeDecodeError:
