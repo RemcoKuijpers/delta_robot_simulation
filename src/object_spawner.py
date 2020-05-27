@@ -46,7 +46,7 @@ class PotatoSpawner(object):
             msg.model_name = "potato_{0}".format(i)
             msg.pose.position.y = y_position
             msg.pose.position.x = x_position
-            msg.pose.position.z = 1.1
+            msg.pose.position.z = 1
             msg.pose.orientation.x = 0
             msg.pose.orientation.y = 0
             msg.pose.orientation.z = 0
