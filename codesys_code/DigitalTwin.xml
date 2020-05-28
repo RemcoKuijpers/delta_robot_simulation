@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="SoMachine Motion Logic Builder" productVersion="V1.56.49.0" creationDateTime="2020-05-25T16:32:27.539003" />
-  <contentHeader name="ARR NG V1.0" version="0.0.0.0" modificationDateTime="2020-05-15T14:58:38.6738722" author="SESA100920">
+  <fileHeader companyName="" productName="SoMachine Motion Logic Builder" productVersion="V1.56.49.0" creationDateTime="2020-05-27T13:42:54.6160442" />
+  <contentHeader name="ARR NG V1.0" version="0.0.0.0" modificationDateTime="2020-05-26T17:23:23.8723846" author="SESA100920">
     <coordinateInfo>
       <fbd>
         <scaling x="1" y="1" />
@@ -38,7 +38,7 @@
                 <string length="15" />
               </type>
               <initialValue>
-                <simpleValue value="'10.139.10.6'" />
+                <simpleValue value="'172.27.128.188'" />
               </initialValue>
             </variable>
             <variable name="uiPort">
@@ -46,7 +46,7 @@
                 <UINT />
               </type>
               <initialValue>
-                <simpleValue value="5005" />
+                <simpleValue value="5008" />
               </initialValue>
             </variable>
             <variable name="fbUdpPeer">
@@ -158,14 +158,14 @@
 		iVal := 1;
 		END_IF
 	1: 
-		uiVal1 := LREAL_TO_UINT(DRV_Robot1_A.Position);
-		uiVal2 := LREAL_TO_UINT(DRV_Robot1_B.Position);
-		uiVal3 := LREAL_TO_UINT(DRV_Robot1_C.Position);
-		uiVal4 := LREAL_TO_UINT(DRV_Robot2_A.Position);
-		uiVal5 := LREAL_TO_UINT(DRV_Robot2_B.Position);
-		uiVal6 := LREAL_TO_UINT(DRV_Robot2_C.Position);
-		uiVal7 := LREAL_TO_INT(DRV_Robot1_AuxAx1.Position);
-		uiVal8 := LREAL_TO_INT(DRV_Robot2_AuxAx1.Position);
+		uiVal1 := LREAL_TO_UINT(DRV_Robot1_A.Position*100);
+		uiVal2 := LREAL_TO_UINT(DRV_Robot1_B.Position*100);
+		uiVal3 := LREAL_TO_UINT(DRV_Robot1_C.Position*100);
+		uiVal4 := LREAL_TO_UINT(DRV_Robot2_A.Position*100);
+		uiVal5 := LREAL_TO_UINT(DRV_Robot2_B.Position*100);
+		uiVal6 := LREAL_TO_UINT(DRV_Robot2_C.Position*100);
+		uiVal7 := LREAL_TO_INT(DRV_Robot1_AuxAx1.Position*100);
+		uiVal8 := LREAL_TO_INT(DRV_Robot2_AuxAx1.Position*100);
 		s1 := UINT_TO_STRING(uiVal1);
 		s2 := UINT_TO_STRING(uiVal2);
 		s3 := UINT_TO_STRING(uiVal3);
@@ -202,7 +202,7 @@ END_CASE</xhtml>
   <addData>
     <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
       <ProjectStructure>
-        <Folder Name="DigitalTwin">
+        <Folder Name="Simulation">
           <Object Name="DigitalTwin" ObjectId="899dce9b-cb41-4545-9fd0-9d0c5bcfb20a" />
         </Folder>
       </ProjectStructure>

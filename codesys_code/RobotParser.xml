@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="SoMachine Motion Logic Builder" productVersion="V1.56.49.0" creationDateTime="2020-05-25T16:35:19.8150034" />
-  <contentHeader name="ARR NG V1.0" version="0.0.0.0" modificationDateTime="2020-05-15T14:58:38.6738722" author="SESA100920">
+  <fileHeader companyName="" productName="SoMachine Motion Logic Builder" productVersion="V1.56.49.0" creationDateTime="2020-05-27T13:43:07.5497102" />
+  <contentHeader name="ARR NG V1.0" version="0.0.0.0" modificationDateTime="2020-05-26T17:23:23.8723846" author="SESA100920">
     <coordinateInfo>
       <fbd>
         <scaling x="1" y="1" />
@@ -38,7 +38,7 @@
                 <string length="15" />
               </type>
               <initialValue>
-                <simpleValue value="'10.139.10.6'" />
+                <simpleValue value="'172.27.128.188'" />
               </initialValue>
             </variable>
             <variable name="uiPort">
@@ -158,16 +158,16 @@
 			stX := CONCAT('X', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrOffsetRobotToMC_X));
 			stY := CONCAT('Y', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrOffsetRobotToMC_Y));
 			stZ := CONCAT('Z', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrOffset_Z_Robot));
-			stRX := CONCAT('RX', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrRotationAngle_Robot_rX));
-			stRY := CONCAT('RY', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrRotationAngle_Robot_rY));
-			stRZ := CONCAT('RZ', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrRotationAngle_Robot_rZ));
+			stRX := CONCAT('RX', INT_TO_STRING(LREAL_TO_INT(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrRotationAngle_Robot_rX*100)));
+			stRY := CONCAT('RY', INT_TO_STRING(LREAL_TO_INT(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrRotationAngle_Robot_rY*100)));
+			stRZ := CONCAT('RZ', INT_TO_STRING(LREAL_TO_INT(SR_MainMachine.astExtRobotItf[1].stParam.stRobotData.lrRotationAngle_Robot_rZ*100)));
 			
 			stX2 := CONCAT('X', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrOffsetRobotToMC_X));
 			stY2 := CONCAT('Y', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrOffsetRobotToMC_Y));
 			stZ2 := CONCAT('Z', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrOffset_Z_Robot));
-			stRX2 := CONCAT('RX', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrRotationAngle_Robot_rX));
-			stRY2 := CONCAT('RY', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrRotationAngle_Robot_rY));
-			stRZ2 := CONCAT('RZ', LREAL_TO_STRING(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrRotationAngle_Robot_rZ));
+			stRX2 := CONCAT('RX', INT_TO_STRING(LREAL_TO_INT(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrRotationAngle_Robot_rX*100)));
+			stRY2 := CONCAT('RY', INT_TO_STRING(LREAL_TO_INT(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrRotationAngle_Robot_rY*100)));
+			stRZ2 := CONCAT('RZ', INT_TO_STRING(LREAL_TO_INT(SR_MainMachine.astExtRobotItf[2].stParam.stRobotData.lrRotationAngle_Robot_rZ*100)));
 			
 			stRobot1 := CONCAT(stNum, CONCAT(stX, CONCAT(stY, CONCAT(stZ, CONCAT(stRX, CONCAT(stRY, stRZ))))));
 			stRobot2 := CONCAT(stX2, CONCAT(stY2, CONCAT(stZ2, CONCAT(stRX2, CONCAT(stRY2, stRZ2)))));
@@ -193,7 +193,7 @@ END_CASE</xhtml>
   <addData>
     <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
       <ProjectStructure>
-        <Folder Name="DigitalTwin">
+        <Folder Name="Simulation">
           <Object Name="RobotParser" ObjectId="533995b7-83c5-4649-9845-f1771fcf7ec6" />
         </Folder>
       </ProjectStructure>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="SoMachine Motion Logic Builder" productVersion="V1.56.49.0" creationDateTime="2020-05-25T16:35:11.2835369" />
-  <contentHeader name="ARR NG V1.0" version="0.0.0.0" modificationDateTime="2020-05-15T14:58:38.6738722" author="SESA100920">
+  <fileHeader companyName="" productName="SoMachine Motion Logic Builder" productVersion="V1.56.49.0" creationDateTime="2020-05-27T13:43:00.917405" />
+  <contentHeader name="ARR NG V1.0" version="0.0.0.0" modificationDateTime="2020-05-26T17:23:23.8723846" author="SESA100920">
     <coordinateInfo>
       <fbd>
         <scaling x="1" y="1" />
@@ -38,7 +38,7 @@
                 <string length="15" />
               </type>
               <initialValue>
-                <simpleValue value="'10.139.10.6'" />
+                <simpleValue value="'172.27.128.188'" />
               </initialValue>
             </variable>
             <variable name="uiPort">
@@ -114,7 +114,11 @@
         </interface>
         <body>
           <ST>
-            <xhtml xmlns="http://www.w3.org/1999/xhtml">CASE iVal OF
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">IF iCounter &gt;= g_c_uiNrOfLocations THEN
+	iCounter := 1;
+END_IF
+
+CASE iVal OF
 	0: IF fbUdpPeer.Open() THEN
 		iVal := 1;
 		END_IF
@@ -162,7 +166,7 @@ END_CASE
   <addData>
     <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
       <ProjectStructure>
-        <Folder Name="DigitalTwin">
+        <Folder Name="Simulation">
           <Object Name="ObjectSpawner" ObjectId="f4601113-d90a-4f4e-9df3-92660d84e554" />
         </Folder>
       </ProjectStructure>
