@@ -10,8 +10,9 @@ if __name__ == "__main__":
     z = -700
     while not rospy.is_shutdown():
         try:
-            x = 0#100*sin(time.time()*2)
-            y = 0#100*cos(time.time()*2)
-            robot.movePositionCartesian(x,y,z)
+            x = 200*cos(time.time()*4)
+            y = 200*sin(time.time()*4)
+            aux = 720*sin(time.time())
+            robot.movePositionCartesian(x,y,z,aux)
         except rospy.ROSException or KeyboardInterrupt:
             break
