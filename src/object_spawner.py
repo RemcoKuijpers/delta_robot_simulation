@@ -22,8 +22,8 @@ class PotatoSpawner(object):
         self.spawn = rospy.ServiceProxy("gazebo/spawn_sdf_model", SpawnModel)
         self.pub = rospy.Publisher('/gazebo/set_model_state', ModelState, queue_size=10)
         rospack = rospkg.RosPack()
-        self.ids = []
-        self.dids = []
+        #self.ids = []
+        #self.dids = []
         with open(os.path.join(rospack.get_path("delta_robot_simulation"), "urdf", "object.urdf"), "r") as f:
             self.model = f.read()
 
@@ -60,19 +60,19 @@ class PotatoSpawner(object):
             msg.reference_frame = "world"
             self.pub.publish(msg)    
         
-    def updatePose(self, i, x_position, y_position):
-        if y_position > 1.4 and i not in self.dids:
-            self.deletePotato(i)
-            self.dids.append(i)
-        elif i not in self.ids and i not in self.dids:
-            self.spawnPotato(i, x_position, y_position)
-            self.ids.append(i)
-        elif i not in self.dids:
-            self.update(i, x_position, y_position)
+    #def updatePose(self, i, x_position, y_position):
+    #    if y_position > 1.4 and i not in self.dids:
+    #        self.deletePotato(i)
+    #        self.dids.append(i)
+    #    elif i not in self.ids and i not in self.dids:
+    #        self.spawnPotato(i, x_position, y_position)
+    #        self.ids.append(i)
+    #    elif i not in self.dids:
+    #        self.update(i, x_position, y_position)
 
     def updatePoseNew(self, i, x_position, y_position, active):
         d = i/float(active)
         if d > 1:
-            i = i - active*int(d)
+            i = i - active*int(d)+1
         if i != 0:
             self.update(i, x_position, y_position)
