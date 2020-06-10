@@ -17,13 +17,13 @@
           <izz>1e05</izz>
         </inertia>
       </inertial>
-      <collision name='base_link_collision'>
+      <!--<collision name='base_link_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
-          <!--<mesh>
+          <mesh>
             <scale>0.001 0.001 0.001</scale>
             <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_base_link.dae</uri>
-          </mesh>-->
+          </mesh>
           <box>
             <size>0.01 0.01 0.01</size>
           </box>
@@ -36,7 +36,7 @@
             <ode/>
           </friction>
         </surface>
-      </collision>
+      </collision>-->
       <visual name='base_link_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
@@ -73,7 +73,7 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='low_base_collision'>
+      <!--<collision name='low_base_collision'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -89,7 +89,7 @@
             <ode/>
           </friction>
         </surface>
-      </collision>
+      </collision>-->
       <visual name='low_base_visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
@@ -369,7 +369,7 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='uleg_1_collision'>
+      <!--<collision name='uleg_1_collision'>
         <pose frame=''>-0.044 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -385,7 +385,7 @@
             <ode/>
           </friction>
         </surface>
-      </collision>
+      </collision>-->
       <visual name='uleg_1_visual'>
         <pose frame=''>-0.044 0 0 0 -0 0</pose>
         <geometry>
@@ -437,7 +437,7 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='lleg_12_collision'>
+      <!--<collision name='lleg_12_collision'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
           <mesh>
@@ -445,7 +445,7 @@
             <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegl.dae</uri>
           </mesh>
         </geometry>
-      </collision>
+      </collision>-->
       <visual name='lleg_12_visual'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
@@ -486,7 +486,7 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='lleg_1_collision'>
+      <!--<collision name='lleg_1_collision'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
           <mesh>
@@ -494,7 +494,7 @@
             <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegr.dae</uri>
           </mesh>
         </geometry>
-      </collision>
+      </collision>-->
       <visual name='lleg_1_visual'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
@@ -536,7 +536,7 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='uleg_2_collision'>
+      <!--<collision name='uleg_2_collision'>
         <pose frame=''>-0.044 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -552,7 +552,7 @@
             <ode/>
           </friction>
         </surface>
-      </collision>
+      </collision>-->
       <visual name='uleg_2_visual'>
         <pose frame=''>-0.044 0 0 0 -0 0</pose>
         <geometry>
@@ -604,7 +604,7 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='lleg_22_collision'>
+      <!--<collision name='lleg_22_collision'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
           <mesh>
@@ -612,7 +612,7 @@
             <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegl.dae</uri>
           </mesh>
         </geometry>
-      </collision>
+      </collision>-->
       <visual name='lleg_22_visual'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
@@ -653,7 +653,7 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='lleg_2_collision'>
+      <!--<collision name='lleg_2_collision'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
           <mesh>
@@ -661,7 +661,7 @@
             <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegr.dae</uri>
           </mesh>
         </geometry>
-      </collision>
+      </collision>-->
       <visual name='lleg_2_visual'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
@@ -703,7 +703,7 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='uleg_3_collision'>
+      <!--<collision name='uleg_3_collision'>
         <pose frame=''>-0.044 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
@@ -719,7 +719,7 @@
             <ode/>
           </friction>
         </surface>
-      </collision>
+      </collision>-->
       <visual name='uleg_3_visual'>
         <pose frame=''>-0.044 0 0 0 -0 0</pose>
         <geometry>
@@ -771,7 +771,7 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='lleg_32_collision'>
+      <!--<collision name='lleg_32_collision'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
           <mesh>
@@ -779,7 +779,7 @@
             <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegl.dae</uri>
           </mesh>
         </geometry>
-      </collision>
+      </collision>-->
       <visual name='lleg_32_visual'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
@@ -820,7 +820,7 @@
           <izz>1e-05</izz>
         </inertia>
       </inertial>
-      <collision name='lleg_3_collision'>
+      <!--<collision name='lleg_3_collision'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
           <mesh>
@@ -828,7 +828,7 @@
             <uri>/home/remco/catkin_ws/src/delta_robot_simulation/meshes/lq_llegr.dae</uri>
           </mesh>
         </geometry>
-      </collision>
+      </collision>-->
       <visual name='lleg_3_visual'>
         <pose frame=''>0 0 0 -1.5708 0 0</pose>
         <geometry>
