@@ -24,9 +24,15 @@ class RobotSpawner():
         self.s.bind((TCP_IP, TCP_PORT))
 
     def spawn_robot(self, id, x, y, z, rx, ry, rz):
+        if id == 1:
+            x_offset = -0.007
+            y_offset = 0.008
+        else:
+            x_offset = 0
+            y_offset = 0
         item_name = "delta_robot{0}".format(id)
         quat = tf.transformations.quaternion_from_euler(radians(rx), radians(ry), radians(rz))
-        pose = Pose(Point(x=x-0.007, y=y+0.008, z=-z-1),   Quaternion(x=quat[0], y=quat[1], z=quat[2], w=quat[3]))
+        pose = Pose(Point(x=x+x_offset, y=y+y_offset, z=-z-1),   Quaternion(x=quat[0], y=quat[1], z=quat[2], w=quat[3]))
         print(pose)
         self.spawn(item_name, self.model, "", pose, "world")
 
@@ -37,7 +43,7 @@ class RobotSpawner():
         if data != []:
             for i in range(1, int(data[0])+1):
                 self.spawn_robot(i, float(data[1+(i-1)*9])/1000, float(data[3+((i-1)*9)])/1000, float(data[5+(i-1)*9])/1000, float(data[7+(i-1)*9])/100, float(data[8+(i-1)*9])/100, float(data[9+(i-1)*9])/100-90-(i-1)*120)
-                break
+                #break
 
 if __name__ == "__main__":
     rs = RobotSpawner()
