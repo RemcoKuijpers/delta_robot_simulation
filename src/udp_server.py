@@ -3,7 +3,6 @@
 import socket
 import re
 from delta_robot import DeltaRobot
-import time
 import rospy
 
 
@@ -11,11 +10,10 @@ class UDPClientRobots(object):
     def __init__(self):
         self.robot = DeltaRobot("delta_robot1")
         self.robot2 = DeltaRobot("delta_robot2")
-        TCP_IP = rospy.get_param("/robot_controller_ip_address")
-        TCP_PORT = 5008
+        UDP_IP = rospy.get_param("/robot_controller_ip_address")
+        UDP_PORT = 5008
         self.s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.s.bind((TCP_IP, TCP_PORT))
-        print("UDP connection for robots started")
+        self.s.bind((UDP_IP, UDP_PORT))
 
     def listen(self):
         while True:
