@@ -9,7 +9,7 @@ import time
 
 class DeltaRobot(object):
     def __init__(self, name):
-        rospy.init_node("control")
+        rospy.init_node("robot_commander")
         self.commander = rospy.Publisher("/" + name + "/pos_cmd", Vector3, queue_size=10)
         self.ee = rospy.Publisher("/" + name + "/ee_cmd", Float32, queue_size=10)
     
