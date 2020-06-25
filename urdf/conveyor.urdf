@@ -20,8 +20,7 @@
   </link>
   <gazebo reference="my_box">
     <material>Gazebo/LightGrey</material>
-  </gazebo>
-  <gazebo>
-    <static>True</static>
+    <static>true</static>
+    <kinematic>true</kinematic>
   </gazebo>
 </robot>

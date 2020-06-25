@@ -4,6 +4,7 @@
     <!--Model structure-->
     <link name='base_link'>
       <static>true</static>
+      <kinematic>true</kinematic>
       <pose frame=''>0 0 2 0 -0 0</pose>
       <inertial>
         <pose frame=''>0 0 0 0 -0 0</pose>

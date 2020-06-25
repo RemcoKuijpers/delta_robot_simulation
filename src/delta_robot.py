@@ -8,8 +8,9 @@ from math import radians, sin, degrees, cos
 import time
 
 class DeltaRobot(object):
-    def __init__(self, name):
+    def __init__(self, name, rz):
         rospy.init_node("robot_commander")
+        self.rz = rz
         self.commander = rospy.Publisher("/" + name + "/pos_cmd", Vector3, queue_size=10)
         self.ee = rospy.Publisher("/" + name + "/ee_cmd", Float32, queue_size=10)
     
@@ -17,7 +18,7 @@ class DeltaRobot(object):
         msg = Vector3()
         msg2 = Float32()
         msg.x, msg.y, msg.z = -radians(m1), -radians(m3), -radians(m2)
-        msg2.data = radians(m4)
+        msg2.data = radians(m4-self.rz)
         self.commander.publish(msg)
         self.ee.publish(msg2)
 

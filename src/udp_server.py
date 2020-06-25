@@ -8,8 +8,8 @@ import rospy
 
 class UDPClientRobots(object):
     def __init__(self):
-        self.robot = DeltaRobot("delta_robot1")
-        self.robot2 = DeltaRobot("delta_robot2")
+        self.robot = DeltaRobot("delta_robot1", 90)
+        self.robot2 = DeltaRobot("delta_robot2", 120+90)
         UDP_IP = rospy.get_param("/robot_controller_ip_address")
         UDP_PORT = 5008
         self.s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
