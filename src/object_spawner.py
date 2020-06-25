@@ -10,7 +10,7 @@ from gazebo_msgs.srv import DeleteModel, SpawnModel
 from geometry_msgs.msg import Pose, Quaternion, Point
 from gazebo_msgs.msg import ModelState
 from gazebo_msgs.srv import SetModelState
-from math import pi
+from math import pi, radians
 
 class PotatoSpawner(object):
     def __init__(self):
@@ -41,16 +41,17 @@ class PotatoSpawner(object):
         item_name = "potato_{0}".format(id)
         self.delete(item_name)
 
-    def update(self, i, x_position, y_position):
+    def update(self, i, x_position, y_position, z_rotation):
+            quat = tf.transformations.quaternion_from_euler(0, 0, radians(z_rotation))
             msg = ModelState()
             msg.model_name = "potato_{0}".format(i)
             msg.pose.position.y = y_position
             msg.pose.position.x = x_position
             msg.pose.position.z = 1
-            msg.pose.orientation.x = 0
-            msg.pose.orientation.y = 0
-            msg.pose.orientation.z = 0
-            msg.pose.orientation.w = 0
+            msg.pose.orientation.x = quat[0]
+            msg.pose.orientation.y = quat[1]
+            msg.pose.orientation.z = quat[2]
+            msg.pose.orientation.w = quat[3]
             msg.twist.linear.x = 0
             msg.twist.linear.y = 0
             msg.twist.linear.z = 0
@@ -70,9 +71,9 @@ class PotatoSpawner(object):
     #    elif i not in self.dids:
     #        self.update(i, x_position, y_position)
 
-    def updatePoseNew(self, i, x_position, y_position, active):
+    def updatePoseNew(self, i, x_position, y_position, z_rotation, active):
         d = i/float(active)
         if d > 1:
             i = i - active*int(d)+1
         if i != 0:
-            self.update(i, x_position, y_position)
+            self.update(i, x_position, y_position, z_rotation)

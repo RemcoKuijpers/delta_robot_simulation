@@ -26,7 +26,8 @@ class UDPClientObjectSpawner():
                         num = int(data[0])
                         x = float(data[1])/1000
                         y = float(data[2])/1000
-                        self.p.updatePoseNew(num,x,y,25)
+                        rz = -float(data[3])+90
+                        self.p.updatePoseNew(num,x,y,rz,25)
             except KeyboardInterrupt:
                 break
             except IndexError:

@@ -31,7 +31,7 @@ class RobotSpawner():
             x_offset = 0
             y_offset = 0
         item_name = "delta_robot{0}".format(id)
-        quat = tf.transformations.quaternion_from_euler(radians(rx), radians(ry), radians(rz))
+        quat = tf.transformations.quaternion_from_euler(radians(-rx), radians(-ry), radians(rz))
         pose = Pose(Point(x=x+x_offset, y=y+y_offset, z=-z-1),   Quaternion(x=quat[0], y=quat[1], z=quat[2], w=quat[3]))
         print(pose)
         self.spawn(item_name, self.model, "", pose, "world")
