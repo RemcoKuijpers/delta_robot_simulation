@@ -4,7 +4,7 @@ import pygame
 from delta_robot import DeltaRobot
 
 def main():
-    robot = DeltaRobot("delta_robot")
+    robot = DeltaRobot("delta_robot", 0)
     pygame.init()
     pygame.display.set_mode((640, 640))
     pygame.time.Clock()
@@ -22,7 +22,6 @@ def main():
                     z -= 10
             if event.type == pygame.MOUSEMOTION:
                 x = -(event.pos[0] - 320) * (320/200)
-                y = -(event.pos[1] - 320) * (320/200)
-        print(x,y,z)
-        robot.movePositionCartesian(x, y, z)
+                y = (event.pos[1] - 320) * (320/200)
+        robot.movePositionCartesian(x, y, z, 0)
 main()
